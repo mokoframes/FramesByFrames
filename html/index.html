@@ -104,32 +104,60 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end min-vh-100">
-      <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
-        <source src="../assets/images/my-intro-temp.mp4" type="video/mp4" />
-      </video>
-      <div class="container">
-        <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
-          <div class="row align-items-center">
-            <div class="col-xl-4">
-              <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
-                data-aos-duration="1000">
-                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-70">We do <span class="text-primary">Commercial
-                    Photography</span> From cafes to creators, interiors to influencers.</p>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <h1 class="mb-0 fs-16 text-white lh-1">MOKO</h1>
-            <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
-              <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
-                <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-              </span>
-            </a>
+  <!-- Desktop Video -->
+  <video class="video-desktop position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+    <source src="../assets/images/Dekstop-intro.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Mobile Video -->
+  <video class="video-mobile position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+    <source src="../assets/images/Mobile-intro.mp4" type="video/mp4" />
+  </video>
+
+  <div class="container">
+    <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
+      <div class="row align-items-center">
+        <div class="col-xl-4">
+          <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+            <p class="mb-0 text-white fs-5 text-opacity-70">
+              We do <span class="text-primary">Commercial Photography</span> From cafes to creators, interiors to influencers.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+      <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <h1 class="mb-0 fs-16 text-white lh-1">MOKO</h1>
+        <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
+          <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
+            <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline CSS for this section -->
+  <style>
+    /* Default: desktop video visible */
+    .video-desktop {
+      display: block;
+    }
+    .video-mobile {
+      display: none;
+    }
+
+    /* On mobile screens */
+    @media (max-width: 991.98px) {
+      .video-desktop {
+        display: none;
+      }
+      .video-mobile {
+        display: block;
+      }
+    }
+  </style>
+</section>
 
     <!--  Stats & Facts Section -->
     <section class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
