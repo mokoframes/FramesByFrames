@@ -16532,7 +16532,7 @@ textarea.form-control-lg {
   visibility: hidden;
   transform: translateY(-100%);
   transition: all 0.4s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #c1ff76bb;
 }
 
 .meet-team-img {
