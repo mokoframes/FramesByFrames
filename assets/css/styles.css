@@ -773,6 +773,13 @@ progress {
   height: auto;
 }
 
+
+.img-fluid-testimonial {
+  /* max-width: 100%; */
+  width: 12vw;
+  height: auto;
+}
+
 .img-fluid-about {
   width: 30vw; /* Default: very small phones */
   height: auto;
