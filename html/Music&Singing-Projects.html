@@ -14,6 +14,7 @@
     .gallery-section {
       padding: 40px 0;
     }
+
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -23,21 +24,25 @@
       overflow: auto;
       padding: 0 10px;
     }
+
     .gallery-container::-webkit-scrollbar {
       display: none;
     }
+
     .gallery-container {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    .gallery-container > div {
+
+    .gallery-container>div {
       position: relative;
       padding: 0;
       overflow: hidden;
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.2), 5px 5px 25px rgba(0,0,0,0.1);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), 5px 5px 25px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease-in-out;
       cursor: pointer;
     }
+
     .gallery-container div img {
       position: absolute;
       top: 0;
@@ -47,19 +52,25 @@
       overflow: hidden;
       transition: all 0.6s ease-in-out;
     }
-    .gallery-container > div:hover, .gallery-container > div:hover img {
+
+    .gallery-container>div:hover,
+    .gallery-container>div:hover img {
       transform: scale(1.05);
     }
+
     .gallery-container .vertical {
       grid-row: span 2;
     }
+
     .gallery-container .horizontal {
       grid-column: span 2;
     }
+
     .gallery-container .big {
       grid-row: span 2;
       grid-column: span 2;
     }
+
     /* Fullscreen Image Styles */
     .fullscreen-overlay {
       display: none;
@@ -74,14 +85,17 @@
       align-items: center;
       overflow: auto;
     }
+
     .fullscreen-overlay.active {
       display: flex;
     }
+
     .fullscreen-image {
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
     }
+
     .close-button {
       position: fixed;
       top: 20px;
@@ -97,30 +111,37 @@
       cursor: pointer;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+
     .close-button iconify-icon {
       font-size: 24px;
       color: #000;
     }
+
     @media (max-width: 768px) {
       .gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-auto-rows: 200px;
         grid-gap: 10px;
       }
+
       .gallery-container .big {
         grid-row: span 1;
         grid-column: span 1;
       }
+
       .gallery-container .horizontal {
         grid-column: span 1;
       }
+
       .gallery-container .vertical {
         grid-row: span 1;
       }
+
       .fullscreen-image {
         max-width: 95%;
         max-height: 85%;
       }
+
       .close-button {
         top: 10px;
         right: 10px;
@@ -306,29 +327,75 @@
       <div class="container">
         <h2 class="fs-13 mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Project Gallery</h2>
         <div class="gallery-container">
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1506252374453-ef5237291d83?ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80" alt="1"></div>
-          <div class="vertical"><img src="https://images.unsplash.com/photo-1536273176101-b3810e5cb3c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="2"></div>
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1524546101258-e99b0826ea9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1936&q=80" alt="3"></div>
-          <div class="big"><img src="https://images.unsplash.com/photo-1486239154832-a989a601c41d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="4"></div>
-          <div class="vertical"><img src="https://images.unsplash.com/photo-1519458524098-335b2a5747b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="5"></div>
-          <div><img src="https://images.unsplash.com/photo-1548737787-a776beb45cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80" alt="6"></div>
-          <div class="vertical"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="7"></div>
-          <div><img src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="8"></div>
-          <div><img src="https://images.unsplash.com/photo-1502842113467-03fdcac39fe5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="8.1"></div>
-          <div><img src="https://images.unsplash.com/photo-1548599042-0df640181771?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="9"></div>
-          <div class="big"><img src="https://images.unsplash.com/photo-1515405969538-5642ed9d0cc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="10"></div>
-          <div><img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=926&q=80" alt="11"></div>
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1460627390041-532a28402358?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="12"></div>
-          <div><img src="https://images.unsplash.com/photo-1514673309919-5998bbbadf7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=688&q=80" alt="12.1"></div>
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1543335785-8aadf6d8183c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="13"></div>
-          <div class="vertical"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="14"></div>
-          <div><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="15"></div>
-          <div class="big"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80" alt="16"></div>
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1519125323398-675f0f8d0f07?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="17"></div>
-          <div><img src="https://images.unsplash.com/photo-1503614472-8c93ca36b0e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="18"></div>
-          <div class="vertical"><img src="https://images.unsplash.com/photo-1519742866993-66d3cfef4bbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="19"></div>
-          <div><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="20"></div>
-          <div class="horizontal"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="21"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1506252374453-ef5237291d83?ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80"
+              alt="1"></div>
+          <div class="vertical"><img
+              src="https://images.unsplash.com/photo-1536273176101-b3810e5cb3c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+              alt="2"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1524546101258-e99b0826ea9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1936&q=80"
+              alt="3"></div>
+          <div class="big"><img
+              src="https://images.unsplash.com/photo-1486239154832-a989a601c41d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              alt="4"></div>
+          <div class="vertical"><img
+              src="https://images.unsplash.com/photo-1519458524098-335b2a5747b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              alt="5"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1548737787-a776beb45cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
+              alt="6"></div>
+          <div class="vertical"><img
+              src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              alt="7"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1474218861938-d6b14818c8e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+              alt="8"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1502842113467-03fdcac39fe5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              alt="8.1"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1548599042-0df640181771?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="9"></div>
+          <div class="big"><img
+              src="https://images.unsplash.com/photo-1515405969538-5642ed9d0cc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+              alt="10"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=926&q=80"
+              alt="11"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1460627390041-532a28402358?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="12"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1514673309919-5998bbbadf7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=688&q=80"
+              alt="12.1"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1543335785-8aadf6d8183c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+              alt="13"></div>
+          <div class="vertical"><img
+              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="14"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="15"></div>
+          <div class="big"><img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80"
+              alt="16"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1519125323398-675f0f8d0f07?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="17"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1503614472-8c93ca36b0e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="18"></div>
+          <div class="vertical"><img
+              src="https://images.unsplash.com/photo-1519742866993-66d3cfef4bbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              alt="19"></div>
+          <div><img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="20"></div>
+          <div class="horizontal"><img
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="21"></div>
         </div>
       </div>
     </section>
@@ -344,81 +411,144 @@
 
   <!-- 7. CTA Section -->
   <section class="cta-section">
-  <style>
-    .cta-section {
-      background-image: url(../assets/images/backgrounds/bg-cta.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-    }
+    <style>
+      .cta-section {
+        background-image: url(../assets/images/backgrounds/bg-cta.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+      }
 
-    /* Glitch effect styles */
-    .glitch-text {
-      position: relative;
-      display: inline-block;
-    }
+      /* Glitch effect styles */
+      .glitch-text {
+        position: relative;
+        display: inline-block;
+      }
 
-    .glitch-text::before,
-    .glitch-text::after {
-      content: attr(data-glitch);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      clip: rect(0, 900px, 0, 0);
-    }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        clip: rect(0, 900px, 0, 0);
+      }
 
-    .glitch-text::before {
-      left: 2px;
-      text-shadow: -2px 0 #ff00c1;
-      animation: glitch-anim 3s infinite linear alternate-reverse;
-    }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+      }
 
-    .glitch-text::after {
-      left: -2px;
-      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-      animation: glitch-anim 2s infinite linear alternate-reverse;
-    }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        animation: glitch-anim 2s infinite linear alternate-reverse;
+      }
 
-    @keyframes glitch-anim {
-      0% { clip: rect(42px, 9999px, 44px, 0); }
-      5% { clip: rect(12px, 9999px, 59px, 0); }
-      10% { clip: rect(48px, 9999px, 29px, 0); }
-      15% { clip: rect(42px, 9999px, 73px, 0); }
-      20% { clip: rect(63px, 9999px, 27px, 0); }
-      25% { clip: rect(34px, 9999px, 55px, 0); }
-      30% { clip: rect(86px, 9999px, 73px, 0); }
-      35% { clip: rect(20px, 9999px, 20px, 0); }
-      40% { clip: rect(26px, 9999px, 60px, 0); }
-      45% { clip: rect(25px, 9999px, 66px, 0); }
-      50% { clip: rect(57px, 9999px, 98px, 0); }
-      55% { clip: rect(5px, 9999px, 46px, 0); }
-      60% { clip: rect(82px, 9999px, 8px, 0); }
-      65% { clip: rect(54px, 9999px, 58px, 0); }
-      70% { clip: rect(28px, 9999px, 99px, 0); }
-      75% { clip: rect(45px, 9999px, 69px, 0); }
-      80% { clip: rect(23px, 9999px, 85px, 0); }
-      85% { clip: rect(97px, 9999px, 72px, 0); }
-      90% { clip: rect(48px, 9999px, 32px, 0); }
-      95% { clip: rect(42px, 9999px, 79px, 0); }
-      100% { clip: rect(64px, 9999px, 40px, 0); }
-    }
-  </style>
+      @keyframes glitch-anim {
+        0% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
 
-  <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
-    <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
-      Ready to Elevate Your Brand?
-    </h2>
-    <p class="fs-4 text-white opacity-80 mb-5 lead">
-      Book your commercial shoot today and showcase your business with world-class photography.
-    </p>
-    <a href="#" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot Now</a>
-  </div>
-</section>
+        5% {
+          clip: rect(12px, 9999px, 59px, 0);
+        }
+
+        10% {
+          clip: rect(48px, 9999px, 29px, 0);
+        }
+
+        15% {
+          clip: rect(42px, 9999px, 73px, 0);
+        }
+
+        20% {
+          clip: rect(63px, 9999px, 27px, 0);
+        }
+
+        25% {
+          clip: rect(34px, 9999px, 55px, 0);
+        }
+
+        30% {
+          clip: rect(86px, 9999px, 73px, 0);
+        }
+
+        35% {
+          clip: rect(20px, 9999px, 20px, 0);
+        }
+
+        40% {
+          clip: rect(26px, 9999px, 60px, 0);
+        }
+
+        45% {
+          clip: rect(25px, 9999px, 66px, 0);
+        }
+
+        50% {
+          clip: rect(57px, 9999px, 98px, 0);
+        }
+
+        55% {
+          clip: rect(5px, 9999px, 46px, 0);
+        }
+
+        60% {
+          clip: rect(82px, 9999px, 8px, 0);
+        }
+
+        65% {
+          clip: rect(54px, 9999px, 58px, 0);
+        }
+
+        70% {
+          clip: rect(28px, 9999px, 99px, 0);
+        }
+
+        75% {
+          clip: rect(45px, 9999px, 69px, 0);
+        }
+
+        80% {
+          clip: rect(23px, 9999px, 85px, 0);
+        }
+
+        85% {
+          clip: rect(97px, 9999px, 72px, 0);
+        }
+
+        90% {
+          clip: rect(48px, 9999px, 32px, 0);
+        }
+
+        95% {
+          clip: rect(42px, 9999px, 79px, 0);
+        }
+
+        100% {
+          clip: rect(64px, 9999px, 40px, 0);
+        }
+      }
+    </style>
+
+    <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+      <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
+        Ready to Elevate Your Brand?
+      </h2>
+      <p class="fs-4 text-white opacity-80 mb-5 lead">
+        Book your commercial shoot today and showcase your business with world-class photography.
+      </p>
+      <a href="Slot-Booking.html" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot
+        Now</a>
+    </div>
+  </section>
 
 
   <!--  Get in touch Section -->
@@ -517,7 +647,7 @@
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-            <li><a class="link-hover fs-5 text-white" id="services" href="#services">Services</a></li>
+            <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
             <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
             <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
           </ul>
@@ -526,43 +656,48 @@
         <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="index.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Commerical-Shoot-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Commercial Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="about-us.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Interior-Photography-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Architectural Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services" href="#services">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services"
+                href="Food&Restro-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Food & Restro Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="projects.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Model Portfolio Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="terms-and-conditions.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Content-Creation-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Content Creator Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="privacy-policy.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Product-Photography-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Product Photography
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="404.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Music-Singing Shoot
               </a>
@@ -600,7 +735,6 @@
     <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white"
         href="index.html">FrameByFrame - © MOKO copyright 2025</a></p>
   </footer>
-
 
   <div class="get-template hstack gap-2">
     <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
