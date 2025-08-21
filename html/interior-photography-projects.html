@@ -342,83 +342,146 @@
     </div>
   </div>
 
-  <!-- 7. CTA Section -->
+<!-- 7. CTA Section -->
   <section class="cta-section">
-  <style>
-    .cta-section {
-      background-image: url(../assets/images/backgrounds/bg-cta.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-    }
+    <style>
+      .cta-section {
+        background-image: url(../assets/images/backgrounds/bg-cta.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+      }
 
-    /* Glitch effect styles */
-    .glitch-text {
-      position: relative;
-      display: inline-block;
-    }
+      /* Glitch effect styles */
+      .glitch-text {
+        position: relative;
+        display: inline-block;
+      }
 
-    .glitch-text::before,
-    .glitch-text::after {
-      content: attr(data-glitch);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      clip: rect(0, 900px, 0, 0);
-    }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        clip: rect(0, 900px, 0, 0);
+      }
 
-    .glitch-text::before {
-      left: 2px;
-      text-shadow: -2px 0 #ff00c1;
-      animation: glitch-anim 3s infinite linear alternate-reverse;
-    }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+      }
 
-    .glitch-text::after {
-      left: -2px;
-      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-      animation: glitch-anim 2s infinite linear alternate-reverse;
-    }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        animation: glitch-anim 2s infinite linear alternate-reverse;
+      }
 
-    @keyframes glitch-anim {
-      0% { clip: rect(42px, 9999px, 44px, 0); }
-      5% { clip: rect(12px, 9999px, 59px, 0); }
-      10% { clip: rect(48px, 9999px, 29px, 0); }
-      15% { clip: rect(42px, 9999px, 73px, 0); }
-      20% { clip: rect(63px, 9999px, 27px, 0); }
-      25% { clip: rect(34px, 9999px, 55px, 0); }
-      30% { clip: rect(86px, 9999px, 73px, 0); }
-      35% { clip: rect(20px, 9999px, 20px, 0); }
-      40% { clip: rect(26px, 9999px, 60px, 0); }
-      45% { clip: rect(25px, 9999px, 66px, 0); }
-      50% { clip: rect(57px, 9999px, 98px, 0); }
-      55% { clip: rect(5px, 9999px, 46px, 0); }
-      60% { clip: rect(82px, 9999px, 8px, 0); }
-      65% { clip: rect(54px, 9999px, 58px, 0); }
-      70% { clip: rect(28px, 9999px, 99px, 0); }
-      75% { clip: rect(45px, 9999px, 69px, 0); }
-      80% { clip: rect(23px, 9999px, 85px, 0); }
-      85% { clip: rect(97px, 9999px, 72px, 0); }
-      90% { clip: rect(48px, 9999px, 32px, 0); }
-      95% { clip: rect(42px, 9999px, 79px, 0); }
-      100% { clip: rect(64px, 9999px, 40px, 0); }
-    }
-  </style>
+      @keyframes glitch-anim {
+        0% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
 
-  <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
-    <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
-      Ready to Elevate Your Brand?
-    </h2>
-    <p class="fs-4 text-white opacity-80 mb-5 lead">
-      Book your commercial shoot today and showcase your business with world-class photography.
-    </p>
-    <a href="#" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot Now</a>
-  </div>
-</section>
+        5% {
+          clip: rect(12px, 9999px, 59px, 0);
+        }
+
+        10% {
+          clip: rect(48px, 9999px, 29px, 0);
+        }
+
+        15% {
+          clip: rect(42px, 9999px, 73px, 0);
+        }
+
+        20% {
+          clip: rect(63px, 9999px, 27px, 0);
+        }
+
+        25% {
+          clip: rect(34px, 9999px, 55px, 0);
+        }
+
+        30% {
+          clip: rect(86px, 9999px, 73px, 0);
+        }
+
+        35% {
+          clip: rect(20px, 9999px, 20px, 0);
+        }
+
+        40% {
+          clip: rect(26px, 9999px, 60px, 0);
+        }
+
+        45% {
+          clip: rect(25px, 9999px, 66px, 0);
+        }
+
+        50% {
+          clip: rect(57px, 9999px, 98px, 0);
+        }
+
+        55% {
+          clip: rect(5px, 9999px, 46px, 0);
+        }
+
+        60% {
+          clip: rect(82px, 9999px, 8px, 0);
+        }
+
+        65% {
+          clip: rect(54px, 9999px, 58px, 0);
+        }
+
+        70% {
+          clip: rect(28px, 9999px, 99px, 0);
+        }
+
+        75% {
+          clip: rect(45px, 9999px, 69px, 0);
+        }
+
+        80% {
+          clip: rect(23px, 9999px, 85px, 0);
+        }
+
+        85% {
+          clip: rect(97px, 9999px, 72px, 0);
+        }
+
+        90% {
+          clip: rect(48px, 9999px, 32px, 0);
+        }
+
+        95% {
+          clip: rect(42px, 9999px, 79px, 0);
+        }
+
+        100% {
+          clip: rect(64px, 9999px, 40px, 0);
+        }
+      }
+    </style>
+
+    <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+      <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
+        Ready to Elevate Your Brand?
+      </h2>
+      <p class="fs-4 text-white opacity-80 mb-5 lead">
+        Book your commercial shoot today and showcase your business with world-class photography.
+      </p>
+      <a href="Slot-Booking.html" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot
+        Now</a>
+    </div>
+  </section>
 
 
   <!--  Get in touch Section -->
@@ -517,7 +580,7 @@
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-            <li><a class="link-hover fs-5 text-white" id="services" href="#services">Services</a></li>
+            <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
             <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
             <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
           </ul>
@@ -526,43 +589,48 @@
         <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="index.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Commerical-Shoot-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Commercial Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="about-us.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Interior-Photography-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Architectural Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services" href="#services">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services"
+                href="Food&Restro-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Food & Restro Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="projects.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Model Portfolio Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="terms-and-conditions.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Content-Creation-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Content Creator Shoot
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="privacy-policy.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                href="Product-Photography-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Product Photography
               </a>
             </li>
             <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="404.html">
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
                 Music-Singing Shoot
               </a>
@@ -600,7 +668,6 @@
     <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white"
         href="index.html">FrameByFrame - © MOKO copyright 2025</a></p>
   </footer>
-
 
   <div class="get-template hstack gap-2">
     <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
