@@ -1,169 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You!</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.svg" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-    .thank-you-container {
-      background: white;
-      padding: 40px 50px 50px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-    }
+        .thank-you-container {
+            background: white;
+            padding: 40px 50px 50px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
 
-    .tick {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      padding: 10px;
-      border: 3px solid #4CAF50;
-      border-radius: 50%;
-      box-sizing: border-box;
-    }
+        .tick {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            padding: 10px;
+            border: 3px solid #4CAF50;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
 
-    .tick path {
-      stroke: #4CAF50;
-      stroke-width: 6;
-      fill: none;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      animation: draw 0.8s ease-in-out forwards;
-    }
+        .tick path {
+            stroke: #4CAF50;
+            stroke-width: 6;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw 0.8s ease-in-out forwards;
+        }
 
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
-      color: #333;
-    }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-    p.message {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 30px;
-    }
+        p.message {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
 
-    /* Toast notification */
-    .toast {
-      background: #4caf50;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
-      position: absolute;
-      top: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      opacity: 0;
-      animation: fadeInOut 5s forwards;
-      pointer-events: none;
-      user-select: none;
-      width: max-content;
-      min-width: 220px;
-    }
+        /* Toast notification */
+        .toast {
+            background: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            animation: fadeInOut 5s forwards;
+            pointer-events: none;
+            user-select: none;
+            width: max-content;
+            min-width: 220px;
+        }
 
-    @keyframes fadeInOut {
-      0%, 20% { opacity: 0; }
-      30%, 80% { opacity: 1; }
-      100% { opacity: 0; }
-    }
+        @keyframes fadeInOut {
 
-    .countdown {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 30px;
-      font-weight: 500;
-    }
+            0%,
+            20% {
+                opacity: 0;
+            }
 
-    .home-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: #4CAF50;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s ease;
-      border: 2px solid #4CAF50;
-      padding: 10px 20px;
-      border-radius: 25px;
-      user-select: none;
-    }
+            30%,
+            80% {
+                opacity: 1;
+            }
 
-    .home-link:hover {
-      color: #388e3c;
-      border-color: #388e3c;
-      background-color: #e8f5e9;
-    }
+            100% {
+                opacity: 0;
+            }
+        }
 
-    .home-link svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-  </style>
+        .countdown {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
 
-  <script>
-    // Countdown and redirect logic
-    let countdown = 8;
-    function updateCountdown() {
-      const countdownEl = document.getElementById('countdown');
-      countdownEl.textContent = `Redirecting in ${countdown} second${countdown !== 1 ? 's' : ''}...`;
-      if (countdown === 0) {
-        window.location.href = "index.html"; // Change this URL if needed
-      }
-      countdown--;
-    }
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            border: 2px solid #4CAF50;
+            padding: 10px 20px;
+            border-radius: 25px;
+            user-select: none;
+        }
 
-    window.onload = function () {
-      updateCountdown();
-      const interval = setInterval(() => {
-        if (countdown < 0) clearInterval(interval);
-        else updateCountdown();
-      }, 1000);
-    };
-  </script>
+        .home-link:hover {
+            color: #388e3c;
+            border-color: #388e3c;
+            background-color: #e8f5e9;
+        }
+
+        .home-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+    </style>
+
+    <script>
+        // Countdown and redirect logic
+        let countdown = 8;
+        function updateCountdown() {
+            const countdownEl = document.getElementById('countdown');
+            countdownEl.textContent = `Redirecting in ${countdown} second${countdown !== 1 ? 's' : ''}...`;
+            if (countdown === 0) {
+                window.location.href = "index.html"; // Change this URL if needed
+            }
+            countdown--;
+        }
+
+        window.onload = function () {
+            updateCountdown();
+            const interval = setInterval(() => {
+                if (countdown < 0) clearInterval(interval);
+                else updateCountdown();
+            }, 1000);
+        };
+    </script>
 </head>
+
 <body>
-  <div class="thank-you-container">
-    <div class="toast">Message submitted successfully!</div>
+    <div class="thank-you-container">
+        <div class="toast">Message submitted successfully!</div>
 
-    <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
-      <path d="M10 25 L20 35 L40 15" />
-    </svg>
+        <svg class="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+            <path d="M10 25 L20 35 L40 15" />
+        </svg>
 
-    <h1>Thank You!</h1>
-    <p class="message">Your message has been successfully submitted.</p>
+        <h1>Thank You!</h1>
+        <p class="message">Your message has been successfully submitted.</p>
 
-    <div id="countdown" class="countdown">Redirecting in 8 seconds...</div>
+        <div id="countdown" class="countdown">Redirecting in 8 seconds...</div>
 
-    <a style="text-decoration: underline;" href="index.html" class="home-link" aria-label="Go back to home page">
-      Go back
-    </a>
-  </div>
+        <a style="text-decoration: underline;" href="index.html" class="home-link" aria-label="Go back to home page">
+            Go back
+        </a>
+    </div>
 </body>
+
 </html>
