@@ -369,30 +369,33 @@
           </div>
         </div>
         <div class="row justify-content-between gap-7 gap-xl-0">
-          <div class="col-xl-3">
+          <div class="col-xl-4">
             <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">Let’s collaborate
-              and create something amazing! Tell me about your project—I’m all
-              ears.</p>
+              and create something amazing! Tell me about your project—</p>
           </div>
           <div class="col-xl-8">
-            <form class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <form action="https://formsubmit.co/mokoframes@gmail.com" method="POST" class="d-flex flex-column gap-7"
+              data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
               <div>
-                <input type="text" class="form-control border-bottom border-dark" id="formGroupExampleInput"
-                  placeholder="Name">
+                <label for="contact-name" class="visually-hidden">Name</label>
+                <input type="text" class="form-control border-bottom border-dark" id="contact-name" name="name"
+                  placeholder="Name" required>
               </div>
               <div>
-                <input type="email" class="form-control border-bottom border-dark" id="exampleInputEmail1"
-                  placeholder="Email" aria-describedby="emailHelp">
+                <label for="contact-email" class="visually-hidden">Email</label>
+                <input type="email" class="form-control border-bottom border-dark" id="contact-email" name="email"
+                  placeholder="Email" required>
               </div>
               <div>
                 <textarea class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
-                  placeholder="Tell us about your project" rows="3"></textarea>
+                  placeholder="Tell us about your project" rows="3" name="message"></textarea>
               </div>
               <button type="submit" class="btn w-100 justify-content-center">
                 <span class="btn-text">Submit message</span>
                 <iconify-icon icon="lucide:arrow-up-right"
                   class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
               </button>
+              <input type="hidden" name="_next" value="https://mokoframes.netlify.app/html/thankyou.html">
             </form>
           </div>
         </div>
