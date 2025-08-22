@@ -9,68 +9,106 @@
   <link rel="stylesheet" href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    /* Set a fixed size for the Google and GitHub icons */
+    .sign-in .btn img {
+      width: 24px; /* Fixed size for the icons */
+      height: auto; /* Maintain aspect ratio */
+      margin-right: 10px; /* Space between text and icon */
+    }
+
+    /* Add space between buttons */
+    .sign-in .hstack {
+      gap: 1rem;
+    }
+
+    /* Button text adjustments */
+    .sign-in .btn {
+      font-size: 1.2rem;
+      padding: 0.75rem 1.5rem;
+      text-align: center;
+    }
+
+    /* Styling for logo and shadow effect */
+    .sign-in .img-fluid {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .sign-in .img-fluid:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add padding to the logo */
+    .sign-in .logo-container {
+      padding: 20px;
+    }
+
+    /* Adjusting the layout for smaller screens */
+    @media (max-width: 768px) {
+      .sign-in .btn {
+        font-size: 1rem; /* Smaller buttons for smaller screens */
+        padding: 0.75rem;
+      }
+
+      .sign-in input[type="email"],
+      .sign-in input[type="password"] {
+        padding: 0.75rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!--  Page Wrapper -->
+  <!-- Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
 
-    <!--  Get in touch Section -->
-    <section class="get-in-touch py-5 py-lg-11 py-xl-12">
-      <div class="container">
-        <div class="d-flex flex-column gap-5 gap-xl-10">
-          <div class="row gap-7 gap-xl-0">
-            <div class="col-xl-4 col-xxl-4">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">10</span>
-                <hr class="border-line bg-white">
-                <span class="badge text-bg-dark">Contact us</span>
+    <!-- Get in touch Section -->
+    <section class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
+      <div class="container py-3">
+        <div class="sign-in card mx-auto shadow-lg">
+          <div class="card-body py-8 px-lg-5">
+            <!-- Logo with padding -->
+            <a href="index.html" class="mb-8 hstack justify-content-center logo-container">
+              <img src="../assets/images/logos/logo-dark.png" alt="logo-dark" class="img-fluid">
+            </a>
+            <div class="hstack gap-3">
+              <!-- Google Sign In Button -->
+              <a href="javascript:void(0)" class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
+                Sign In
+                <img src="../assets/images/svgs/icon-google.svg" alt="google">
+              </a>
+              <!-- GitHub Sign In Button -->
+              <a href="javascript:void(0)" class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
+                Sign In
+                <img src="../assets/images/svgs/icon-github.svg" alt="github">
+              </a>
+            </div>
+            <!-- OR Divider -->
+            <div class="position-relative hstack justify-content-center">
+              <hr class="my-8 w-100 d-block">
+              <p class="mb-0 fs-3 bg-body px-3 position-absolute top-50 start-50 translate-middle">OR</p>
+            </div>
+            <!-- Form Inputs -->
+            <form class="d-flex flex-column gap-3">
+              <div>
+                <input type="email" class="form-control border-bottom" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
               </div>
-            </div>
-            <div class="col-xl-8 col-xxl-7">
-              <div class="row">
-                <div class="col-xxl-8">
-                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="1000">
-                    <h2 class="mb-0">Get in touch</h2>
-                  </div>
-                </div>
+              <div>
+                <input type="password" class="form-control border-bottom" id="inputPassword" placeholder="Password">
               </div>
-            </div>
-          </div>
-          <div class="row justify-content-between gap-7 gap-xl-0">
-            <div class="col-xl-4">
-              <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">Let’s collaborate
-                and create something amazing! Tell me about your project—</p>
-            </div>
-            <div class="col-xl-8">
-              <form action="https://formsubmit.co/mokoframes@gmail.com" method="POST" class="d-flex flex-column gap-7"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div>
-                  <label for="contact-name" class="visually-hidden">Name</label>
-                  <input type="text" class="form-control border-bottom border-dark" id="contact-name" name="name"
-                    placeholder="Name" required>
-                </div>
-                <div>
-                  <label for="contact-email" class="visually-hidden">Email</label>
-                  <input type="email" class="form-control border-bottom border-dark" id="contact-email" name="email"
-                    placeholder="Email" required>
-                </div>
-                <div>
-                  <textarea class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
-                    placeholder="Tell us about your project" rows="3" name="message"></textarea>
-                </div>
-                <button type="submit" class="btn w-100 justify-content-center">
-                  <span class="btn-text">Submit message</span>
-                  <iconify-icon icon="lucide:arrow-up-right"
-                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                </button>
-                <input type="hidden" name="_next" value="https://mokoframes.netlify.app/html/thankyou.html">
-              </form>
-            </div>
+
+              <a href="index.html" class="btn btn-dark w-100 justify-content-center py-2 fw-medium my-7 fs-4 lh-lg">
+                Sign In
+              </a>
+            </form>
+            <!-- Forget Password and Sign Up -->
+            <a class="text-center mb-1 d-block text-dark fw-medium" href="#">Forget Password?</a>
+            <p class="mb-0 fw-medium text-center">Not a member yet? <a class="text-dark" href="sign-up.html">Sign Up</a></p>
           </div>
         </div>
       </div>
@@ -79,13 +117,10 @@
   </div>
 
   <div class="get-template hstack gap-2">
-
-    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
-      id="scrollToTopBtn">
+    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0" id="scrollToTopBtn">
       <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
     </button>
   </div>
-
 
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
