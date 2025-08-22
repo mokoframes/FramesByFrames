@@ -11,13 +11,16 @@
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* WhatsApp Button Styles */
     .whatsapp-chat-btn {
       position: fixed;
       left: 32px;
       bottom: 30px;
       z-index: 9999;
-      background: rgba(255, 255, 255, 0.08);
+      background: #c1ff76;
+      /* Green background */
       color: #111111;
+      /* Black icon color */
       border-radius: 50%;
       box-shadow: 0 8px 32px rgba(18, 140, 126, 0.18), 0 2px 10px rgba(18, 140, 126, 0.10);
       width: 64px;
@@ -35,6 +38,26 @@
       overflow: visible;
     }
 
+    /* WhatsApp Icon (Initially Black) */
+    .whatsapp-chat-btn .fa-whatsapp {
+      color: black;
+      /* Icon is black initially */
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+    }
+
+    /* Hover Effect: Background Black, Icon White */
+    .whatsapp-chat-btn:hover {
+      box-shadow: 0 12px 40px rgba(18, 140, 126, 0.28);
+      transform: scale(1.09);
+      background: #111111;
+      /* Background turns black */
+    }
+
+    .whatsapp-chat-btn:hover .fa-whatsapp {
+      color: white;
+      /* Icon turns white when hovered */
+    }
+
     .whatsapp-chat-btn::before {
       content: "";
       position: absolute;
@@ -45,25 +68,18 @@
       border-radius: 50%;
       padding: 0.5px;
       background: #c1ff76;
+      /* Green background */
       z-index: -1;
       transition: background 0.2s;
     }
 
+    /* Hover Effect on the Pseudo-Element (Background Change) */
     .whatsapp-chat-btn:hover::before {
-      background: rgba(11, 15, 16, 0.782);
+      background: #111111;
+      /* Black background on hover */
     }
 
-    .whatsapp-chat-btn:hover {
-      box-shadow: 0 12px 40px rgba(18, 140, 126, 0.28);
-      transform: scale(1.09);
-      background: rgba(255, 255, 255, 0.18);
-    }
-
-    .whatsapp-chat-btn .fa-whatsapp {
-      color: #fff;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
-    }
-
+    /* Tooltip Styling */
     .whatsapp-tooltip {
       opacity: 0;
       visibility: hidden;
@@ -81,14 +97,15 @@
       transition: opacity 0.2s;
       backdrop-filter: blur(6px);
       border: 2px solid;
-
     }
 
+    /* Tooltip Visibility on Hover */
     .whatsapp-chat-btn:hover .whatsapp-tooltip {
       opacity: 1;
       visibility: visible;
     }
 
+    /* Media Query for Smaller Screens */
     @media (max-width: 576px) {
       .whatsapp-chat-btn {
         left: 12px;
@@ -260,7 +277,8 @@
       </style>
     </section>
 
-    <a href="https://wa.me/+917778056001" id="whatsappBtn" class="whatsapp-chat-btn" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/+917778056001" id="whatsappBtn" class="whatsapp-chat-btn" target="_blank"
+      aria-label="Chat on WhatsApp">
       <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
       <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -416,7 +434,7 @@
   </div>
   </section>
 
-  <!--  What We Offer Section -->
+  <!--  What We do Section -->
   <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
     <style>
       .badge-link {
@@ -652,7 +670,7 @@
     </div>
   </section>
 
-  <!--  Services Section -->
+  <!-- What We Offer Section Services Section -->
   <section class="services py-5 py-lg-11 py-xl-12" id="services">
     <style>
       .services {
@@ -663,6 +681,49 @@
         min-height: 100vh;
         /* Ensures the section covers the full viewport height */
       }
+
+      .services-tab .accordion-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.3rem 1.25rem !important;
+        /* Adjust padding if needed */
+      }
+
+      /* Padding for the accordion body */
+      .services-tab .accordion-body {
+        padding: 1.25rem;
+        /* Adjust padding for content inside the dropdown */
+      }
+
+      /* Adjust margin for headings inside the accordion body */
+      .services-tab .accordion-body h5 {
+        margin-bottom: 1rem;
+        /* Adds space between the heading and the content */
+      }
+
+      /* Adjust the list items inside the dropdown */
+      .services-tab .accordion-body ul {
+        padding-left: 20px;
+        /* Adds indentation for list items */
+        margin-top: 0.5rem;
+        /* Space above the list */
+      }
+
+      .services-tab .accordion-body ul li {
+        margin-bottom: 0.5rem;
+        /* Adds space between each list item */
+      }
+
+      /* Image inside accordion body */
+      .services-tab .accordion-body img {
+        margin-top: 1rem;
+        /* Adds space between content and image */
+        max-width: 100%;
+        /* Makes the image responsive */
+      }
+
+
 
       @media (max-width: 767px) {
         .services {
@@ -694,163 +755,205 @@
             </div>
           </div>
         </div>
+
+        <!-- Services Tabs as Dropdowns -->
         <div class="services-tab">
-          <div class="row gap-5 gap-xl-0">
-            <div class="col-xl-4">
-              <div class="tab-content" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-                <div class="tab-pane active" id="one" role="tabpanel" aria-labelledby="one-tab" tabindex="0">
-                  <img src="../assets/images/services/service-1.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="two" role="tabpanel" aria-labelledby="two-tab" tabindex="0">
-                  <img src="../assets/images/services/service-2.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="three" role="tabpanel" aria-labelledby="three-tab" tabindex="0">
-                  <img src="../assets/images/services/service-3.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="four" role="tabpanel" aria-labelledby="four-tab" tabindex="0">
-                  <img src="../assets/images/services/service-4.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="five" role="tabpanel" aria-labelledby="five-tab" tabindex="0">
-                  <img src="../assets/images/services/service-5.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="six" role="tabpanel" aria-labelledby="six-tab" tabindex="0">
-                  <img src="../assets/images/services/service-6.jpg" alt="services" class="img-fluid-service  ">
-                </div>
-                <div class="tab-pane" id="seven" role="tabpanel" aria-labelledby="seven-tab" tabindex="0">
-                  <img src="../assets/images/services/service-7.jpg" alt="services" class="img-fluid-service">
+          <div class="accordion accordion-flush" id="servicesAccordion" data-aos="fade-up" data-aos-delay="200"
+            data-aos-duration="1000">
+            <!-- Commercial Shoot -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <span class="service-title">Commercial Shoot</span>
+                </button>
+              </h6>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <p>Professional product/service images for branding. Captures the essence of the brand or campaign,
+                    ideal for advertising materials.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Promotes business identity through visual storytelling.</li>
+                    <li><span class="bullet-arrow">→</span> Customizable for print, digital, or social media.</li>
+                    <li><span class="bullet-arrow">→</span> Captures the essence of the brand or campaign.</li>
+                    <li><span class="bullet-arrow">→</span> Ideal for advertising materials.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-1.jpg" alt="Commercial Shoot" class="img-fluid-service">
                 </div>
               </div>
             </div>
-            <div class="col-xl-8">
-              <div class="d-flex flex-column gap-5">
-                <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200"
-                  data-aos-duration="1000">
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
-                          id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
-                          aria-controls="one" aria-selected="true">Food & Restro Shoot</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Capturing the warmth of your dishes and ambiance, we highlight the flavors, atmosphere, and
-                          unique identity of your café or restaurant with creative visuals.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="two-tab"
-                          data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two"
-                          aria-selected="false">Commercial Site</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          We focus on showcasing your business spaces in a way that reflects professionalism, style, and
-                          functionality, perfect for attracting clients and investors.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="three-tab"
-                          data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="three"
-                          aria-selected="false">Interior Photography</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Highlighting interiors with precision, we capture spaces with the right balance of light,
-                          detail, and depth, turning properties into visually appealing assets.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="four-tab"
-                          data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four"
-                          aria-selected="false">Product Photography</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          With crisp details and sharp visuals, our product shoots elevate your brand by creating images
-                          designed for websites, catalogs, and digital campaigns.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="five-tab"
-                          data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five"
-                          aria-selected="false">Model Portfolio</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Professional portfolio photography designed to bring out confidence, personality, and
-                          versatility, giving models and professionals a polished edge.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="six-tab"
-                          data-bs-toggle="tab" data-bs-target="#six" type="button" role="tab" aria-controls="six"
-                          aria-selected="false">Content Creations</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          For influencers and creators, we design engaging shoots that resonate with audiences,
-                          combining personality, storytelling, and brand-focused aesthetics.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="seven-tab"
-                          data-bs-toggle="tab" data-bs-target="#seven" type="button" role="tab" aria-controls="seven"
-                          aria-selected="false">Podcast Shoots</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          We capture behind-the-scenes moments, portraits, and setup imagery, giving your podcast the
-                          professional branding and social media presence it deserves.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <a href="our-work.html" class="btn border border-white border-opacity-25" data-aos="fade-up"
-                  data-aos-delay="300" data-aos-duration="1000">
-                  <span class="btn-text">See our Work</span>
-                  <iconify-icon icon="lucide:arrow-up-right"
-                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                </a>
+
+            <!-- Food & Restro Shoot -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  <span class="service-title">Food & Restro Shoot</span>
+                </button>
+              </h6>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Food & Restro Shoot</h5>
+                  <p>High-definition shots showcasing food & beverages. Creative styling and props enhance the visual
+                    appeal, great for menus and ads.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Lighting highlights textures and vibrant colors.</li>
+                    <li><span class="bullet-arrow">→</span> Creative styling and props enhance visual appeal.</li>
+                    <li><span class="bullet-arrow">→</span> Captures the ambiance of the restaurant or meal experience.
+                    </li>
+                    <li><span class="bullet-arrow">→</span> Perfect for menus, social media, and ads.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-2.jpg" alt="Food & Restro Shoot"
+                    class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Photography -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  <span class="service-title">Product Photography</span>
+                </button>
+              </h6>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Product Photography</h5>
+                  <p>Studio, e-commerce, and fashion product photography to enhance your brand's appeal and showcase
+                    your products in their best light.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> E-commerce Photography for online stores.</li>
+                    <li><span class="bullet-arrow">→</span> Jewelry & Luxury Product Photography.</li>
+                    <li><span class="bullet-arrow">→</span> Fashion & Apparel Product Shoots.</li>
+                    <li><span class="bullet-arrow">→</span> 360° Product Photography.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-3.jpg" alt="Product Photography"
+                    class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Interior Photography -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  <span class="service-title">Interior Photography</span>
+                </button>
+              </h6>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Interior Photography</h5>
+                  <p>Highlights architecture, rooms, and design features. Perfect for real estate, hotels, and interior
+                    design projects.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Focus on lighting and angles to enhance spaces.</li>
+                    <li><span class="bullet-arrow">→</span> Great for real estate, hotels, and interior design.</li>
+                    <li><span class="bullet-arrow">→</span> Showcases space functionality and flow.</li>
+                    <li><span class="bullet-arrow">→</span> Includes lifestyle shots to create atmosphere.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-4.jpg" alt="Interior Photography"
+                    class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Model Portfolio Shoots -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                  <span class="service-title">Model Portfolio Shoots</span>
+                </button>
+              </h6>
+              <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Model Portfolio Shoots</h5>
+                  <p>Build a diverse, professional model portfolio that showcases expressions, poses, and unique looks.
+                  </p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> High-quality lighting enhances features.</li>
+                    <li><span class="bullet-arrow">→</span> Custom wardrobe and styling for unique shots.</li>
+                    <li><span class="bullet-arrow">→</span> Focus on expressions, poses, and looks.</li>
+                    <li><span class="bullet-arrow">→</span> Suitable for new and experienced models.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-5.jpg" alt="Model Portfolio Shoots"
+                    class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Creators Shoot -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                  <span class="service-title">Content Creators Shoot</span>
+                </button>
+              </h6>
+              <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Content Creators Shoot</h5>
+                  <p>Professional shoots for Instagram, YouTube, podcasting, and short-form video content creation.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Instagram Creator Shoots.</li>
+                    <li><span class="bullet-arrow">→</span> YouTube Video Production.</li>
+                    <li><span class="bullet-arrow">→</span> Professional Podcast Shoots.</li>
+                    <li><span class="bullet-arrow">→</span> Storytelling Concept Shoots.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-6.jpg" alt="Content Creators Shoot"
+                    class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Industrial Shoot -->
+            <div class="accordion-item">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                  <span class="service-title">Industrial Shoot</span>
+                </button>
+              </h6>
+              <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Industrial Shoot</h5>
+                  <p>Comprehensive industrial photography for factories, warehouses, machinery, and more.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Inquiry & Slot Booking.</li>
+                    <li><span class="bullet-arrow">→</span> Concept & Planning.</li>
+                    <li><span class="bullet-arrow">→</span> On-Site Shoot.</li>
+                    <li><span class="bullet-arrow">→</span> Editing & Retouching.</li>
+                    <li><span class="bullet-arrow">→</span> Delivery.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-7.jpg" alt="Industrial Shoot" class="img-fluid-service">
+                </div>
+              </div>
+            </div>
+
+            <!-- Music & Singing Shoot -->
+            <div class="accordion-item border-bottom">
+              <h6 class="accordion-header">
+                <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                  <span class="service-title">Music & Singing Shoot</span>
+                </button>
+              </h6>
+              <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body pt-0 fs-5 text-dark">
+                  <h5 class="text-primary">Music & Singing Shoot</h5>
+                  <p>Dynamic shots of musicians and singers with creative lighting and energy.</p>
+                  <ul class="fs-5">
+                    <li><span class="bullet-arrow">→</span> Captures dynamic shots of musicians and singers.</li>
+                    <li><span class="bullet-arrow">→</span> Creative lighting and backdrops match the artist’s vibe.
+                    </li>
+                    <li><span class="bullet-arrow">→</span> Focus on live performances or studio portraits.</li>
+                    <li><span class="bullet-arrow">→</span> Great for album covers, posters, and promotions.</li>
+                  </ul>
+                  <img src="../assets/images/services/service-8.jpg" alt="Music & Singing Shoot"
+                    class="img-fluid-service">
+                </div>
               </div>
             </div>
           </div>
