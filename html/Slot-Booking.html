@@ -1,185 +1,523 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book Your Photoshoot Slot - MOKO</title>
+  <title>Slot Booking - MOKO Frames</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.svg" />
   <link rel="stylesheet" href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    .slot-booking-banner {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../assets/images/backgrounds/projects-banner.jpg) center/cover no-repeat;
-      min-height: 320px;
-      display: flex;
-      align-items: flex-end;
-      position: relative;
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', 'Arial', sans-serif;
+      background-color: #f8f9fa;
     }
-
-    .slot-booking-banner .container {
-      z-index: 2;
-      position: relative;
-    }
-
-    .breadcrumb {
-      background: transparent;
-      padding: 0;
-      margin-bottom: 0;
-    }
-
-    .slot-booking-card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.09);
-      padding: 40px 32px 32px 32px;
-      max-width: 650px;
-      margin: -120px auto 0 auto;
-      position: relative;
-      z-index: 3;
-      border: 1.5px solid #eaeaea;
-    }
-
-    .slot-booking-title {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 800;
-      font-size: 2.5rem;
-      margin-bottom: 8px;
-      color: #222;
-      letter-spacing: -1px;
-    }
-
-    .slot-booking-desc {
-      color: #666;
-      margin-bottom: 28px;
-      font-size: 1.15rem;
-    }
-
+    
+    /* Slot Booking Section */
     .slot-booking-section {
-      background: #f8f9fa;
-      padding: 0 0 60px 0;
-    }
-
-    .slot-calendar {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 6px;
-      margin-top: 18px;
-      background: #f6f6f6;
-      border-radius: 12px;
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+      color: #fff;
+      position: relative;
       overflow: hidden;
     }
-
-    .slot-calendar th,
-    .slot-calendar td {
+    
+    .slot-booking-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../assets/images/backgrounds/bg-cta.jpg');
+      opacity: 0.3;
+      z-index: 0;
+    }
+    
+    .slot-booking-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      color: #333;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    .slot-booking-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCwwIEwxMDAsMCBMMTAwLDEwMCBMMCwxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLCAxMjMsIDI1NSwgMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==');
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .slot-booking-container h2 {
+      font-size: 2.8rem;
       text-align: center;
-      padding: 10px 0 6px 0;
-      border-radius: 8px;
-      font-size: 1.08rem;
-    }
-
-    .slot-calendar th {
-      background: #f1f1f1;
-      color: #888;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+      position: relative;
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
-
-    .slot-calendar td.available {
-      background: #e6ffe6;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+    
+    .slot-booking-container h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background:#c1ff76;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    
+    /* Form Styling */
+    #slot-booking-form {
+      position: relative;
+    }
+    
+    .form-section {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eaeaea;
+      position: relative;
+    }
+    
+    .form-section:last-child {
+      border-bottom: none;
+    }
+    
+    .form-section-title {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: #2c3e50;
       font-weight: 600;
-      color: #009e60;
-      border: 1.5px solid #b2f2b2;
-    }
-
-    .slot-calendar td.booked {
-      background: #ffeaea;
-      color: #aaa;
-      cursor: not-allowed;
-      border: 1.5px solid #ffd6d6;
-    }
-
-    .slot-calendar td.selected {
-      background: #00b894;
-      color: #fff;
-      font-weight: bold;
-      border: 2px solid #009e60;
-      box-shadow: 0 0 0 2px #b2f2b2;
-    }
-
-    .calendar-nav {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
     }
-
-    .calendar-nav button {
-      background: #fff;
-      border: 1.5px solid #e0e0e0;
+    
+    .form-section-title i {
+      margin-right: 12px;
+      background: #c1ff76;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.8rem;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .form-group label {
+      font-weight: 500;
+      margin-bottom: 10px;
+      display: block;
+      color: #444;
+      font-size: 1.05rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e1e5eb;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: #f9fbfd;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+      background-color: #fff;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    /* Checkbox Group Styling */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 2px solid #e9ecef;
+    }
+    
+    .checkbox-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-color: #caff76;
+    }
+    
+    .checkbox-item input[type="checkbox"] {
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
+      accent-color: #c1ff76;
+    }
+    
+    .checkbox-item label {
+      margin-bottom: 0;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    
+    /* Calendar Styling */
+    .calendar-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .calendar {
+      flex: 1;
+      min-width: 320px;
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eaeaea;
+    }
+    
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .calendar-header button {
+      background: #c1ff76;
+      color: white;
+      border: none;
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      color: #00b894;
-      transition: background 0.2s;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-
-    .calendar-nav button:hover {
-      background: #e6ffe6;
+    
+    .calendar-header button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(17, 22, 27, 0.3);
     }
-
-    .form-label {
+    
+    .calendar-header span {
       font-weight: 600;
-    }
-
-    .is-invalid {
-      border-color: #e74c3c !important;
-    }
-
-    .input-group-text {
-      background: #f1f1f1;
-      border: none;
       font-size: 1.2rem;
-      color: #00b894;
+      color: #c1ff76;
     }
-
-    .icon-input {
+    
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+    
+    .calendar-day-header {
+      padding: 10px;
+      text-align: center;
+      font-weight: 600;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+    
+    .calendar-day {
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 10px;
+      background: #fff;
+      border: 2px solid #e9ecef;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .calendar-day.booked {
+      background: #ff4757;
+      color: #fff;
+      cursor: not-allowed;
+      border-color: #ff4757;
+    }
+    
+    .calendar-day.available:hover {
+      background: #c1ff76;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+    
+    .calendar-day.selected {
+      background: #c1ff76;
+      color: #fff;
+      border-color: #c1ff76;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+    
+    /* Time Slots Styling */
+    .time-slots-container {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .time-slots-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2c3e50;
+      font-size: 1.1rem;
+    }
+    
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    
+    .time-slot {
+      padding: 15px 10px;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .time-slot:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .time-slot.selected {
+      background: #c1ff76;
+      color: #fff;
+      border-color: #c1ff76;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+    
+    .time-slot.disabled {
+      background: #e9ecef;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+    
+    /* File Upload Styling */
+    .file-upload-container {
       position: relative;
     }
-
-    .icon-input input,
-    .icon-input textarea {
-      padding-left: 2.5rem;
+    
+    .file-upload-label {
+      display: block;
+      padding: 15px 20px;
+      background-color: #f8f9fa;
+      border: 2px dashed #dee2e6;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-
-    .icon-input .input-icon {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #00b894;
+    
+    .file-upload-label:hover {
+      border-color: #c1ff76;
+      background-color: #e8f4ff;
+    }
+    
+    .file-upload-label i {
+      margin-right: 8px;
+      color: #c1ff76;
+    }
+    
+    /* Submit Button Styling */
+    .submit-btn-container {
+      margin-top: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .submit-btn {
+      display: inline-block;
+      padding: 18px 50px;
+      background: #c1ff76;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
       font-size: 1.2rem;
-      z-index: 2;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(8, 11, 13, 0.3);
+      position: relative;
+      overflow: hidden;
     }
-
-    @media (max-width: 600px) {
-      .slot-booking-card {
-        padding: 18px 6px;
+    
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.6s ease;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(17, 20, 23, 0.4);
+    }
+    
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+    
+    /* Error Styling */
+    .error {
+      color: #ff4757;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      display: none;
+      font-weight: 500;
+    }
+    
+    /* Pan India Note */
+    .pan-india-note {
+      font-size: 0.95rem;
+      color: #6c757d;
+      margin-top: 15px;
+      text-align: center;
+      padding: 12px;
+      background-color: #e8f4ff;
+      border-radius: 10px;
+      border-left: 4px solid #c1ff76;
+    }
+    
+    /* Terms Styling */
+    .terms-container {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    
+    .terms-container input[type="checkbox"] {
+      margin-right: 15px;
+      margin-top: 4px;
+      width: 20px;
+      height: 20px;
+      accent-color: #c1ff76;
+    }
+    
+    .terms-container label {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: #495057;
+    }
+    
+    .terms-container a {
+      color: #c1ff76;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .terms-container a:hover {
+      color: #c1ff76;
+      text-decoration: underline;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .slot-booking-container {
+        padding: 30px;
       }
-
-      .slot-booking-title {
-        font-size: 1.4rem;
+      
+      .calendar-container {
+        flex-direction: column;
       }
+      
+      .checkbox-group {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .slot-booking-container {
+        padding: 20px;
+        border-radius: 15px;
+      }
+      
+      .slot-booking-container h2 {
+        font-size: 2.2rem;
+      }
+      
+      .calendar {
+        min-width: 100%;
+      }
+      
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animation for form sections */
+    .form-section {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Custom radio and checkbox styling */
+    input[type="checkbox"], input[type="radio"] {
+      width: 20px;
+      height: 20px;
     }
   </style>
 </head>
-
 <body>
   <!-- Header -->
   <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
@@ -239,8 +577,7 @@
                           class="img-fluid animate-spin">Contact</a>
                     </li>
                     <li class="header-item">
-                      <a href="Slot-Booking.html" aria-current="true"
-                        class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
+                      <a href="Slot-Booking.html" aria-current="true" class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
                           src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
                           class="img-fluid animate-spin">Slot-Booking</a>
                     </li>
@@ -255,7 +592,7 @@
                   </div>
                 </div>
                 <div>
-                  <a class="text-dark" href="tel:+91-7778056001">+91 7778056001</a>
+                  <a class="text-dark" href="tel:+91 7778056001">+91 7778056001</a>
                   <a class="fs-8 text-dark fw-bold" href="mailto:mokoframes@gmail.com">mokoframes@gmail.com</a>
                 </div>
               </div>
@@ -266,434 +603,582 @@
     </div>
   </header>
 
-  <!-- Page Wrapper -->
+  
+  <!--  Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
-    <!-- Banner Section with Breadcrumb -->
-    <section class="slot-booking-banner d-flex align-items-end">
-      <div class="container pb-5 pb-xl-10 position-relative z-1">
-        <div class="d-flex flex-column gap-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-2">
-              <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
-              <li class="breadcrumb-item active text-white" aria-current="page">Slot Booking</li>
-            </ol>
-          </nav>
-          <h1 class="mb-0 fs-16 text-white lh-1">Book Your Photoshoot Slot</h1>
-          <p class="text-white fs-5 text-opacity-70 mb-0">Secure your preferred date and time for a professional shoot
-            experience.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Slot Booking Section -->
-    <section class="slot-booking-section">
-      <div class="slot-booking-card">
-        <div class="text-center mb-4">
-          <h2 class="slot-booking-title">Book Your Photoshoot Slot</h2>
-          <p class="slot-booking-desc">Select your shoot type, fill in your details, and pick a date. We’ll get in touch
-            to confirm your booking!</p>
-        </div>
-        <form id="bookingForm" autocomplete="off">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="category" class="form-label">Category <span style="color:#e74c3c">*</span></label>
-              <select class="form-select" id="category" name="category" required>
-                <option value="">Select Category</option>
-                <option value="Cafe & Restaurant Shoots">📷 Cafe & Restaurant Shoots</option>
-                <option value="Interior Site Shoots">🏢 Interior Site Shoots</option>
-                <option value="Indoor Product Photography">📦 Indoor Product Photography</option>
-                <option value="Model Shoots">💃 Model Shoots</option>
-                <option value="Content Creator Shoots">🎬 Content Creator Shoots</option>
-                <option value="Podcast Shoots">🎙 Podcast Shoots</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="duration" class="form-label">Duration <span style="color:#e74c3c">*</span></label>
-              <select class="form-select" id="duration" name="duration" required>
-                <option value="">Select Duration</option>
-                <option value="2 Hours">2 Hours</option>
-                <option value="4 Hours">4 Hours</option>
-                <option value="Full Day">Full Day</option>
-                <option value="Multiple Days">Multiple Days</option>
-              </select>
-            </div>
-            <div class="col-md-6 icon-input">
-              <label for="name" class="form-label">Your Name <span style="color:#e74c3c">*</span></label>
-              <span class="input-icon"><iconify-icon icon="mdi:account-outline"></iconify-icon></span>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="col-md-6 icon-input">
-              <label for="email" class="form-label">Email <span style="color:#e74c3c">*</span></label>
-              <span class="input-icon"><iconify-icon icon="mdi:email-outline"></iconify-icon></span>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="col-md-6 icon-input">
-              <label for="phone" class="form-label">Phone <span style="color:#e74c3c">*</span></label>
-              <span class="input-icon"><iconify-icon icon="mdi:phone-outline"></iconify-icon></span>
-              <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10,}" required>
-            </div>
-            <div class="col-md-6">
-              <label for="city" class="form-label">City <span style="color:#e74c3c">*</span></label>
-              <input type="text" class="form-control" id="city" name="city" required>
-            </div>
-            <div class="col-12">
-              <label for="details" class="form-label">Project Details</label>
-              <textarea class="form-control" id="details" name="details" rows="2"
-                placeholder="Share any specific requirements..."></textarea>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Select Date Slot <span style="color:#e74c3c">*</span></label>
-              <input type="hidden" id="slotInfo" name="slotInfo" required>
-              <div id="calendar"></div>
-            </div>
-            <div class="col-12 mt-3">
-              <button type="submit" class="btn btn-primary w-100 py-2 fs-5">Book Now</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- 7. CTA Section -->
-    <section class="cta-section">
-      <style>
-        .cta-section {
-          background-image: url(../assets/images/backgrounds/bg-cta.jpg);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          position: relative;
-          z-index: 1;
-        }
-
-        /* Glitch effect styles */
-        .glitch-text {
-          position: relative;
-          display: inline-block;
-        }
-
-        .glitch-text::before,
-        .glitch-text::after {
-          content: attr(data-glitch);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          clip: rect(0, 900px, 0, 0);
-        }
-
-        .glitch-text::before {
-          left: 2px;
-          text-shadow: -2px 0 #ff00c1;
-          animation: glitch-anim 3s infinite linear alternate-reverse;
-        }
-
-        .glitch-text::after {
-          left: -2px;
-          text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-          animation: glitch-anim 2s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-          0% {
-            clip: rect(42px, 9999px, 44px, 0);
-          }
-
-          5% {
-            clip: rect(12px, 9999px, 59px, 0);
-          }
-
-          10% {
-            clip: rect(48px, 9999px, 29px, 0);
-          }
-
-          15% {
-            clip: rect(42px, 9999px, 73px, 0);
-          }
-
-          20% {
-            clip: rect(63px, 9999px, 27px, 0);
-          }
-
-          25% {
-            clip: rect(34px, 9999px, 55px, 0);
-          }
-
-          30% {
-            clip: rect(86px, 9999px, 73px, 0);
-          }
-
-          35% {
-            clip: rect(20px, 9999px, 20px, 0);
-          }
-
-          40% {
-            clip: rect(26px, 9999px, 60px, 0);
-          }
-
-          45% {
-            clip: rect(25px, 9999px, 66px, 0);
-          }
-
-          50% {
-            clip: rect(57px, 9999px, 98px, 0);
-          }
-
-          55% {
-            clip: rect(5px, 9999px, 46px, 0);
-          }
-
-          60% {
-            clip: rect(82px, 9999px, 8px, 0);
-          }
-
-          65% {
-            clip: rect(54px, 9999px, 58px, 0);
-          }
-
-          70% {
-            clip: rect(28px, 9999px, 99px, 0);
-          }
-
-          75% {
-            clip: rect(45px, 9999px, 69px, 0);
-          }
-
-          80% {
-            clip: rect(23px, 9999px, 85px, 0);
-          }
-
-          85% {
-            clip: rect(97px, 9999px, 72px, 0);
-          }
-
-          90% {
-            clip: rect(48px, 9999px, 32px, 0);
-          }
-
-          95% {
-            clip: rect(42px, 9999px, 79px, 0);
-          }
-
-          100% {
-            clip: rect(64px, 9999px, 40px, 0);
-          }
-        }
-      </style>
-
-      <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
-        <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
-          Ready to Elevate Your Brand?
-        </h2>
-        <p class="fs-4 text-white opacity-80 mb-5 lead">
-          Book your commercial shoot today and showcase your business with world-class photography.
-        </p>
-        <a href="#" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot Now</a>
-      </div>
-    </section>
-
-
-    <!--  Get in touch Section -->
-    <section class="get-in-touch py-5 py-lg-11 py-xl-12">
+    <!--  Banner Section -->
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+      style="background-image: url(../assets/images/backgrounds/blog-banner.jpg);">
       <div class="container">
-        <div class="d-flex flex-column gap-5 gap-xl-10">
-          <div class="row gap-7 gap-xl-0">
-            <div class="col-xl-4 col-xxl-4">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">10</span>
-                <hr class="border-line bg-white">
-                <span class="badge text-bg-dark">Contact us</span>
-              </div>
-            </div>
-            <div class="col-xl-8 col-xxl-7">
-              <div class="row">
-                <div class="col-xxl-8">
-                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="1000">
-                    <h2 class="mb-0">Get in touch</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row justify-content-between gap-7 gap-xl-0">
+        <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <div class="row align-items-center">
             <div class="col-xl-4">
-              <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">Let’s collaborate
-                and create something amazing! Tell me about your project—</p>
+              <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="1000">
+                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <p class="mb-0 text-white fs-5 text-opacity-70">Excited to <span class="text-primary">begin something
+                    amazing?</span>Get in touch—we'd love to connect with you!</p>
+              </div>
             </div>
-            <div class="col-xl-8">
-              <form action="https://formsubmit.co/mokoframes@gmail.com" method="POST" class="d-flex flex-column gap-7"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div>
-                  <label for="contact-name" class="visually-hidden">Name</label>
-                  <input type="text" class="form-control border-bottom border-dark" id="contact-name" name="name"
-                    placeholder="Name" required>
-                </div>
-                <div>
-                  <label for="contact-email" class="visually-hidden">Email</label>
-                  <input type="email" class="form-control border-bottom border-dark" id="contact-email" name="email"
-                    placeholder="Email" required>
-                </div>
-                <div>
-                  <textarea class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
-                    placeholder="Tell us about your project" rows="3" name="message"></textarea>
-                </div>
-                <button type="submit" class="btn w-100 justify-content-center">
-                  <span class="btn-text">Submit message</span>
-                  <iconify-icon icon="lucide:arrow-up-right"
-                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                </button>
-                <input type="hidden" name="_next" value="https://mokoframes.netlify.app/html/thankyou.html">
-              </form>
-            </div>
+          </div>
+          <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <h1 class="mb-0 fs-16 text-white lh-1">Blog</h1>
+            <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
+              <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
+                <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer Start from here -->
-    <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-xl-5 mb-8 mb-xl-0">
-            <div class="d-flex flex-column gap-8 pe-xl-5">
-              <!-- Column-1 -->
-              <h2 class="mb-0 text-white">Create something together?</h2>
-              <p class="text-white-50 fs-6 mb-0">We're here to bring your vision to life with stunning photography and
-                creative videography. <br> Reach out — the first step is just a click away.</p>
-              <div class="d-flex flex-column gap-2">
-                <!-- email id -->
-                <a href="mailto:mokoframes@gmail.com" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
-                  <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
-                  mokoframes@gmail.com
-                </a>
-                <!-- phone number -->
-                <div class="d-flex flex-wrap gap-4">
-                  <a href="tel:+917778056001" class="link-hover hstack gap-2 text-white fs-5">
-                    <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
-                    +91 7778056001
-                  </a>
-                  <a href="tel:+918140210701" class="link-hover hstack gap-2 text-white fs-5">
-                    +91 8140210701
-                  </a>
-                </div>
-                <!-- address -->
-                <a href="https://maps.app.goo.gl/TDziuHv7JPTetenC6" target="_blank"
-                  class="link-hover hstack gap-3 text-white fs-5">
-                  <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
-                  Ajwa-Waghodia Road, Vadodara, 390019.
-                </a>
+
+  <!-- Slot Booking Section -->
+  <section class="slot-booking-section">
+    <div class="slot-booking-container" data-aos="fade-up">
+      <h2>Book Your Creative Session</h2>
+      <form id="slot-booking-form">
+        <!-- Basic Client Details -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-user-circle"></i> Client Information</h3>
+          
+          <div class="form-group">
+            <label for="full-name">Full Name <span style="color: #ff4757;">*</span></label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            <div class="error" id="full-name-error">Please enter your full name.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address <span style="color: #ff4757;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            <div class="error" id="email-error">Please enter a valid email address.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number <span style="color: #ff4757;">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" pattern="\+?[1-9]\d{1,14}" required>
+            <div class="error" id="phone-error">Please enter a valid phone number.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company / Brand Name (Optional)</label>
+            <input type="text" id="company" name="company" placeholder="Your company or brand">
+          </div>
+          
+          <div class="form-group">
+            <label for="social-media">Social Media Handle (Optional)</label>
+            <input type="text" id="social-media" name="social-media" placeholder="@yourhandle">
+          </div>
+        </div>
+
+        <!-- Service Selection -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-camera"></i> Service Selection</h3>
+          
+          <div class="form-group">
+            <label>Select Your Service <span style="color: #ff4757;">*</span></label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="service1" name="services" value="Cafe & Restaurant Shoot">
+                <label for="service1">📸 Cafe & Restaurant Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service2" name="services" value="Interior & Architectural Shoot">
+                <label for="service2">🏢 Interior & Architectural Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service3" name="services" value="Product Photography & Videography">
+                <label for="service3">📦 Product Photography & Videography</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service4" name="services" value="Model Portfolio / Fashion Shoot">
+                <label for="service4">👗 Model Portfolio / Fashion Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service5" name="services" value="Content Creator / Influencer Shoot">
+                <label for="service5">🎥 Content Creator / Influencer Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service6" name="services" value="Podcast / Music Video Shoot">
+                <label for="service6">🎤 Podcast / Music Video Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service7" name="services" value="Industrial & Corporate Shoot">
+                <label for="service7">🏭 Industrial & Corporate Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service8" name="services" value="Food & Beverages Shoot">
+                <label for="service8">🍴 Food & Beverages Shoot</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service9" name="services" value="Event / Campaign Coverage">
+                <label for="service9">🎉 Event / Campaign Coverage</label>
+              </div>
+              
+              <div class="checkbox-item">
+                <input type="checkbox" id="service10" name="services" value="Custom / Other">
+                <label for="service10">✨ Custom / Other</label>
+              </div>
+            </div>
+            
+            <div class="form-group" id="custom-service-details" style="display: none; margin-top: 15px;">
+              <label for="custom-service-text">Please specify your custom requirement</label>
+              <input type="text" id="custom-service-text" name="custom-service-text" placeholder="Describe your custom service need">
+            </div>
+            
+            <div class="error" id="services-error">Please select at least one service.</div>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-clipboard-list"></i> Project Details</h3>
+          
+          <div class="form-group">
+            <label for="shoot-type">Shoot Type <span style="color: #ff4757;">*</span></label>
+            <select id="shoot-type" name="shoot-type" required>
+              <option value="" disabled selected>Select Shoot Type</option>
+              <option value="Photoshoot">Photoshoot</option>
+              <option value="Videography">Videography</option>
+              <option value="Both">Both</option>
+            </select>
+            <div class="error" id="shoot-type-error">Please select a shoot type.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="num-items">Number of People / Products <span style="color: #ff4757;">*</span></label>
+            <input type="number" id="num-items" name="num-items" min="1" placeholder="e.g., 5 people or 10 products" required>
+            <div class="error" id="num-items-error">Please enter a valid number.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="shoot-location">Shoot Location <span style="color: #ff4757;">*</span></label>
+            <select id="shoot-location" name="shoot-location" required>
+              <option value="" disabled selected>Select Location</option>
+              <option value="Indoor Studio">Indoor Studio</option>
+              <option value="Client's Location">Client's Location</option>
+              <option value="Outdoor">Outdoor</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="error" id="shoot-location-error">Please select a shoot location.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="additional-requirements">Additional Requirements</label>
+            <textarea id="additional-requirements" name="additional-requirements" placeholder="e.g., makeup, props, drone, editing, etc."></textarea>
+          </div>
+        </div>
+
+        <!-- Date & Time Selection -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Schedule Your Session</h3>
+          
+          <div class="calendar-container">
+            <div class="calendar">
+              <div class="calendar-header">
+                <button type="button" id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                <span id="month-year"></span>
+                <button type="button" id="next-month"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              
+              <div class="calendar-grid">
+                <div class="calendar-day-header">Sun</div>
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+              </div>
+              
+              <div class="calendar-grid" id="calendar-grid"></div>
+            </div>
+            
+            <div class="time-slots-container">
+              <div class="time-slots-title">Available Time Slots</div>
+              <div class="time-slots" id="time-slots">
+                <!-- Time slots will be populated by JavaScript -->
               </div>
             </div>
           </div>
-          <!-- Column-2  -->
-          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-              <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
-              <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-              <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
-              <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
-              <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
-            </ul>
-          </div>
-          <!-- Column-3 -->
-          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="Commerical-Shoot-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Commercial Shoot
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="Interior-Photography-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Architectural Shoot
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services"
-                  href="Food&Restro-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Food & Restro Shoot
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Model Portfolio Shoot
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="Content-Creation-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Content Creator Shoot
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="Product-Photography-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Product Photography
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
-                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                  Music-Singing Shoot
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Column-4  -->
-          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="https://youtube.com/@mokoframes?si=3A7YcdWkgznjUxke" target="_blank">
-                  <iconify-icon icon="lucide:youtube" class="fs-7 text-primary"></iconify-icon>
-                  YouTube
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="https://www.instagram.com/mokoframes?igsh=aXNheTJ4MHRhdno4" target="_blank">
-                  <iconify-icon icon="lucide:instagram" class="fs-7 text-primary"></iconify-icon>
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
-                  href="https://www.behance.net/mokoframes" target="_blank">
-                  <iconify-icon icon="mdi:behance" class="fs-7 text-primary"></iconify-icon>
-                  Behance
-                </a>
-              </li>
-            </ul>
+          
+          <input type="hidden" id="selected-date" name="selected-date" required>
+          <input type="hidden" id="selected-time" name="selected-time" required>
+          <div class="error" id="date-time-error">Please select a date and time slot.</div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-file-upload"></i> Reference Materials</h3>
+          
+          <div class="form-group">
+            <label for="reference-files">Upload Reference Files / Mood Board (Optional, max 20MB)</label>
+            <div class="file-upload-container">
+              <label for="reference-files" class="file-upload-label">
+                <i class="fas fa-cloud-upload-alt"></i> Choose files or drag them here
+              </label>
+              <input type="file" id="reference-files" name="reference-files" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" multiple style="display: none;">
+            </div>
+            <div class="error" id="reference-files-error">File size exceeds 20MB or invalid file type.</div>
           </div>
         </div>
+
+        <!-- Location Details -->
+        <div class="form-section">
+          <h3 class="form-section-title"><i class="fas fa-map-marker-alt"></i> Location Information</h3>
+          
+          <div class="form-group">
+            <label for="city-state">City & State <span style="color: #ff4757;">*</span></label>
+            <input type="text" id="city-state" name="city-state" placeholder="e.g., Mumbai, Maharashtra" required>
+            <div class="error" id="city-state-error">Please enter city and state.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="shoot-address">Exact Shoot Address / Venue (Optional if undecided)</label>
+            <input type="text" id="shoot-address" name="shoot-address" placeholder="Full address of the shoot location">
+          </div>
+          
+          <div class="pan-india-note">
+            <i class="fas fa-info-circle"></i> Available Pan India – We'll bring our expertise to you!
+          </div>
+        </div>
+
+        <!-- Terms & Agreement -->
+        <div class="form-group terms-container">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="terms-and-conditions.html" target="_blank">terms & conditions</a> and understand booking is subject to confirmation.</label>
+          <div class="error" id="terms-error">Please agree to the terms & conditions.</div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-btn-container">
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Confirm Booking
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <h2 class="mb-0 text-white">Create something together?</h2>
+            <p class="text-white-50 fs-6 mb-0">We're here to bring your vision to life with stunning photography and creative videography. <br> Reach out — the first step is just a click away.</p>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:mokoframes@gmail.com" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                mokoframes@gmail.com
+              </a>
+              <div class="d-flex flex-wrap gap-4">
+                <a href="tel:+917778056001" class="link-hover hstack gap-2 text-white fs-5">
+                  <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                  +91 7778056001
+                </a>
+                <a href="tel:+918140210701" class="link-hover hstack gap-2 text-white fs-5">
+                  +91 8140210701
+                </a>
+              </div>
+              <a href="https://maps.app.goo.gl/TDziuHv7JPTetenC6" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
+                Ajwa-Waghodia Road, Vadodara, 390019.
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
+            <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
+            <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
+            <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Commerical-Shoot-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Commercial Shoot
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Interior-Photography-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Architectural Shoot
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services" href="Food&Restro-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Food & Restro Shoot
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Model Portfolio Shoot
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Content-Creation-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Content Creator Shoot
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Product-Photography-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Product Photography
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
+                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                Music-Singing Shoot
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://youtube.com/@mokoframes?si=3A7YcdWkgznjUxke" target="_blank">
+                <iconify-icon icon="lucide:youtube" class="fs-7 text-primary"></iconify-icon>
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://www.instagram.com/mokoframes?igsh=aXNheTJ4MHRhdno4" target="_blank">
+                <iconify-icon icon="lucide:instagram" class="fs-7 text-primary"></iconify-icon>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://www.behance.net/mokoframes" target="_blank">
+                <iconify-icon icon="mdi:behance" class="fs-7 text-primary"></iconify-icon>
+                Behance
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white"
-          href="index.html">FrameByFrame - <br> © MOKO copyright 2025</a></p>
+      <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white" href="index.html">FrameByFrame - <br> © MOKO copyright 2025</a></p>
     </footer>
 
-  </div>
+    <div class="get-template hstack gap-2">
+      <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0" id="scrollToTopBtn">
+        <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
+      </button>
+    </div>
 
-  <!-- Scripts -->
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="../assets/libs/aos-master/dist/aos.js"></script>
-  <script src="../assets/js/custom.js"></script>
-  <script src="../assets/js/script.js"></script>
-  <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/libs/aos-master/dist/aos.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script>
+      // Calendar and Time Slot Logic
+      const bookedDates = ['2025-08-25', '2025-08-26']; // Example booked dates
+      const timeSlots = {
+        '2025-08-27': ['1PM–4PM', '5PM–8PM'],
+        '2025-08-28': ['9AM–12PM', '5PM–8PM'],
+        // Add more dates and available slots as needed
+      };
+
+      const calendarGrid = document.getElementById('calendar-grid');
+      const monthYear = document.getElementById('month-year');
+      const prevMonth = document.getElementById('prev-month');
+      const nextMonth = document.getElementById('next-month');
+      const timeSlotsContainer = document.getElementById('time-slots');
+      const selectedDateInput = document.getElementById('selected-date');
+      const selectedTimeInput = document.getElementById('selected-time');
+
+      let currentDate = new Date();
+      let selectedDate = null;
+
+      function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+
+        monthYear.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+        calendarGrid.innerHTML = '';
+
+        // Add empty cells before first day
+        for (let i = 0; i < firstDay; i++) {
+          const emptyDay = document.createElement('div');
+          emptyDay.classList.add('calendar-day');
+          calendarGrid.appendChild(emptyDay);
+        }
+
+        // Add days
+        for (let i = 1; i <= lastDate; i++) {
+          const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+          const day = document.createElement('div');
+          day.textContent = i;
+          day.classList.add('calendar-day');
+          if (bookedDates.includes(dateStr)) {
+            day.classList.add('booked');
+          } else {
+            day.classList.add('available');
+            day.addEventListener('click', () => selectDate(dateStr, day));
+          }
+          calendarGrid.appendChild(day);
+        }
+      }
+
+      function selectDate(dateStr, element) {
+        selectedDate = dateStr;
+        selectedDateInput.value = dateStr;
+        document.querySelectorAll('.calendar-day').forEach(day => day.classList.remove('selected'));
+        element.classList.add('selected');
+        updateTimeSlots(dateStr);
+      }
+
+      function updateTimeSlots(dateStr) {
+        timeSlotsContainer.innerHTML = '';
+        const availableSlots = timeSlots[dateStr] || ['9AM–12PM', '1PM–4PM', '5PM–8PM', 'Custom'];
+        availableSlots.forEach(slot => {
+          const slotElement = document.createElement('div');
+          slotElement.textContent = slot;
+          slotElement.classList.add('time-slot');
+          slotElement.addEventListener('click', () => {
+            document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+            slotElement.classList.add('selected');
+            selectedTimeInput.value = slot;
+          });
+          timeSlotsContainer.appendChild(slotElement);
+        });
+      }
+
+      prevMonth.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+      });
+
+      nextMonth.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+      });
+
+      renderCalendar();
+
+      // Custom Service Logic
+      document.getElementById('service10').addEventListener('change', function () {
+        document.getElementById('custom-service-details').style.display = this.checked ? 'block' : 'none';
+      });
+
+      // File upload styling
+      const fileInput = document.getElementById('reference-files');
+      const fileUploadLabel = document.querySelector('.file-upload-label');
+      
+      fileInput.addEventListener('change', function() {
+        if (this.files.length > 0) {
+          fileUploadLabel.innerHTML = `<i class="fas fa-check-circle"></i> ${this.files.length} file(s) selected`;
+          fileUploadLabel.style.borderColor = '#28a745';
+          fileUploadLabel.style.backgroundColor = '#f0fff4';
+        } else {
+          fileUploadLabel.innerHTML = '<i class="fas fa-cloud-upload-alt"></i> Choose files or drag them here';
+          fileUploadLabel.style.borderColor = '#dee2e6';
+          fileUploadLabel.style.backgroundColor = '#f8f9fa';
+        }
+      });
+
+      // Form Validation and Submission
+      document.getElementById('slot-booking-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Reset errors
+        document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
+
+        // Validate required fields
+        if (!document.getElementById('full-name').value.trim()) {
+          document.getElementById('full-name-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('email').value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          document.getElementById('email-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('phone').value.match(/\+?[1-9]\d{1,14}/)) {
+          document.getElementById('phone-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.querySelector('input[name="services"]:checked')) {
+          document.getElementById('services-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('shoot-type').value) {
+          document.getElementById('shoot-type-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('num-items').value || document.getElementById('num-items').value < 1) {
+          document.getElementById('num-items-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('shoot-location').value) {
+          document.getElementById('shoot-location-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('selected-date').value || !document.getElementById('selected-time').value) {
+          document.getElementById('date-time-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('city-state').value.trim()) {
+          document.getElementById('city-state-error').style.display = 'block';
+          isValid = false;
+        }
+        if (!document.getElementById('terms').checked) {
+          document.getElementById('terms-error').style.display = 'block';
+          isValid = false;
+        }
+
+        // File validation
+        const files = document.getElementById('reference-files').files;
+        for (let file of files) {
+          if (file.size > 20 * 1024 * 1024) {
+            document.getElementById('reference-files-error').style.display = 'block';
+            isValid = false;
+          }
+        }
+
+        if (isValid) {
+          // Simulate form submission (replace with actual backend API call)
+          alert('Thank you for booking with Moko Frames 🎥✨. Our team will confirm your slot shortly!');
+          this.reset();
+          document.getElementById('custom-service-details').style.display = 'none';
+          selectedDateInput.value = '';
+          selectedTimeInput.value = '';
+          timeSlotsContainer.innerHTML = '';
+          fileUploadLabel.innerHTML = '<i class="fas fa-cloud-upload-alt"></i> Choose files or drag them here';
+          fileUploadLabel.style.borderColor = '#dee2e6';
+          fileUploadLabel.style.backgroundColor = '#f8f9fa';
+          document.querySelectorAll('.calendar-day').forEach(day => day.classList.remove('selected'));
+        }
+      });
+
+      // Scroll to Top
+      document.getElementById('scrollToTopBtn').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
 </body>
-
 </html>
