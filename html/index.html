@@ -12,96 +12,96 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .whatsapp-chat-btn {
-            position: fixed;
-            left: 32px;
-            bottom: 30px;
-            z-index: 9999;
-            background: rgba(255, 255, 255, 0.08);
-            color:#111111 ;
-            border-radius: 50%;
-            box-shadow: 0 8px 32px rgba(18, 140, 126, 0.18), 0 2px 10px rgba(18, 140, 126, 0.10);
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
-            text-decoration: none;
-            cursor: pointer;
-            backdrop-filter: blur(8px);
-            font-size: 2.2rem;
-            border: 2.5px solid transparent;
-            background-clip: padding-box;
-            overflow: visible;
-        }
+      position: fixed;
+      left: 32px;
+      bottom: 30px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.08);
+      color: #111111;
+      border-radius: 50%;
+      box-shadow: 0 8px 32px rgba(18, 140, 126, 0.18), 0 2px 10px rgba(18, 140, 126, 0.10);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      font-size: 2.2rem;
+      border: 2.5px solid transparent;
+      background-clip: padding-box;
+      overflow: visible;
+    }
 
-        .whatsapp-chat-btn::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 0.5px;
-            background: #c1ff76;
-            z-index: -1;
-            transition: background 0.2s;
-        }
+    .whatsapp-chat-btn::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 0.5px;
+      background: #c1ff76;
+      z-index: -1;
+      transition: background 0.2s;
+    }
 
-        .whatsapp-chat-btn:hover::before {
-            background: rgba(11, 15, 16, 0.782);
-        }
+    .whatsapp-chat-btn:hover::before {
+      background: rgba(11, 15, 16, 0.782);
+    }
 
-        .whatsapp-chat-btn:hover {
-            box-shadow: 0 12px 40px rgba(18, 140, 126, 0.28);
-            transform: scale(1.09);
-            background: rgba(255, 255, 255, 0.18);
-        }
+    .whatsapp-chat-btn:hover {
+      box-shadow: 0 12px 40px rgba(18, 140, 126, 0.28);
+      transform: scale(1.09);
+      background: rgba(255, 255, 255, 0.18);
+    }
 
-        .whatsapp-chat-btn .fa-whatsapp {
-            color: #fff;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
-        }
+    .whatsapp-chat-btn .fa-whatsapp {
+      color: #fff;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+    }
 
-        .whatsapp-tooltip {
-            opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            left: 110%;
-            bottom: 50%;
-            transform: translateY(50%);
-            background: rgba(17, 17, 17, 0.7);
-            color: #c1ff76;
-            padding: 0.5em 1em;
-            border-radius: 8px;
-            font-size: 1rem;
-            white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(199, 246, 240, 0.18);
-            transition: opacity 0.2s;
-            backdrop-filter: blur(6px);
-            border: 2px solid;
-            
-        }
+    .whatsapp-tooltip {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      left: 110%;
+      bottom: 50%;
+      transform: translateY(50%);
+      background: rgba(17, 17, 17, 0.7);
+      color: #c1ff76;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      font-size: 1rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(199, 246, 240, 0.18);
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+      border: 2px solid;
 
-        .whatsapp-chat-btn:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
+    }
 
-        @media (max-width: 576px) {
-            .whatsapp-chat-btn {
-                left: 12px;
-                bottom: 29px;
-                width: 58px;
-                height: 58px;
-                font-size: 1.5rem;
-            }
+    .whatsapp-chat-btn:hover .whatsapp-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
 
-            .whatsapp-tooltip {
-                font-size: 0.9rem;
-            }
-        }
+    @media (max-width: 576px) {
+      .whatsapp-chat-btn {
+        left: 12px;
+        bottom: 29px;
+        width: 58px;
+        height: 58px;
+        font-size: 1.5rem;
+      }
+
+      .whatsapp-tooltip {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 
@@ -260,9 +260,9 @@
       </style>
     </section>
 
-    <a href="https://wa.me/+917778056001" class="whatsapp-chat-btn" target="_blank" aria-label="Chat on WhatsApp">
-        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/+917778056001" id="whatsappBtn" class="whatsapp-chat-btn" target="_blank" aria-label="Chat on WhatsApp">
+      <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!--  Stats & Facts Section -->
@@ -416,8 +416,26 @@
   </div>
   </section>
 
-  <!--  Featured Projects Section -->
+  <!--  What We Offer Section -->
   <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <style>
+      .badge-link {
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        font-weight: 500;
+        border-radius: 0.5rem;
+      }
+
+      .badge-link:hover {
+        background-color: #c1ff76;
+        /* Bootstrap primary */
+        color: black !important;
+        border-color: darkgreen;
+        text-decoration: none;
+      }
+    </style>
     <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
@@ -434,9 +452,9 @@
             <div class="row">
               <div class="col-xxl-8">
                 <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                  <h2 class="mb-0">Featured projects</h2>
-                  <p class="fs-5 mb-0">A glimpse into our creativity—exploring innovative designs, successful
-                    collaborations, and transformative digital experiences.</p>
+                  <h2 class="mb-0">What We Do,</h2>
+                  <p class="fs-5 mb-0">Discover our wide range of creative services tailored to elevate your brand and
+                    tell your story beautifully.</p>
                 </div>
               </div>
             </div>
@@ -445,122 +463,186 @@
       </div>
       <div class="featured-projects-slider px-3">
         <div class="owl-carousel owl-theme">
+          <!-- item-1  -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
                 <img src="../assets/images/portfolio/portfolio-img-1.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Commerical-Shoot-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Snapclear</h3>
+                <h3 class="mb-0">Commercial Shoot</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">UX Strategy</span>
-                  <span class="badge text-dark border">UI Design</span>
+                  <a href="Commerical-Shoot-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="Commercial-Shoot-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- item-2 -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
                 <img src="../assets/images/portfolio/portfolio-img-2.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Food&Restro-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Amber Bottle</h3>
+                <h3 class="mb-0">Food & Restro Shoot</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">Web development</span>
-                  <span class="badge text-dark border">Digital design</span>
+                  <a href="Food&Restro-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="food&restro-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- item-3 -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
                 <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Product-Photography-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Pixelforge</h3>
+                <h3 class="mb-0">Product Photography</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">UI/UX design</span>
-                  <span class="badge text-dark border">Web development</span>
+                  <a href="Product-Photography-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="product-photography-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- item-4 -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
                 <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Interior-Photography-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">BioTrack LIMS</h3>
+                <h3 class="mb-0">Interior Photography</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">Brand identity</span>
-                  <span class="badge text-dark border">Digital design</span>
+                  <a href="Interior-Photography-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="interior-photography-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- item-5 -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Model-Shoot-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Amber Bottle</h3>
+                <h3 class="mb-0">Model Portfolio Shoots</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">Photography</span>
-                  <span class="badge text-dark border">Studio</span>
+                  <a href="Model-Shoot-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="model-shoot-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- item-6 -->
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-6.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <a href="projects-detail.html"
+                  <!-- <a href="Content-Creation-Details.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
-                <h3 class="mb-0">Digital Magazine</h3>
+                <h3 class="mb-0">Content Creators Shoot</h3>
                 <div class="hstack gap-2">
-                  <span class="badge text-dark border">Digital design</span>
-                  <span class="badge text-dark border">Web development</span>
+                  <a href="Content-Creation-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="content-creation-projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- item-7 -->
+          <div class="item">
+            <div class="portfolio d-flex flex-column gap-6">
+              <div class="portfolio-img position-relative overflow-hidden">
+                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
+                <div class="portfolio-overlay">
+                  <!-- <a href="Industrial-Shoot-Details.html"
+                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+                  </a> -->
+                </div>
+              </div>
+              <div class="portfolio-details d-flex flex-column gap-3">
+                <h3 class="mb-0">Industrial Shoot</h3>
+                <div class="hstack gap-2">
+                  <a href="Industrial-Shoot-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="Industrial-Shoot-Proejcts.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- item-8 -->
+          <div class="item">
+            <div class="portfolio d-flex flex-column gap-6">
+              <div class="portfolio-img position-relative overflow-hidden">
+                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
+                <div class="portfolio-overlay">
+                  <!-- <a href="Music&Singing-Details.html"
+                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+                  </a> -->
+                </div>
+              </div>
+              <div class="portfolio-details d-flex flex-column gap-3">
+                <h3 class="mb-0">Music & Singing Shoot</h3>
+                <div class="hstack gap-2">
+                  <a href="Music&Singing-Details.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Details</a>
+                  <a href="Music&Singing-Projects.html"
+                    class="badge text-dark border text-decoration-none badge-link">See-Work</a>
                 </div>
               </div>
             </div>
@@ -604,7 +686,7 @@
             <div class="row">
               <div class="col-xxl-8">
                 <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                  <h2 class="mb-0 text-white">What we do</h2>
+                  <h2 class="mb-0 text-white">What we Offer,</h2>
                   <p class="fs-5 mb-0 text-white text-opacity-70">A glimpse into our creativity—exploring innovative
                     designs, successful collaborations, and transformative digital experiences.</p>
                 </div>
@@ -1587,81 +1669,144 @@
 
   <!-- 7. CTA Section -->
   <section class="cta-section">
-  <style>
-    .cta-section {
-      background-image: url(../assets/images/backgrounds/bg-cta.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-    }
+    <style>
+      .cta-section {
+        background-image: url(../assets/images/backgrounds/bg-cta.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+      }
 
-    /* Glitch effect styles */
-    .glitch-text {
-      position: relative;
-      display: inline-block;
-    }
+      /* Glitch effect styles */
+      .glitch-text {
+        position: relative;
+        display: inline-block;
+      }
 
-    .glitch-text::before,
-    .glitch-text::after {
-      content: attr(data-glitch);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      clip: rect(0, 900px, 0, 0);
-    }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        clip: rect(0, 900px, 0, 0);
+      }
 
-    .glitch-text::before {
-      left: 2px;
-      text-shadow: -2px 0 #ff00c1;
-      animation: glitch-anim 3s infinite linear alternate-reverse;
-    }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+      }
 
-    .glitch-text::after {
-      left: -2px;
-      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-      animation: glitch-anim 2s infinite linear alternate-reverse;
-    }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        animation: glitch-anim 2s infinite linear alternate-reverse;
+      }
 
-    @keyframes glitch-anim {
-      0% { clip: rect(42px, 9999px, 44px, 0); }
-      5% { clip: rect(12px, 9999px, 59px, 0); }
-      10% { clip: rect(48px, 9999px, 29px, 0); }
-      15% { clip: rect(42px, 9999px, 73px, 0); }
-      20% { clip: rect(63px, 9999px, 27px, 0); }
-      25% { clip: rect(34px, 9999px, 55px, 0); }
-      30% { clip: rect(86px, 9999px, 73px, 0); }
-      35% { clip: rect(20px, 9999px, 20px, 0); }
-      40% { clip: rect(26px, 9999px, 60px, 0); }
-      45% { clip: rect(25px, 9999px, 66px, 0); }
-      50% { clip: rect(57px, 9999px, 98px, 0); }
-      55% { clip: rect(5px, 9999px, 46px, 0); }
-      60% { clip: rect(82px, 9999px, 8px, 0); }
-      65% { clip: rect(54px, 9999px, 58px, 0); }
-      70% { clip: rect(28px, 9999px, 99px, 0); }
-      75% { clip: rect(45px, 9999px, 69px, 0); }
-      80% { clip: rect(23px, 9999px, 85px, 0); }
-      85% { clip: rect(97px, 9999px, 72px, 0); }
-      90% { clip: rect(48px, 9999px, 32px, 0); }
-      95% { clip: rect(42px, 9999px, 79px, 0); }
-      100% { clip: rect(64px, 9999px, 40px, 0); }
-    }
-  </style>
+      @keyframes glitch-anim {
+        0% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
 
-  <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
-    <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
-      Ready to Elevate Your Brand?
-    </h2>
-    <p class="fs-4 text-white opacity-80 mb-5 lead">
-      Book your commercial shoot today and showcase your business with world-class photography.
-    </p>
-    <a href="Slot-Booking.html" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot Now</a>
-  </div>
-</section>
+        5% {
+          clip: rect(12px, 9999px, 59px, 0);
+        }
+
+        10% {
+          clip: rect(48px, 9999px, 29px, 0);
+        }
+
+        15% {
+          clip: rect(42px, 9999px, 73px, 0);
+        }
+
+        20% {
+          clip: rect(63px, 9999px, 27px, 0);
+        }
+
+        25% {
+          clip: rect(34px, 9999px, 55px, 0);
+        }
+
+        30% {
+          clip: rect(86px, 9999px, 73px, 0);
+        }
+
+        35% {
+          clip: rect(20px, 9999px, 20px, 0);
+        }
+
+        40% {
+          clip: rect(26px, 9999px, 60px, 0);
+        }
+
+        45% {
+          clip: rect(25px, 9999px, 66px, 0);
+        }
+
+        50% {
+          clip: rect(57px, 9999px, 98px, 0);
+        }
+
+        55% {
+          clip: rect(5px, 9999px, 46px, 0);
+        }
+
+        60% {
+          clip: rect(82px, 9999px, 8px, 0);
+        }
+
+        65% {
+          clip: rect(54px, 9999px, 58px, 0);
+        }
+
+        70% {
+          clip: rect(28px, 9999px, 99px, 0);
+        }
+
+        75% {
+          clip: rect(45px, 9999px, 69px, 0);
+        }
+
+        80% {
+          clip: rect(23px, 9999px, 85px, 0);
+        }
+
+        85% {
+          clip: rect(97px, 9999px, 72px, 0);
+        }
+
+        90% {
+          clip: rect(48px, 9999px, 32px, 0);
+        }
+
+        95% {
+          clip: rect(42px, 9999px, 79px, 0);
+        }
+
+        100% {
+          clip: rect(64px, 9999px, 40px, 0);
+        }
+      }
+    </style>
+
+    <div class="text-center py-10 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+      <h2 class="display-4 text-white mb-4 font-future glitch-text" data-glitch="Ready to Elevate Your Brand?">
+        Ready to Elevate Your Brand?
+      </h2>
+      <p class="fs-4 text-white opacity-80 mb-5 lead">
+        Book your commercial shoot today and showcase your business with world-class photography.
+      </p>
+      <a href="Slot-Booking.html" class="btn btn-dark fs-6 px-6 py-3 rounded-pill shadow-lg hover-scale">Book Your Slot
+        Now</a>
+    </div>
+  </section>
 
 
   <!--  Get in touch Section -->

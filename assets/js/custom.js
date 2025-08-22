@@ -63,13 +63,19 @@ $(function () {
     btn.addEventListener("click", scrollToTop);
 
     window.onscroll = function () {
-        const btn = document.getElementById("scrollToTopBtn");
-        if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
-        }
-    };
+    const scrollTopBtn = document.getElementById("scrollToTopBtn");
+    const whatsappBtn = document.getElementById("whatsappBtn");
+
+    if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+        // Show both buttons
+        if (scrollTopBtn) scrollTopBtn.style.display = "flex";
+        if (whatsappBtn) whatsappBtn.style.display = "flex";
+    } else {
+        // Hide both buttons
+        if (scrollTopBtn) scrollTopBtn.style.display = "none";
+        if (whatsappBtn) whatsappBtn.style.display = "none";
+    }
+};
 
 
     // Aos
