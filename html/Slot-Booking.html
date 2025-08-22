@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +10,14 @@
   <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Global Styles */
     body {
       font-family: 'Poppins', 'Arial', sans-serif;
       background-color: #f8f9fa;
     }
-    
+
     /* Slot Booking Section */
     .slot-booking-section {
       padding: 80px 0;
@@ -24,7 +26,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .slot-booking-section::before {
       content: '';
       position: absolute;
@@ -36,7 +38,7 @@
       opacity: 0.3;
       z-index: 0;
     }
-    
+
     .slot-booking-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -49,7 +51,7 @@
       z-index: 1;
       overflow: hidden;
     }
-    
+
     .slot-booking-container::before {
       content: '';
       position: absolute;
@@ -61,7 +63,7 @@
       opacity: 0.1;
       z-index: -1;
     }
-    
+
     .slot-booking-container h2 {
       font-size: 2.8rem;
       text-align: center;
@@ -71,33 +73,33 @@
       font-weight: 700;
       letter-spacing: -0.5px;
     }
-    
+
     .slot-booking-container h2::after {
       content: '';
       display: block;
       width: 80px;
       height: 4px;
-      background:#c1ff76;
+      background: #c1ff76;
       margin: 15px auto 0;
       border-radius: 2px;
     }
-    
+
     /* Form Styling */
     #slot-booking-form {
       position: relative;
     }
-    
+
     .form-section {
       margin-bottom: 40px;
       padding-bottom: 30px;
       border-bottom: 1px solid #eaeaea;
       position: relative;
     }
-    
+
     .form-section:last-child {
       border-bottom: none;
     }
-    
+
     .form-section-title {
       font-size: 1.5rem;
       margin-bottom: 25px;
@@ -106,7 +108,7 @@
       display: flex;
       align-items: center;
     }
-    
+
     .form-section-title i {
       margin-right: 12px;
       background: #c1ff76;
@@ -114,12 +116,12 @@
       -webkit-text-fill-color: transparent;
       font-size: 1.8rem;
     }
-    
+
     .form-group {
       margin-bottom: 25px;
       position: relative;
     }
-    
+
     .form-group label {
       font-weight: 500;
       margin-bottom: 10px;
@@ -127,7 +129,7 @@
       color: #444;
       font-size: 1.05rem;
     }
-    
+
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -139,7 +141,7 @@
       transition: all 0.3s ease;
       background-color: #f9fbfd;
     }
-    
+
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
@@ -148,12 +150,12 @@
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
       background-color: #fff;
     }
-    
+
     .form-group textarea {
       resize: vertical;
       min-height: 120px;
     }
-    
+
     /* Checkbox Group Styling */
     .checkbox-group {
       display: grid;
@@ -161,7 +163,7 @@
       gap: 15px;
       margin-top: 15px;
     }
-    
+
     .checkbox-item {
       display: flex;
       align-items: center;
@@ -171,26 +173,26 @@
       transition: all 0.3s ease;
       border: 2px solid #e9ecef;
     }
-    
+
     .checkbox-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       border-color: #caff76;
     }
-    
+
     .checkbox-item input[type="checkbox"] {
       margin-right: 12px;
       width: 18px;
       height: 18px;
       accent-color: #c1ff76;
     }
-    
+
     .checkbox-item label {
       margin-bottom: 0;
       cursor: pointer;
       font-weight: 500;
     }
-    
+
     /* Calendar Styling */
     .calendar-container {
       display: flex;
@@ -198,7 +200,7 @@
       gap: 30px;
       margin-bottom: 20px;
     }
-    
+
     .calendar {
       flex: 1;
       min-width: 320px;
@@ -208,14 +210,14 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       border: 1px solid #eaeaea;
     }
-    
+
     .calendar-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
     }
-    
+
     .calendar-header button {
       background: #c1ff76;
       color: white;
@@ -229,24 +231,24 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .calendar-header button:hover {
       transform: scale(1.1);
       box-shadow: 0 5px 15px rgba(17, 22, 27, 0.3);
     }
-    
+
     .calendar-header span {
       font-weight: 600;
       font-size: 1.2rem;
       color: #c1ff76;
     }
-    
+
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 8px;
     }
-    
+
     .calendar-day-header {
       padding: 10px;
       text-align: center;
@@ -254,7 +256,7 @@
       color: #6c757d;
       font-size: 0.9rem;
     }
-    
+
     .calendar-day {
       padding: 12px;
       text-align: center;
@@ -265,47 +267,47 @@
       transition: all 0.3s ease;
       font-weight: 500;
     }
-    
+
     .calendar-day.booked {
       background: #ff4757;
       color: #fff;
       cursor: not-allowed;
       border-color: #ff4757;
     }
-    
+
     .calendar-day.available:hover {
       background: #c1ff76;
       color: #fff;
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
-    
+
     .calendar-day.selected {
       background: #c1ff76;
       color: #fff;
       border-color: #c1ff76;
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
-    
+
     /* Time Slots Styling */
     .time-slots-container {
       flex: 1;
       min-width: 250px;
     }
-    
+
     .time-slots-title {
       font-weight: 600;
       margin-bottom: 15px;
       color: #2c3e50;
       font-size: 1.1rem;
     }
-    
+
     .time-slots {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 12px;
     }
-    
+
     .time-slot {
       padding: 15px 10px;
       border: 2px solid #e9ecef;
@@ -316,30 +318,30 @@
       text-align: center;
       font-weight: 500;
     }
-    
+
     .time-slot:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
-    
+
     .time-slot.selected {
       background: #c1ff76;
       color: #fff;
       border-color: #c1ff76;
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
-    
+
     .time-slot.disabled {
       background: #e9ecef;
       color: #6c757d;
       cursor: not-allowed;
     }
-    
+
     /* File Upload Styling */
     .file-upload-container {
       position: relative;
     }
-    
+
     .file-upload-label {
       display: block;
       padding: 15px 20px;
@@ -350,24 +352,24 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .file-upload-label:hover {
       border-color: #c1ff76;
       background-color: #e8f4ff;
     }
-    
+
     .file-upload-label i {
       margin-right: 8px;
       color: #c1ff76;
     }
-    
+
     /* Submit Button Styling */
     .submit-btn-container {
       margin-top: 40px;
       text-align: center;
       position: relative;
     }
-    
+
     .submit-btn {
       display: inline-block;
       padding: 18px 50px;
@@ -383,7 +385,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .submit-btn::before {
       content: '';
       position: absolute;
@@ -394,16 +396,16 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: all 0.6s ease;
     }
-    
+
     .submit-btn:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 25px rgba(17, 20, 23, 0.4);
     }
-    
+
     .submit-btn:hover::before {
       left: 100%;
     }
-    
+
     /* Error Styling */
     .error {
       color: #ff4757;
@@ -412,7 +414,7 @@
       display: none;
       font-weight: 500;
     }
-    
+
     /* Pan India Note */
     .pan-india-note {
       font-size: 0.95rem;
@@ -424,7 +426,7 @@
       border-radius: 10px;
       border-left: 4px solid #c1ff76;
     }
-    
+
     /* Terms Styling */
     .terms-container {
       display: flex;
@@ -434,7 +436,7 @@
       border-radius: 12px;
       margin-top: 20px;
     }
-    
+
     .terms-container input[type="checkbox"] {
       margin-right: 15px;
       margin-top: 4px;
@@ -442,82 +444,194 @@
       height: 20px;
       accent-color: #c1ff76;
     }
-    
+
     .terms-container label {
       margin-bottom: 0;
       font-weight: 500;
       color: #495057;
     }
-    
+
     .terms-container a {
       color: #c1ff76;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
     }
-    
+
     .terms-container a:hover {
       color: #c1ff76;
       text-decoration: underline;
     }
-    
+
     /* Responsive Design */
     @media (max-width: 992px) {
       .slot-booking-container {
         padding: 30px;
       }
-      
+
       .calendar-container {
         flex-direction: column;
       }
-      
+
       .checkbox-group {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       }
     }
-    
+
     @media (max-width: 768px) {
       .slot-booking-container {
         padding: 20px;
         border-radius: 15px;
       }
-      
+
       .slot-booking-container h2 {
         font-size: 2.2rem;
       }
-      
+
       .calendar {
         min-width: 100%;
       }
-      
+
       .checkbox-group {
         grid-template-columns: 1fr;
       }
     }
-    
+
     /* Animation for form sections */
     .form-section {
       animation: fadeIn 0.6s ease forwards;
     }
-    
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     /* Custom radio and checkbox styling */
-    input[type="checkbox"], input[type="radio"] {
+    input[type="checkbox"],
+    input[type="radio"] {
       width: 20px;
       height: 20px;
     }
+
+    /* WhatsApp Button Styles */
+    .whatsapp-chat-btn {
+      position: fixed;
+      left: 32px;
+      bottom: 30px;
+      z-index: 9999;
+      background: #c1ff76;
+      /* Green background */
+      color: #111111;
+      /* Black icon color */
+      border-radius: 50%;
+      box-shadow: 0 8px 32px rgba(18, 140, 126, 0.18), 0 2px 10px rgba(18, 140, 126, 0.10);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      font-size: 2.2rem;
+      border: 2.5px solid transparent;
+      background-clip: padding-box;
+      overflow: visible;
+    }
+
+    /* WhatsApp Icon (Initially Black) */
+    .whatsapp-chat-btn .fa-whatsapp {
+      color: black;
+      /* Icon is black initially */
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+    }
+
+    /* Hover Effect: Background Black, Icon White */
+    .whatsapp-chat-btn:hover {
+      box-shadow: 0 12px 40px rgba(18, 140, 126, 0.28);
+      transform: scale(1.09);
+      background: #111111;
+      /* Background turns black */
+    }
+
+    .whatsapp-chat-btn:hover .fa-whatsapp {
+      color: white;
+      /* Icon turns white when hovered */
+    }
+
+    .whatsapp-chat-btn::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 0.5px;
+      background: #c1ff76;
+      /* Green background */
+      z-index: -1;
+      transition: background 0.2s;
+    }
+
+    /* Hover Effect on the Pseudo-Element (Background Change) */
+    .whatsapp-chat-btn:hover::before {
+      background: #111111;
+      /* Black background on hover */
+    }
+
+    /* Tooltip Styling */
+    .whatsapp-tooltip {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      left: 110%;
+      bottom: 50%;
+      transform: translateY(50%);
+      background: rgba(17, 17, 17, 0.7);
+      color: #c1ff76;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      font-size: 1rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(199, 246, 240, 0.18);
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+      border: 2px solid;
+    }
+
+    /* Tooltip Visibility on Hover */
+    .whatsapp-chat-btn:hover .whatsapp-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Media Query for Smaller Screens */
+    @media (max-width: 576px) {
+      .whatsapp-chat-btn {
+        left: 12px;
+        bottom: 29px;
+        width: 58px;
+        height: 58px;
+        font-size: 1.5rem;
+      }
+
+      .whatsapp-tooltip {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
@@ -577,7 +691,8 @@
                           class="img-fluid animate-spin">Contact</a>
                     </li>
                     <li class="header-item">
-                      <a href="Slot-Booking.html" aria-current="true" class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
+                      <a href="Slot-Booking.html" aria-current="true"
+                        class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
                           src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
                           class="img-fluid animate-spin">Slot-Booking</a>
                     </li>
@@ -603,7 +718,7 @@
     </div>
   </header>
 
-  
+
   <!--  Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
 
@@ -634,354 +749,378 @@
       </div>
     </section>
 
+    <a href="https://wa.me/+917778056001" id="whatsappBtn" class="whatsapp-chat-btn" target="_blank"
+      aria-label="Chat on WhatsApp">
+      <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-  <!-- Slot Booking Section -->
-  <section class="slot-booking-section">
-    <div class="slot-booking-container" data-aos="fade-up">
-      <h2>Book Your Creative Session</h2>
-      <form id="slot-booking-form">
-        <!-- Basic Client Details -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-user-circle"></i> Client Information</h3>
-          
-          <div class="form-group">
-            <label for="full-name">Full Name <span style="color: #ff4757;">*</span></label>
-            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
-            <div class="error" id="full-name-error">Please enter your full name.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address <span style="color: #ff4757;">*</span></label>
-            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-            <div class="error" id="email-error">Please enter a valid email address.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone Number <span style="color: #ff4757;">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" pattern="\+?[1-9]\d{1,14}" required>
-            <div class="error" id="phone-error">Please enter a valid phone number.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="company">Company / Brand Name (Optional)</label>
-            <input type="text" id="company" name="company" placeholder="Your company or brand">
-          </div>
-          
-          <div class="form-group">
-            <label for="social-media">Social Media Handle (Optional)</label>
-            <input type="text" id="social-media" name="social-media" placeholder="@yourhandle">
-          </div>
-        </div>
+    <!-- Slot Booking Section -->
+    <section class="slot-booking-section">
+      <div class="slot-booking-container" data-aos="fade-up">
+        <h2>Book Your Creative Session</h2>
+        <form id="slot-booking-form">
+          <!-- Basic Client Details -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-user-circle"></i> Client Information</h3>
 
-        <!-- Service Selection -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-camera"></i> Service Selection</h3>
-          
-          <div class="form-group">
-            <label>Select Your Service <span style="color: #ff4757;">*</span></label>
-            <div class="checkbox-group">
-              <div class="checkbox-item">
-                <input type="checkbox" id="service1" name="services" value="Cafe & Restaurant Shoot">
-                <label for="service1">📸 Cafe & Restaurant Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service2" name="services" value="Interior & Architectural Shoot">
-                <label for="service2">🏢 Interior & Architectural Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service3" name="services" value="Product Photography & Videography">
-                <label for="service3">📦 Product Photography & Videography</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service4" name="services" value="Model Portfolio / Fashion Shoot">
-                <label for="service4">👗 Model Portfolio / Fashion Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service5" name="services" value="Content Creator / Influencer Shoot">
-                <label for="service5">🎥 Content Creator / Influencer Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service6" name="services" value="Podcast / Music Video Shoot">
-                <label for="service6">🎤 Podcast / Music Video Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service7" name="services" value="Industrial & Corporate Shoot">
-                <label for="service7">🏭 Industrial & Corporate Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service8" name="services" value="Food & Beverages Shoot">
-                <label for="service8">🍴 Food & Beverages Shoot</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service9" name="services" value="Event / Campaign Coverage">
-                <label for="service9">🎉 Event / Campaign Coverage</label>
-              </div>
-              
-              <div class="checkbox-item">
-                <input type="checkbox" id="service10" name="services" value="Custom / Other">
-                <label for="service10">✨ Custom / Other</label>
-              </div>
+            <div class="form-group">
+              <label for="full-name">Full Name <span style="color: #ff4757;">*</span></label>
+              <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+              <div class="error" id="full-name-error">Please enter your full name.</div>
             </div>
-            
-            <div class="form-group" id="custom-service-details" style="display: none; margin-top: 15px;">
-              <label for="custom-service-text">Please specify your custom requirement</label>
-              <input type="text" id="custom-service-text" name="custom-service-text" placeholder="Describe your custom service need">
-            </div>
-            
-            <div class="error" id="services-error">Please select at least one service.</div>
-          </div>
-        </div>
 
-        <!-- Project Details -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-clipboard-list"></i> Project Details</h3>
-          
-          <div class="form-group">
-            <label for="shoot-type">Shoot Type <span style="color: #ff4757;">*</span></label>
-            <select id="shoot-type" name="shoot-type" required>
-              <option value="" disabled selected>Select Shoot Type</option>
-              <option value="Photoshoot">Photoshoot</option>
-              <option value="Videography">Videography</option>
-              <option value="Both">Both</option>
-            </select>
-            <div class="error" id="shoot-type-error">Please select a shoot type.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="num-items">Number of People / Products <span style="color: #ff4757;">*</span></label>
-            <input type="number" id="num-items" name="num-items" min="1" placeholder="e.g., 5 people or 10 products" required>
-            <div class="error" id="num-items-error">Please enter a valid number.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="shoot-location">Shoot Location <span style="color: #ff4757;">*</span></label>
-            <select id="shoot-location" name="shoot-location" required>
-              <option value="" disabled selected>Select Location</option>
-              <option value="Indoor Studio">Indoor Studio</option>
-              <option value="Client's Location">Client's Location</option>
-              <option value="Outdoor">Outdoor</option>
-              <option value="Other">Other</option>
-            </select>
-            <div class="error" id="shoot-location-error">Please select a shoot location.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="additional-requirements">Additional Requirements</label>
-            <textarea id="additional-requirements" name="additional-requirements" placeholder="e.g., makeup, props, drone, editing, etc."></textarea>
-          </div>
-        </div>
-
-        <!-- Date & Time Selection -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Schedule Your Session</h3>
-          
-          <div class="calendar-container">
-            <div class="calendar">
-              <div class="calendar-header">
-                <button type="button" id="prev-month"><i class="fas fa-chevron-left"></i></button>
-                <span id="month-year"></span>
-                <button type="button" id="next-month"><i class="fas fa-chevron-right"></i></button>
-              </div>
-              
-              <div class="calendar-grid">
-                <div class="calendar-day-header">Sun</div>
-                <div class="calendar-day-header">Mon</div>
-                <div class="calendar-day-header">Tue</div>
-                <div class="calendar-day-header">Wed</div>
-                <div class="calendar-day-header">Thu</div>
-                <div class="calendar-day-header">Fri</div>
-                <div class="calendar-day-header">Sat</div>
-              </div>
-              
-              <div class="calendar-grid" id="calendar-grid"></div>
+            <div class="form-group">
+              <label for="email">Email Address <span style="color: #ff4757;">*</span></label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+              <div class="error" id="email-error">Please enter a valid email address.</div>
             </div>
-            
-            <div class="time-slots-container">
-              <div class="time-slots-title">Available Time Slots</div>
-              <div class="time-slots" id="time-slots">
-                <!-- Time slots will be populated by JavaScript -->
-              </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span style="color: #ff4757;">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" pattern="\+?[1-9]\d{1,14}"
+                required>
+              <div class="error" id="phone-error">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company / Brand Name (Optional)</label>
+              <input type="text" id="company" name="company" placeholder="Your company or brand">
+            </div>
+
+            <div class="form-group">
+              <label for="social-media">Social Media Handle (Optional)</label>
+              <input type="text" id="social-media" name="social-media" placeholder="@yourhandle">
             </div>
           </div>
-          
-          <input type="hidden" id="selected-date" name="selected-date" required>
-          <input type="hidden" id="selected-time" name="selected-time" required>
-          <div class="error" id="date-time-error">Please select a date and time slot.</div>
-        </div>
 
-        <!-- File Upload -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-file-upload"></i> Reference Materials</h3>
-          
-          <div class="form-group">
-            <label for="reference-files">Upload Reference Files / Mood Board (Optional, max 20MB)</label>
-            <div class="file-upload-container">
-              <label for="reference-files" class="file-upload-label">
-                <i class="fas fa-cloud-upload-alt"></i> Choose files or drag them here
-              </label>
-              <input type="file" id="reference-files" name="reference-files" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" multiple style="display: none;">
-            </div>
-            <div class="error" id="reference-files-error">File size exceeds 20MB or invalid file type.</div>
-          </div>
-        </div>
+          <!-- Service Selection -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-camera"></i> Service Selection</h3>
 
-        <!-- Location Details -->
-        <div class="form-section">
-          <h3 class="form-section-title"><i class="fas fa-map-marker-alt"></i> Location Information</h3>
-          
-          <div class="form-group">
-            <label for="city-state">City & State <span style="color: #ff4757;">*</span></label>
-            <input type="text" id="city-state" name="city-state" placeholder="e.g., Mumbai, Maharashtra" required>
-            <div class="error" id="city-state-error">Please enter city and state.</div>
-          </div>
-          
-          <div class="form-group">
-            <label for="shoot-address">Exact Shoot Address / Venue (Optional if undecided)</label>
-            <input type="text" id="shoot-address" name="shoot-address" placeholder="Full address of the shoot location">
-          </div>
-          
-          <div class="pan-india-note">
-            <i class="fas fa-info-circle"></i> Available Pan India – We'll bring our expertise to you!
-          </div>
-        </div>
+            <div class="form-group">
+              <label>Select Your Service <span style="color: #ff4757;">*</span></label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service1" name="services" value="Cafe & Restaurant Shoot">
+                  <label for="service1">📸 Cafe & Restaurant Shoot</label>
+                </div>
 
-        <!-- Terms & Agreement -->
-        <div class="form-group terms-container">
-          <input type="checkbox" id="terms" name="terms" required>
-          <label for="terms">I agree to the <a href="terms-and-conditions.html" target="_blank">terms & conditions</a> and understand booking is subject to confirmation.</label>
-          <div class="error" id="terms-error">Please agree to the terms & conditions.</div>
-        </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service2" name="services" value="Interior & Architectural Shoot">
+                  <label for="service2">🏢 Interior & Architectural Shoot</label>
+                </div>
 
-        <!-- Submit Button -->
-        <div class="submit-btn-container">
-          <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Confirm Booking
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service3" name="services" value="Product Photography & Videography">
+                  <label for="service3">📦 Product Photography & Videography</label>
+                </div>
 
-  <!-- Footer -->
-  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-xl-5 mb-8 mb-xl-0">
-          <div class="d-flex flex-column gap-8 pe-xl-5">
-            <h2 class="mb-0 text-white">Create something together?</h2>
-            <p class="text-white-50 fs-6 mb-0">We're here to bring your vision to life with stunning photography and creative videography. <br> Reach out — the first step is just a click away.</p>
-            <div class="d-flex flex-column gap-2">
-              <a href="mailto:mokoframes@gmail.com" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
-                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
-                mokoframes@gmail.com
-              </a>
-              <div class="d-flex flex-wrap gap-4">
-                <a href="tel:+917778056001" class="link-hover hstack gap-2 text-white fs-5">
-                  <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
-                  +91 7778056001
-                </a>
-                <a href="tel:+918140210701" class="link-hover hstack gap-2 text-white fs-5">
-                  +91 8140210701
-                </a>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service4" name="services" value="Model Portfolio / Fashion Shoot">
+                  <label for="service4">👗 Model Portfolio / Fashion Shoot</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service5" name="services" value="Content Creator / Influencer Shoot">
+                  <label for="service5">🎥 Content Creator / Influencer Shoot</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service6" name="services" value="Podcast / Music Video Shoot">
+                  <label for="service6">🎤 Podcast / Music Video Shoot</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service7" name="services" value="Industrial & Corporate Shoot">
+                  <label for="service7">🏭 Industrial & Corporate Shoot</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service8" name="services" value="Food & Beverages Shoot">
+                  <label for="service8">🍴 Food & Beverages Shoot</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service9" name="services" value="Event / Campaign Coverage">
+                  <label for="service9">🎉 Event / Campaign Coverage</label>
+                </div>
+
+                <div class="checkbox-item">
+                  <input type="checkbox" id="service10" name="services" value="Custom / Other">
+                  <label for="service10">✨ Custom / Other</label>
+                </div>
               </div>
-              <a href="https://maps.app.goo.gl/TDziuHv7JPTetenC6" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
-                <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
-                Ajwa-Waghodia Road, Vadodara, 390019.
-              </a>
+
+              <div class="form-group" id="custom-service-details" style="display: none; margin-top: 15px;">
+                <label for="custom-service-text">Please specify your custom requirement</label>
+                <input type="text" id="custom-service-text" name="custom-service-text"
+                  placeholder="Describe your custom service need">
+              </div>
+
+              <div class="error" id="services-error">Please select at least one service.</div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-            <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
-            <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-            <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
-            <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
-            <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Commerical-Shoot-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Commercial Shoot
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Interior-Photography-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Architectural Shoot
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services" href="Food&Restro-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Food & Restro Shoot
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Model Portfolio Shoot
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Content-Creation-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Content Creator Shoot
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Product-Photography-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Product Photography
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
-                <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Music-Singing Shoot
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://youtube.com/@mokoframes?si=3A7YcdWkgznjUxke" target="_blank">
-                <iconify-icon icon="lucide:youtube" class="fs-7 text-primary"></iconify-icon>
-                YouTube
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://www.instagram.com/mokoframes?igsh=aXNheTJ4MHRhdno4" target="_blank">
-                <iconify-icon icon="lucide:instagram" class="fs-7 text-primary"></iconify-icon>
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="https://www.behance.net/mokoframes" target="_blank">
-                <iconify-icon icon="mdi:behance" class="fs-7 text-primary"></iconify-icon>
-                Behance
-              </a>
-            </li>
-          </ul>
-        </div>
+
+          <!-- Project Details -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-clipboard-list"></i> Project Details</h3>
+
+            <div class="form-group">
+              <label for="shoot-type">Shoot Type <span style="color: #ff4757;">*</span></label>
+              <select id="shoot-type" name="shoot-type" required>
+                <option value="" disabled selected>Select Shoot Type</option>
+                <option value="Photoshoot">Photoshoot</option>
+                <option value="Videography">Videography</option>
+                <option value="Both">Both</option>
+              </select>
+              <div class="error" id="shoot-type-error">Please select a shoot type.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="num-items">Number of People / Products <span style="color: #ff4757;">*</span></label>
+              <input type="number" id="num-items" name="num-items" min="1" placeholder="e.g., 5 people or 10 products"
+                required>
+              <div class="error" id="num-items-error">Please enter a valid number.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="shoot-location">Shoot Location <span style="color: #ff4757;">*</span></label>
+              <select id="shoot-location" name="shoot-location" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Indoor Studio">Indoor Studio</option>
+                <option value="Client's Location">Client's Location</option>
+                <option value="Outdoor">Outdoor</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="error" id="shoot-location-error">Please select a shoot location.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="additional-requirements">Additional Requirements</label>
+              <textarea id="additional-requirements" name="additional-requirements"
+                placeholder="e.g., makeup, props, drone, editing, etc."></textarea>
+            </div>
+          </div>
+
+          <!-- Date & Time Selection -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Schedule Your Session</h3>
+
+            <div class="calendar-container">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <button type="button" id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                  <span id="month-year"></span>
+                  <button type="button" id="next-month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="calendar-grid">
+                  <div class="calendar-day-header">Sun</div>
+                  <div class="calendar-day-header">Mon</div>
+                  <div class="calendar-day-header">Tue</div>
+                  <div class="calendar-day-header">Wed</div>
+                  <div class="calendar-day-header">Thu</div>
+                  <div class="calendar-day-header">Fri</div>
+                  <div class="calendar-day-header">Sat</div>
+                </div>
+
+                <div class="calendar-grid" id="calendar-grid"></div>
+              </div>
+
+              <div class="time-slots-container">
+                <div class="time-slots-title">Available Time Slots</div>
+                <div class="time-slots" id="time-slots">
+                  <!-- Time slots will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+
+            <input type="hidden" id="selected-date" name="selected-date" required>
+            <input type="hidden" id="selected-time" name="selected-time" required>
+            <div class="error" id="date-time-error">Please select a date and time slot.</div>
+          </div>
+
+          <!-- File Upload -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-file-upload"></i> Reference Materials</h3>
+
+            <div class="form-group">
+              <label for="reference-files">Upload Reference Files / Mood Board (Optional, max 20MB)</label>
+              <div class="file-upload-container">
+                <label for="reference-files" class="file-upload-label">
+                  <i class="fas fa-cloud-upload-alt"></i> Choose files or drag them here
+                </label>
+                <input type="file" id="reference-files" name="reference-files" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+                  multiple style="display: none;">
+              </div>
+              <div class="error" id="reference-files-error">File size exceeds 20MB or invalid file type.</div>
+            </div>
+          </div>
+
+          <!-- Location Details -->
+          <div class="form-section">
+            <h3 class="form-section-title"><i class="fas fa-map-marker-alt"></i> Location Information</h3>
+
+            <div class="form-group">
+              <label for="city-state">City & State <span style="color: #ff4757;">*</span></label>
+              <input type="text" id="city-state" name="city-state" placeholder="e.g., Mumbai, Maharashtra" required>
+              <div class="error" id="city-state-error">Please enter city and state.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="shoot-address">Exact Shoot Address / Venue (Optional if undecided)</label>
+              <input type="text" id="shoot-address" name="shoot-address"
+                placeholder="Full address of the shoot location">
+            </div>
+
+            <div class="pan-india-note">
+              <i class="fas fa-info-circle"></i> Available Pan India – We'll bring our expertise to you!
+            </div>
+          </div>
+
+          <!-- Terms & Agreement -->
+          <div class="form-group terms-container">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the <a href="terms-and-conditions.html" target="_blank">terms & conditions</a>
+              and understand booking is subject to confirmation.</label>
+            <div class="error" id="terms-error">Please agree to the terms & conditions.</div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn-container">
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Confirm Booking
+            </button>
+          </div>
+        </form>
       </div>
-      <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white" href="index.html">FrameByFrame - <br> © MOKO copyright 2025</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-5 mb-8 mb-xl-0">
+            <div class="d-flex flex-column gap-8 pe-xl-5">
+              <h2 class="mb-0 text-white">Create something together?</h2>
+              <p class="text-white-50 fs-6 mb-0">We're here to bring your vision to life with stunning photography and
+                creative videography. <br> Reach out — the first step is just a click away.</p>
+              <div class="d-flex flex-column gap-2">
+                <a href="mailto:mokoframes@gmail.com" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
+                  <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                  mokoframes@gmail.com
+                </a>
+                <div class="d-flex flex-wrap gap-4">
+                  <a href="tel:+917778056001" class="link-hover hstack gap-2 text-white fs-5">
+                    <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                    +91 7778056001
+                  </a>
+                  <a href="tel:+918140210701" class="link-hover hstack gap-2 text-white fs-5">
+                    +91 8140210701
+                  </a>
+                </div>
+                <a href="https://maps.app.goo.gl/TDziuHv7JPTetenC6" target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5">
+                  <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
+                  Ajwa-Waghodia Road, Vadodara, 390019.
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
+              <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
+              <li><a class="link-hover fs-5 text-white" id="services" href="services.html">Services</a></li>
+              <li><a class="link-hover fs-5 text-white" href="projects.html">Projects</a></li>
+              <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Slot Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="Commerical-Shoot-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Commercial Shoot
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="Interior-Photography-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Architectural Shoot
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" id="services"
+                  href="Food&Restro-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Food & Restro Shoot
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Model-Shoot-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Model Portfolio Shoot
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="Content-Creation-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Content Creator Shoot
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="Product-Photography-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Product Photography
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
+                  <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
+                  Music-Singing Shoot
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="https://youtube.com/@mokoframes?si=3A7YcdWkgznjUxke" target="_blank">
+                  <iconify-icon icon="lucide:youtube" class="fs-7 text-primary"></iconify-icon>
+                  YouTube
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="https://www.instagram.com/mokoframes?igsh=aXNheTJ4MHRhdno4" target="_blank">
+                  <iconify-icon icon="lucide:instagram" class="fs-7 text-primary"></iconify-icon>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white d-flex align-items-center gap-2"
+                  href="https://www.behance.net/mokoframes" target="_blank">
+                  <iconify-icon icon="mdi:behance" class="fs-7 text-primary"></iconify-icon>
+                  Behance
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white"
+            href="index.html">FrameByFrame - <br> © MOKO copyright 2025</a></p>
     </footer>
 
     <div class="get-template hstack gap-2">
-      <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0" id="scrollToTopBtn">
+      <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
+        id="scrollToTopBtn">
         <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
       </button>
     </div>
@@ -1088,8 +1227,8 @@
       // File upload styling
       const fileInput = document.getElementById('reference-files');
       const fileUploadLabel = document.querySelector('.file-upload-label');
-      
-      fileInput.addEventListener('change', function() {
+
+      fileInput.addEventListener('change', function () {
         if (this.files.length > 0) {
           fileUploadLabel.innerHTML = `<i class="fas fa-check-circle"></i> ${this.files.length} file(s) selected`;
           fileUploadLabel.style.borderColor = '#28a745';
@@ -1181,4 +1320,5 @@
       });
     </script>
 </body>
+
 </html>
