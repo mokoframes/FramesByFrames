@@ -773,6 +773,39 @@ progress {
   height: auto;
 }
 
+.img-fluid-logo {
+  width: 35vw;       /* Default: very small screens, slightly bigger */
+  height: auto;
+  max-width: 100%;
+}
+
+/* Small devices (≥576px) */
+@media (min-width: 576px) {
+  .img-fluid-logo {
+    width: 30vw;
+  }
+}
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+  .img-fluid-logo {
+    width: 22vw;
+  }
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+  .img-fluid-logo {
+    width: 14vw;    /* Reduced a lot here */
+  }
+}
+
+/* Extra large devices (≥1200px) */
+@media (min-width: 1200px) {
+  .img-fluid-logo {
+    width: 12vw;    /* Even smaller on xl screens */
+  }
+}
 
 .img-fluid-testimonial {
   /* max-width: 100%; */
@@ -4340,6 +4373,7 @@ fieldset:disabled .btn {
     transition: none;
   }
 }
+
 
 .dropup,
 .dropend,
