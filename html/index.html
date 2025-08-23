@@ -673,11 +673,32 @@
   <section class="services py-5 py-lg-11 py-xl-12" id="services">
     <style>
       .services {
-        background-image: url('../assets/images/services/service-bg-2.jpg');
+        position: relative;
+        background-image: url('../assets/images/services/service-bg-3.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 100vh;
+        z-index: 1;
+      }
+
+      /* Overlay */
+      .services::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Adjust opacity here (0.5 = 50%) */
+        z-index: 2;
+      }
+
+      /* Ensure content is above the overlay */
+      .services>* {
+        position: relative;
+        z-index: 3;
       }
 
       .services-tab .accordion-button {
@@ -685,25 +706,33 @@
         align-items: center;
         justify-content: space-between;
         padding: 1.3rem 1.25rem !important;
-        background: transparent !important; /* Remove white background */
-        color: white !important; /* Set text to white */
-        border: none; /* Ensure no border interferes */
+        background: transparent !important;
+        /* Remove white background */
+        color: white !important;
+        /* Set text to white */
+        border: none;
+        /* Ensure no border interferes */
       }
 
       .services-tab .accordion-button:not(.collapsed) {
-        background: transparent !important; /* Keep transparent when expanded */
-        color: white !important; /* Ensure white text when active */
+        background: transparent !important;
+        /* Keep transparent when expanded */
+        color: white !important;
+        /* Ensure white text when active */
       }
 
       .services-tab .accordion-body {
         padding: 1.25rem;
-        background: transparent !important; /* Remove white background */
-        color: white !important; /* Set all text to white */
+        background: transparent !important;
+        /* Remove white background */
+        color: white !important;
+        /* Set all text to white */
       }
 
       .services-tab .accordion-body h5 {
         margin-bottom: 1rem;
-        color: white !important; /* White heading */
+        color: white !important;
+        /* White heading */
       }
 
       .services-tab .accordion-body ul {
@@ -713,11 +742,13 @@
 
       .services-tab .accordion-body ul li {
         margin-bottom: 0.5rem;
-        color: white !important; /* White list items */
+        color: white !important;
+        /* White list items */
       }
 
       .services-tab .accordion-body .bullet-arrow {
-        color: #c1ff76 !important; /* Keypoint icons to lime green */
+        color: #c1ff76 !important;
+        /* Keypoint icons to lime green */
       }
 
       .services-tab .accordion-body img {
@@ -726,13 +757,21 @@
       }
 
       .services-tab .accordion-item {
-        background: transparent !important; /* Ensure accordion item is transparent */
-        border: none; /* Remove any default borders */
+        background: transparent !important;
+        border: none;
+        border-bottom: 1px solid #808080;
+        /* Neutral gray */
+        margin-bottom: 1rem;
+      }
+
+      /* Remove border from last accordion item to avoid double border */
+      .services-tab .accordion-item:last-child {
+        border-bottom: none;
       }
 
       @media (max-width: 767px) {
         .services {
-          background-image: url('../assets/images/services/service-bg-5.jpg');
+          background-image: url('../assets/images/services/service-bg-6.jpg');
         }
       }
     </style>
@@ -966,7 +1005,7 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
 
   <!--  Why choose us Section -->
   <section class="why-choose-us py-5 py-lg-11 py-xl-12">
