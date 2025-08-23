@@ -670,7 +670,6 @@
     </div>
   </section>
 
-  <!-- What We Offer Section Services Section -->
   <section class="services py-5 py-lg-11 py-xl-12" id="services">
     <style>
       .services {
@@ -679,7 +678,6 @@
         background-position: center;
         background-repeat: no-repeat;
         min-height: 100vh;
-        /* Ensures the section covers the full viewport height */
       }
 
       .services-tab .accordion-button {
@@ -687,43 +685,50 @@
         align-items: center;
         justify-content: space-between;
         padding: 1.3rem 1.25rem !important;
-        /* Adjust padding if needed */
+        background: transparent !important; /* Remove white background */
+        color: white !important; /* Set text to white */
+        border: none; /* Ensure no border interferes */
       }
 
-      /* Padding for the accordion body */
+      .services-tab .accordion-button:not(.collapsed) {
+        background: transparent !important; /* Keep transparent when expanded */
+        color: white !important; /* Ensure white text when active */
+      }
+
       .services-tab .accordion-body {
         padding: 1.25rem;
-        /* Adjust padding for content inside the dropdown */
+        background: transparent !important; /* Remove white background */
+        color: white !important; /* Set all text to white */
       }
 
-      /* Adjust margin for headings inside the accordion body */
       .services-tab .accordion-body h5 {
         margin-bottom: 1rem;
-        /* Adds space between the heading and the content */
+        color: white !important; /* White heading */
       }
 
-      /* Adjust the list items inside the dropdown */
       .services-tab .accordion-body ul {
         padding-left: 20px;
-        /* Adds indentation for list items */
         margin-top: 0.5rem;
-        /* Space above the list */
       }
 
       .services-tab .accordion-body ul li {
         margin-bottom: 0.5rem;
-        /* Adds space between each list item */
+        color: white !important; /* White list items */
       }
 
-      /* Image inside accordion body */
+      .services-tab .accordion-body .bullet-arrow {
+        color: #c1ff76 !important; /* Keypoint icons to lime green */
+      }
+
       .services-tab .accordion-body img {
         margin-top: 1rem;
-        /* Adds space between content and image */
         max-width: 100%;
-        /* Makes the image responsive */
       }
 
-
+      .services-tab .accordion-item {
+        background: transparent !important; /* Ensure accordion item is transparent */
+        border: none; /* Remove any default borders */
+      }
 
       @media (max-width: 767px) {
         .services {
@@ -731,6 +736,7 @@
         }
       }
     </style>
+
     <div class="container">
       <div class="d-flex flex-column gap-5 gap-xl-10">
         <div class="row gap-7 gap-xl-0">
@@ -769,7 +775,7 @@
                 </button>
               </h6>
               <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
+                <div class="accordion-body pt-0 fs-5">
                   <p>Professional product/service images for branding. Captures the essence of the brand or campaign,
                     ideal for advertising materials.</p>
                   <ul class="fs-5">
@@ -792,8 +798,8 @@
                 </button>
               </h6>
               <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Food & Restro Shoot</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Food & Restro Shoot</h5>
                   <p>High-definition shots showcasing food & beverages. Creative styling and props enhance the visual
                     appeal, great for menus and ads.</p>
                   <ul class="fs-5">
@@ -818,8 +824,8 @@
                 </button>
               </h6>
               <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Product Photography</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Product Photography</h5>
                   <p>Studio, e-commerce, and fashion product photography to enhance your brand's appeal and showcase
                     your products in their best light.</p>
                   <ul class="fs-5">
@@ -843,8 +849,8 @@
                 </button>
               </h6>
               <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Interior Photography</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Interior Photography</h5>
                   <p>Highlights architecture, rooms, and design features. Perfect for real estate, hotels, and interior
                     design projects.</p>
                   <ul class="fs-5">
@@ -868,8 +874,8 @@
                 </button>
               </h6>
               <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Model Portfolio Shoots</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Model Portfolio Shoots</h5>
                   <p>Build a diverse, professional model portfolio that showcases expressions, poses, and unique looks.
                   </p>
                   <ul class="fs-5">
@@ -893,8 +899,8 @@
                 </button>
               </h6>
               <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Content Creators Shoot</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Content Creators Shoot</h5>
                   <p>Professional shoots for Instagram, YouTube, podcasting, and short-form video content creation.</p>
                   <ul class="fs-5">
                     <li><span class="bullet-arrow">→</span> Instagram Creator Shoots.</li>
@@ -917,8 +923,8 @@
                 </button>
               </h6>
               <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Industrial Shoot</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Industrial Shoot</h5>
                   <p>Comprehensive industrial photography for factories, warehouses, machinery, and more.</p>
                   <ul class="fs-5">
                     <li><span class="bullet-arrow">→</span> Inquiry & Slot Booking.</li>
@@ -941,8 +947,8 @@
                 </button>
               </h6>
               <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
-                <div class="accordion-body pt-0 fs-5 text-dark">
-                  <h5 class="text-primary">Music & Singing Shoot</h5>
+                <div class="accordion-body pt-0 fs-5">
+                  <h5>Music & Singing Shoot</h5>
                   <p>Dynamic shots of musicians and singers with creative lighting and energy.</p>
                   <ul class="fs-5">
                     <li><span class="bullet-arrow">→</span> Captures dynamic shots of musicians and singers.</li>
@@ -960,7 +966,7 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
 
   <!--  Why choose us Section -->
   <section class="why-choose-us py-5 py-lg-11 py-xl-12">
