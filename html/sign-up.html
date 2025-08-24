@@ -12,9 +12,12 @@
   <style>
     /* Set a fixed size for the Google and GitHub icons */
     .sign-in .btn img {
-      width: 24px; /* Fixed size for the icons */
-      height: auto; /* Maintain aspect ratio */
-      margin-right: 10px; /* Space between text and icon */
+      width: 24px;
+      /* Fixed size for the icons */
+      height: auto;
+      /* Maintain aspect ratio */
+      margin-right: 10px;
+      /* Space between text and icon */
     }
 
     /* Add space between buttons */
@@ -22,15 +25,35 @@
       gap: 1rem;
     }
 
-    /* Button text adjustments */
     .sign-in .btn {
       font-size: 1.2rem;
       padding: 0.75rem 1.5rem;
       text-align: center;
+      white-space: nowrap;
+      /* ❗ Prevent text from wrapping */
+      overflow: hidden;
+      /* Optional: prevent content spill */
+      text-overflow: ellipsis;
+      /* Optional: shows ... if text overflows */
+      display: inline-flex;
+      /* Ensures icon and text align horizontally */
+      align-items: center;
+      /* Vertically center content */
+      justify-content: center;
+      /* Center content horizontally */
+      gap: 10px;
+      /* Space between icon and text */
     }
 
-    /* Styling for logo and shadow effect */
+
+    /* ✅ Responsive Logo Styling with vw */
     .sign-in .img-fluid {
+      width: 20vw;
+      /* Responsive scaling */
+      min-width: 140px;
+      /* Keeps it visible on small screens */
+      max-width: 260px;
+      /* Prevents it from being too large */
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       padding: 10px;
@@ -42,15 +65,17 @@
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     }
 
-    /* Add padding to the logo */
     .sign-in .logo-container {
       padding: 20px;
+      text-align: center;
     }
+
 
     /* Adjusting the layout for smaller screens */
     @media (max-width: 768px) {
       .sign-in .btn {
-        font-size: 1rem; /* Smaller buttons for smaller screens */
+        font-size: 1rem;
+        /* Smaller buttons for smaller screens */
         padding: 0.75rem;
       }
 
@@ -69,7 +94,8 @@
   <div class="page-wrapper overflow-hidden">
 
     <!-- Get in touch Section -->
-    <section class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
+    <section
+      class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
       <div class="container py-3">
         <div class="sign-in card mx-auto shadow-lg">
           <div class="card-body py-8 px-lg-5">
@@ -79,12 +105,14 @@
             </a>
             <div class="hstack gap-3">
               <!-- Google Sign Up Button -->
-              <a href="javascript:void(0)" class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
+              <a href="javascript:void(0)"
+                class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
                 Sign Up
                 <img src="../assets/images/svgs/icon-google.svg" alt="google">
               </a>
               <!-- GitHub Sign Up Button -->
-              <a href="javascript:void(0)" class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
+              <a href="javascript:void(0)"
+                class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">
                 Sign Up
                 <img src="../assets/images/svgs/icon-github.svg" alt="github">
               </a>
@@ -100,7 +128,8 @@
                 <input type="text" id="disabledTextInput" class="form-control border-bottom" placeholder="Name">
               </div>
               <div>
-                <input type="email" class="form-control border-bottom" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+                <input type="email" class="form-control border-bottom" id="exampleInputEmail1" placeholder="Email"
+                  aria-describedby="emailHelp">
               </div>
               <div>
                 <input type="password" class="form-control border-bottom" id="inputPassword" placeholder="Password">
@@ -111,8 +140,11 @@
               </a>
             </form>
             <!-- Terms and Privacy -->
-            <p class="text-center mb-1 d-block fw-medium">By creating an account, you agree with our <a class="text-dark" href="privacy-policy.html">Privacy</a> and <a class="text-dark" href="privacy-policy.html">Policy</a>.</p>
-            <p class="mb-0 fw-medium text-center">Already have an account? <a class="text-dark" href="sign-in.html">Sign In</a></p>
+            <p class="text-center mb-1 d-block fw-medium">By creating an account, you agree with our <a
+                class="text-dark" href="privacy-policy.html">Privacy</a> and <a class="text-dark"
+                href="privacy-policy.html">Policy</a>.</p>
+            <p class="mb-0 fw-medium text-center">Already have an account? <a class="text-dark" href="sign-in.html">Sign
+                In</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +153,8 @@
   </div>
 
   <div class="get-template hstack gap-2">
-    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0" id="scrollToTopBtn">
+    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
+      id="scrollToTopBtn">
       <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
     </button>
   </div>
