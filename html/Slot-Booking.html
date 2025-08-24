@@ -289,6 +289,15 @@
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     }
 
+    .calendar-day.disabled {
+      color: #999;
+      background-color: #f0f0f0;
+      pointer-events: none;
+      /* disables click events */
+      opacity: 0.5;
+    }
+
+
     /* Time Slots Styling */
     .time-slots-container {
       flex: 1;
@@ -735,12 +744,12 @@
                 data-aos-duration="1000">
                 <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
                 <p class="mb-0 text-white fs-5 text-opacity-70">Excited to <span class="text-primary">begin something
-                    amazing?</span>Get in touch—we'd love to connect with you!</p>
+                    amazing?</span>Get in touch, we'd love to connect with you!</p>
               </div>
             </div>
           </div>
           <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <h1 class="mb-0 fs-16 text-white lh-1">Blog</h1>
+            <h1 class="mb-0 fs-16 text-white lh-1">Slot Booking</h1>
             <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
               <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
                 <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
@@ -760,7 +769,7 @@
     <!-- Slot Booking Section -->
     <section class="slot-booking-section">
       <div class="slot-booking-container" data-aos="fade-up">
-        <h2>Book Your Creative Session</h2>
+        <h2 class="mb-0 fw-normal">Book Your Creative Session</h2>
         <form id="slot-booking-form">
           <!-- Basic Client Details -->
           <div class="form-section">
@@ -1162,6 +1171,9 @@
         monthYear.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
         calendarGrid.innerHTML = '';
 
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Normalize to midnight for accurate comparison
+
         // Add empty cells before first day
         for (let i = 0; i < firstDay; i++) {
           const emptyDay = document.createElement('div');
@@ -1172,15 +1184,25 @@
         // Add days
         for (let i = 1; i <= lastDate; i++) {
           const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+          const dayDate = new Date(year, month, i);
+          dayDate.setHours(0, 0, 0, 0);
+
           const day = document.createElement('div');
           day.textContent = i;
           day.classList.add('calendar-day');
-          if (bookedDates.includes(dateStr)) {
+
+          // Disable past dates
+          if (dayDate < today) {
+            day.classList.add('disabled');  // Add disabled style class
+            day.style.cursor = 'not-allowed';  // Optional: show disabled cursor
+          } else if (bookedDates.includes(dateStr)) {
             day.classList.add('booked');
+            day.style.cursor = 'not-allowed'; // booked dates also not selectable
           } else {
             day.classList.add('available');
             day.addEventListener('click', () => selectDate(dateStr, day));
           }
+
           calendarGrid.appendChild(day);
         }
       }
@@ -1195,8 +1217,46 @@
 
       function updateTimeSlots(dateStr) {
         timeSlotsContainer.innerHTML = '';
+
+        // Helper to parse time like '9AM' or '1PM' into 24h number (e.g. 9, 13)
+        function parseHour(timeStr) {
+          let [hourPart, meridian] = timeStr.match(/(\d+)(AM|PM)/i).slice(1);
+          let hour = parseInt(hourPart, 10);
+          if (meridian.toUpperCase() === 'PM' && hour !== 12) hour += 12;
+          if (meridian.toUpperCase() === 'AM' && hour === 12) hour = 0;
+          return hour;
+        }
+
+        // Check if the date is today
+        const today = new Date();
+        const selectedDateObj = new Date(dateStr);
+        today.setHours(0, 0, 0, 0);
+        selectedDateObj.setHours(0, 0, 0, 0);
+
+        // Current hour in 24h format
+        const currentHour = new Date().getHours();
+
+        // Get available slots or fallback slots
         const availableSlots = timeSlots[dateStr] || ['9AM–12PM', '1PM–4PM', '5PM–8PM', 'Custom'];
-        availableSlots.forEach(slot => {
+
+        // Filter slots if date is today based on current time
+        const filteredSlots = availableSlots.filter(slot => {
+          if (slot.toLowerCase() === 'custom') return true; // always show custom slot
+
+          // Parse slot times: e.g. '9AM–12PM'
+          const [startStr, endStr] = slot.split('–');
+          const startHour = parseHour(startStr);
+          const endHour = parseHour(endStr);
+
+          if (selectedDateObj.getTime() === today.getTime()) {
+            // For today, show only slots where endHour is later than currentHour
+            return endHour > currentHour;
+          }
+          // For future dates, show all slots
+          return true;
+        });
+
+        filteredSlots.forEach(slot => {
           const slotElement = document.createElement('div');
           slotElement.textContent = slot;
           slotElement.classList.add('time-slot');
@@ -1208,6 +1268,7 @@
           timeSlotsContainer.appendChild(slotElement);
         });
       }
+
 
       prevMonth.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
