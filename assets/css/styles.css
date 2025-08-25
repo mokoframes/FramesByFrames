@@ -896,6 +896,7 @@ progress {
   width: 80vw; /* Default: very small phones */
   height: auto;
   max-width: 100%; /* Don’t let image grow beyond its natural size */
+  margin-right: 0; /* no margin by default */
 }
 
 /* Small devices (≥576px) */
@@ -916,6 +917,7 @@ progress {
 @media (min-width: 992px) {
   .img-fluid-service {
     width: 30vw;
+    margin-right: 20px; /* add some right margin for breathing room */
   }
 }
 
@@ -923,8 +925,10 @@ progress {
 @media (min-width: 1200px) {
   .img-fluid-service {
     width: 25vw;
+    margin-right: 30px; /* slightly bigger margin for wider screens */
   }
 }
+
 
 .img-thumbnail {
   padding: 0.25rem;
