@@ -814,7 +814,7 @@ progress {
 }
 
 .img-fluid-about {
-  width: 30vw; /* Default: very small phones */
+ width: 70vw;       /* Default: very small phones */
   height: auto;
   max-width: 100%; /* Prevent image from exceeding natural size */
 }
