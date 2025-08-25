@@ -20096,6 +20096,12 @@ a:hover {
   color: var(--bs-primary) !important;
 }
 
+.footer-menu a.active {
+  color: var(--bs-primary) !important;  /* Use a color different from .text-white */
+  text-decoration: underline; /* Optional */
+}
+
+
 ul {
   list-style: none;
   padding-left: 0;
