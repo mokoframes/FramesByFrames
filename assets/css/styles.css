@@ -774,7 +774,7 @@ progress {
 }
 
 .img-fluid-logo {
-  width: 35vw;       /* Default: very small screens, slightly bigger */
+  width: 35vw; /* Default: very small screens, slightly bigger */
   height: auto;
   max-width: 100%;
 }
@@ -796,14 +796,14 @@ progress {
 /* Large devices (≥992px) */
 @media (min-width: 992px) {
   .img-fluid-logo {
-    width: 14vw;    /* Reduced a lot here */
+    width: 14vw; /* Reduced a lot here */
   }
 }
 
 /* Extra large devices (≥1200px) */
 @media (min-width: 1200px) {
   .img-fluid-logo {
-    width: 12vw;    /* Even smaller on xl screens */
+    width: 12vw; /* Even smaller on xl screens */
   }
 }
 
@@ -814,7 +814,7 @@ progress {
 }
 
 .img-fluid-about {
- width: 70vw;       /* Default: very small phones */
+  width: 70vw; /* Default: very small phones */
   height: auto;
   max-width: 100%; /* Prevent image from exceeding natural size */
 }
@@ -928,7 +928,6 @@ progress {
     margin-right: 30px; /* slightly bigger margin for wider screens */
   }
 }
-
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -4377,7 +4376,6 @@ fieldset:disabled .btn {
     transition: none;
   }
 }
-
 
 .dropup,
 .dropend,
@@ -20068,6 +20066,7 @@ fieldset:disabled .btn {
   transition: all 0.5s ease-in-out;
 }
 
+/* Default styles for mobile and smaller screens */
 .services-tab .nav-tabs .nav-item .nav-link {
   color: var(--bs-white);
 }
@@ -20075,6 +20074,30 @@ fieldset:disabled .btn {
 .services-tab .nav-tabs .nav-item .nav-link.active {
   background-color: transparent;
   color: var(--bs-primary);
+}
+
+/* Mobile and smaller screens will use the styles above */
+
+/* For screens larger than or equal to 1024px (larger devices like desktop) */
+@media (min-width: 1024px) {
+  .services-tab .nav-tabs .nav-item .nav-link {
+    color: var(--bs-white);
+    margin-left: 3.5vw; /* For larger screens, with margin */
+  }
+
+  .services-tab .nav-tabs .nav-item .nav-link.active {
+    background-color: transparent;
+    color: var(--bs-primary);
+  }
+
+  .services-tab .nav-tabs .nav-item .nav-link:hover {
+    background-color: transparent;
+    color: var(--bs-primary);
+  }
+
+  .innerbtn {
+    margin-left: 3.5vw; /* Margin for innerbtn for larger screens */
+  }
 }
 
 .sign-in {
@@ -20101,10 +20124,11 @@ a:hover {
 }
 
 .footer-menu a.active {
-  color: var(--bs-primary) !important;  /* Use a color different from .text-white */
+  color: var(
+    --bs-primary
+  ) !important; /* Use a color different from .text-white */
   text-decoration: underline; /* Optional */
 }
-
 
 ul {
   list-style: none;

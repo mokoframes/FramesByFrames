@@ -644,6 +644,27 @@
           background-image: url('../assets/images/services/service-bg-5.jpg');
         }
       }
+
+      /* Default icon size for larger screens (PC, tablets, etc.) */
+      .icon-img {
+        width: 10vw;
+        /* Icon size in viewport width for larger screens */
+        height: auto;
+        margin-right: 0.2vw;
+        /* Space between the icon and the text in viewport width */
+        vertical-align: middle;
+        /* Align the icon vertically with the text */
+      }
+
+      /* Responsive icon size for smaller screens (mobile, tablets) */
+      @media (max-width: 768px) {
+        .icon-img {
+          width: 17vw;
+          /* Icon size in viewport width for smaller screens */
+          margin-right: 0.2vw;
+          /* Adjust space between the icon and the text in viewport width */
+        }
+      }
     </style>
     <div class="container">
       <div class="d-flex flex-column gap-5 gap-xl-10">
@@ -659,7 +680,7 @@
           </div>
           <div class="col-xl-8 col-xxl-7">
             <div class="row">
-              <div class="col-xxl-8">
+              <div class="col-xxl-12">
                 <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                   <h2 class="mb-0 text-white">How We Work</h2>
                   <p class="fs-5 mb-0 text-white text-opacity-70">Our process is simple yet effective — from booking
@@ -671,7 +692,9 @@
         </div>
         <div class="services-tab">
           <div class="row gap-5 gap-xl-0">
-            <div class="col-xl-4">
+
+            <!-- Removed images from this section -->
+            <!-- <div class="col-xl-4">
               <div class="tab-content" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
                 <div class="tab-pane active" id="one" role="tabpanel" aria-labelledby="one-tab" tabindex="0">
                   <img src="../assets/images/services/service-1.jpg" alt="services" class="img-fluid-service">
@@ -695,8 +718,9 @@
                   <img src="../assets/images/services/service-7.jpg" alt="services" class="img-fluid-service">
                 </div>
               </div>
-            </div>
-            <div class="col-xl-8">
+            </div> -->
+
+            <div class="col-xl-12">
               <div class="d-flex flex-column gap-5">
                 <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200"
                   data-aos-duration="1000">
@@ -707,14 +731,13 @@
                       <div class="col-lg-6 col-xxl-5">
                         <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
                           id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
-                          aria-controls="one" aria-selected="true">Inquiry & Slot Booking</button>
+                          aria-controls="one" aria-selected="true">
+                          <img src="../assets/images/Icons/icon1_slot.png" alt="icon" class="icon-img"> Inquiry & Slot
+                          Booking
+                        </button>
                       </div>
-
-
                       <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Choose your service and confirm date.
-                        </p>
+                        <p class="text-white text-opacity-70 mb-0">Choose your service and confirm date.</p>
                       </div>
                     </div>
                   </li>
@@ -725,11 +748,13 @@
                       <div class="col-lg-6 col-xxl-5">
                         <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="two-tab"
                           data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two"
-                          aria-selected="false">Concept & Planning</button>
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon2_plan.png" alt="icon" class="icon-img"> Concept &
+                          Planning
+                        </button>
                       </div>
                       <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Shoot concepts, wardrobe, styling & brief discussion.
+                        <p class="text-white text-opacity-70 mb-0">Shoot concepts, wardrobe, styling & brief discussion.
                         </p>
                       </div>
                     </div>
@@ -741,11 +766,13 @@
                       <div class="col-lg-6 col-xxl-5">
                         <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="three-tab"
                           data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="three"
-                          aria-selected="false">On-Site Shoot</button>
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon3_onSiteShoot.png" alt="icon" class="icon-img"> On-Site
+                          Shoot
+                        </button>
                       </div>
                       <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Professional photography at your office/studio/event.
+                        <p class="text-white text-opacity-70 mb-0">Professional photography at your office/studio/event.
                         </p>
                       </div>
                     </div>
@@ -757,12 +784,13 @@
                       <div class="col-lg-6 col-xxl-5">
                         <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="four-tab"
                           data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four"
-                          aria-selected="false">Editing & Retouching</button>
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon4_editing.png" alt="icon" class="icon-img"> Editing &
+                          Retouching
+                        </button>
                       </div>
                       <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          High-end post-production for polished results.
-                        </p>
+                        <p class="text-white text-opacity-70 mb-0">High-end post-production for polished results.</p>
                       </div>
                     </div>
                   </li>
@@ -773,22 +801,23 @@
                       <div class="col-lg-6 col-xxl-5">
                         <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="five-tab"
                           data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five"
-                          aria-selected="false">Delivery</button>
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon5_delivery.png" alt="icon" class="icon-img"> Delivery
+                        </button>
                       </div>
                       <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Final images delivered digitally & on time.
-                        </p>
+                        <p class="text-white text-opacity-70 mb-0">Final images delivered digitally & on time.</p>
                       </div>
                     </div>
                   </li>
+                </ul>
 
-                  <a href="our-work.html" class="btn border border-white border-opacity-25" data-aos="fade-up"
-                    data-aos-delay="300" data-aos-duration="1000">
-                    <span class="btn-text">See our Work</span>
-                    <iconify-icon icon="lucide:arrow-up-right"
-                      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                  </a>
+                <a href="our-work.html" class="innerbtn btn border border-white border-opacity-25" data-aos="fade-up"
+                  data-aos-delay="300" data-aos-duration="1000">
+                  <span class="btn-text">See Other Works</span>
+                  <iconify-icon icon="lucide:arrow-up-right"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                </a>
               </div>
             </div>
           </div>
