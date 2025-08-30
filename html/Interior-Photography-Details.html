@@ -667,7 +667,6 @@
           /* Adjust space between the icon and the text in viewport width */
         }
       }
-      
     </style>
     <div class="container">
       <div class="d-flex flex-column gap-5 gap-xl-10">
@@ -832,6 +831,24 @@
   <!--  Pricing Section -->
 
   <section id="pricing4-ip" class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <style>
+      /* Badge styling for Most Popular */
+      .badge-top-right {
+        position: absolute;
+        top: 10px;
+        /* Adjust position from the top */
+        right: 10px;
+        /* Adjust position from the right */
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        background-color: #f1a7c5;
+        /* Soft color for attractiveness */
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+    </style>
     <div class="container">
       <div class="d-flex flex-column gap-5 gap-xl-10">
         <div class="d-flex flex-column gap-5 gap-xl-11">
@@ -927,7 +944,12 @@
 
             <!-- Signature Package -->
             <div class="col-lg-6 col-xl-4 mb-7 mb-xl-0 d-flex align-items-stretch">
-              <div class="card w-100" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+              <div class="card w-100 position-relative" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="1000">
+                <!-- Most Popular Badge -->
+                <span class="badge text-bg-dark hstack gap-2 badge-top-right">
+                  <iconify-icon icon="lucide:flame" class="fs-5"></iconify-icon> Most Popular
+                </span>
                 <div class="card-body p-7 p-xxl-5 d-flex flex-column gap-8">
                   <!-- Title and Description -->
                   <div class="d-flex flex-column gap-3">
