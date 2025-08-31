@@ -473,6 +473,139 @@
         border-color: darkgreen;
         text-decoration: none;
       }
+
+      .carousel-nav-btn {
+        top: 35%;
+        transform: translateY(-50%);
+        border: 1.5px solid rgba(0, 0, 0, 0.1);
+        /* soft light border */
+        border-radius: 50%;
+        width: 5vw;
+        /* responsive size */
+        max-width: 60px;
+        min-width: 40px;
+        height: 5vw;
+        max-height: 60px;
+        min-height: 40px;
+        background: linear-gradient(145deg, #a6ffcb, #32cd32);
+        /* green gradient matching dots */
+        color: #1f2a2e;
+        box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .carousel-nav-btn iconify-icon {
+        font-size: 3vw;
+        max-font-size: 28px;
+        min-font-size: 20px;
+        transition: transform 0.3s ease;
+        color: #1f2a2e;
+      }
+
+      .carousel-nav-btn:hover {
+        background: linear-gradient(145deg, #32cd32, #a6ffcb);
+        box-shadow: 0 6px 18px rgba(50, 205, 50, 0.7), inset 0 3px 7px rgba(255, 255, 255, 1);
+        transform: translateY(-50%) scale(1.1);
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .carousel-nav-btn:hover iconify-icon {
+        transform: scale(1.3);
+        color: #0a190a;
+      }
+
+      .custom-prev {
+        left: -0.1vw;
+        /* Adjust as needed */
+      }
+
+      .custom-next {
+        right: -0.1vw;
+        /* Adjust as needed */
+      }
+
+      @media (max-width: 768px) {
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 8vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 5vw;
+        }
+
+        .custom-prev {
+          left: -0.1vw;
+        }
+
+        .custom-next {
+          right: -0.1vw;
+        }
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 2vw;
+      }
+
+      .owl-dot {
+        display: inline-block;
+        margin: 0 1vw;
+        cursor: pointer;
+      }
+
+      .owl-dot span {
+        display: block;
+        width: 2.5vw;
+        max-width: 40px;
+        min-width: 20px;
+        height: 0.35vw;
+        max-height: 7px;
+        min-height: 5px;
+        background-color: #ddd;
+        border-radius: 2vw;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Active dot (line) with gradient, glow, and animation */
+      .owl-dot.active span {
+        background: linear-gradient(90deg, #a6ffcb, #32cd32);
+        /* green gradient */
+        border-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        transform: scaleX(1.5);
+        animation: pulseActive 2.5s ease-in-out infinite;
+      }
+
+      /* Hover effect */
+      .owl-dot:hover span {
+        background-color: #c1ff72;
+        transform: scaleX(1.3);
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 6px rgba(193, 255, 114, 0.5);
+      }
+
+      /* Pulse animation for active dot */
+      @keyframes pulseActive {
+
+        0%,
+        100% {
+          transform: scaleX(1.5);
+          box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        50% {
+          transform: scaleX(1.6);
+          box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), inset 0 2px 8px rgba(255, 255, 255, 1);
+        }
+      }
     </style>
     <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="container">
@@ -499,7 +632,17 @@
           </div>
         </div>
       </div>
-      <div class="featured-projects-slider px-3">
+      <div class="featured-projects-slider px-3 position-relative">
+
+        <!-- 🚀 Custom navigation arrows -->
+        <button class="custom-prev carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-left" class="fs-3"></iconify-icon>
+        </button>
+        <button class="custom-next carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-right" class="fs-3"></iconify-icon>
+        </button>
+
+        <!-- 🖼️ Owl Carousel container -->
         <div class="owl-carousel owl-theme">
           <!-- item-1  -->
           <div class="item">
@@ -685,11 +828,13 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
+  <!-- What we offer section  -->
   <section class="services py-5 py-lg-11 py-xl-12" id="services">
     <style>
       .services {
