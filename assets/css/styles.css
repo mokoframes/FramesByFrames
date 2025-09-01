@@ -773,6 +773,21 @@ progress {
   height: auto;
 }
 
+.img-fluid-home {
+ width: 18vw;
+  height: auto;
+  box-shadow: 0 0.42vw 1.05vw rgba(0, 0, 0, 0.3);/* subtle, professional shadow */
+  border-radius: 0.6vw; /* optional: makes edges smooth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* optional: smooth hover effect */
+  margin-left: 1.5vw;
+  cursor: pointer;
+}
+
+.img-fluid-home:hover {
+    transform: scale(1.02); /* Scales image up slightly */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
 .img-fluid-logo {
   width: 35vw; /* Default: very small screens, slightly bigger */
   height: auto;
