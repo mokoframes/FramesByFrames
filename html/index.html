@@ -474,43 +474,48 @@
         text-decoration: none;
       }
 
-.carousel-nav-btn {
-  top: 30%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: none;
-  border-radius: 0.8vw;
-  width: 4vw;       /* bigger button */
-  height: 8vw;     /* taller button */
-  box-shadow: 0 0.17vw 1vw rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
+      .carousel-nav-btn {
+        top: 30%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: none;
+        border-radius: 0.8vw;
+        width: 4vw;
+        /* bigger button */
+        height: 8vw;
+        /* taller button */
+        box-shadow: 0 0.17vw 1vw rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
 
-.carousel-nav-btn iconify-icon {
-  font-size: 12vw;           /* bigger icon */
-  color: #fff;               /* bright white */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* strong shadow */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+      .carousel-nav-btn iconify-icon {
+        font-size: 12vw;
+        /* bigger icon */
+        color: #fff;
+        /* bright white */
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        /* strong shadow */
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
 
-.carousel-nav-btn:hover {
-  transform: translateY(-50%) scale(1.15);
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0.67vw 2.33vw rgba(0, 0, 0, 0.5);
-}
+      .carousel-nav-btn:hover {
+        transform: translateY(-50%) scale(1.15);
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.67vw 2.33vw rgba(0, 0, 0, 0.5);
+      }
 
-.carousel-nav-btn:hover iconify-icon {
-  transform: scale(1.2);
-  color: #fff;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 1);
-}
+      .carousel-nav-btn:hover iconify-icon {
+        transform: scale(1.2);
+        color: #fff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+      }
 
       .custom-prev {
         left: 1.5vw;
@@ -524,6 +529,7 @@
 
       @media (max-width: 768px) {
         .carousel-nav-btn {
+          top: 35%;
           width: 8vw;
           height: 8vw;
         }
@@ -539,14 +545,16 @@
         .custom-next {
           right: 5vw;
         }
-          .carousel-nav-btn {
-    width: 8vw;
-    height: 22vw;
-  }
 
-  .carousel-nav-btn iconify-icon {
-    font-size: 16vw; /* even bigger on mobile */
-  }
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 22vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 16vw;
+          /* even bigger on mobile */
+        }
       }
 
       .owl-dots {
@@ -577,7 +585,7 @@
 
       /* Active dot (line) with gradient, glow, and animation */
       .owl-dot.active span {
-        background: linear-gradient(90deg, #a6ffcb, #32cd32);
+        background: #c1ff76;
         /* green gradient */
         border-color: rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
