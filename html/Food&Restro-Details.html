@@ -215,7 +215,7 @@
   <div class="page-wrapper overflow-hidden">
     <!-- Banner Section -->
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/backgrounds/commercial-banner.jpg); background-size: cover; background-position: center;">
+      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/Food\ &\ Restro\ Photograpohy\ \(webp\)/11.webp); background-size: cover; background-position: center;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
@@ -223,9 +223,9 @@
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
                 <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-80">Elevate your brand with <span
-                    class="text-primary fw-bold">professional commercial photography</span> that captures the essence of
-                  your business.</p>
+                <p class="mb-0 text-white fs-5 text-opacity-80">Elevate your presence with <span
+                    class="text-primary fw-bold">professional food and restaurant photography</span> that brings flavors
+                  to life and showcases the true essence of your dining experience.</p>
               </div>
             </div>
           </div>
@@ -247,10 +247,12 @@
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!--  Stats & Facts Section -->
+    <!-- Stats & Facts Section for Product Photography -->
     <section class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
+
+          <!-- Left Column -->
           <div class="col-xl-4 col-xxl-4">
             <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
               data-aos-duration="1000">
@@ -259,24 +261,34 @@
               <hr class="border-line">
               <span class="badge text-bg-dark">Introduction</span>
             </div>
+
+            <!-- ✅ Image below the 'Introduction' heading, visible only on large screens -->
+            <div class="mt-4 d-none d-lg-block w-70 ms-5" data-aos="fade-right" data-aos-delay="200"
+              data-aos-duration="1000">
+              <img src="../assets/images/Food & Restro Photograpohy (webp)/7.webp"
+                alt="Product Photography Introduction" class="img-fluid-home w-100">
+            </div>
           </div>
+
+          <!-- Right Column -->
           <div class="col-xl-8 col-xxl-7">
             <div class="d-flex flex-column gap-9">
               <div class="row">
-                <div class="col-xxl-12">
+                <div class="col-xl-10 offset-xl-1 col-xxl-10 offset-xxl-1">
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">About Food & Restro Shoot</h2>
                     <p class="fs-5 mb-0">Food and restaurant photography is about making dishes look irresistible and
                       spaces feel inviting. It captures the essence of your culinary creations, ambience, and dining
                       experience in a visually appealing way. From beautifully plated meals to cozy interiors and action
-                      shots of chefs at work, it helps tell the story behind your restaurant or food brand. At MOKO, we
-                      focus on capturing high-quality, mouth-watering visuals that are perfect for menus, websites,
-                      social media, delivery platforms, and marketing campaigns.</p>
+                      shots of chefs at work, it helps tell the story behind your restaurant or food brand.</p>
+                    <p class="fs-5 mb-0">At MOKO, we focus on capturing high-quality, mouth-watering visuals that are
+                      perfect for menus, websites, social media, delivery platforms, and marketing campaigns.</p>
                   </div>
                 </div>
               </div>
 
+              <!-- CTA Button -->
               <a href="food&restro-projects.html" class="btn" data-aos="fade-up" data-aos-delay="500"
                 data-aos-duration="1000">
                 <span class="btn-text">See Our Work</span>
@@ -285,13 +297,15 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
+
+      <!-- Background Image -->
       <div class="position-absolute bottom-0 start-0" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
         <img src="../assets/images/backgrounds/stats-facts-bg.svg" alt="" class="img-fluid">
       </div>
     </section>
-
 
     <section class="about-img">
       <div class="marquee w-100 d-flex align-items-center overflow-hidden bg-primary py-4">
@@ -381,8 +395,139 @@
   </div>
   </section>
 
-  <!--  Featured Projects Section -->
+  <!-- Featured Projects Section -->
   <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <style>
+      .carousel-nav-btn {
+        top: 30%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: none;
+        border-radius: 0.8vw;
+        width: 4vw;
+        height: 8vw;
+        box-shadow: 0 0.17vw 1vw rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .carousel-nav-btn iconify-icon {
+        font-size: 12vw;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .carousel-nav-btn:hover {
+        transform: translateY(-50%) scale(1.15);
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.67vw 2.33vw rgba(0, 0, 0, 0.5);
+      }
+
+      .carousel-nav-btn:hover iconify-icon {
+        transform: scale(1.2);
+        color: #fff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+      }
+
+      .custom-prev {
+        left: 1.5vw;
+      }
+
+      .custom-next {
+        right: 1.5vw;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-nav-btn {
+          top: 35%;
+          width: 8vw;
+          height: 8vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 5vw;
+        }
+
+        .custom-prev {
+          left: 5vw;
+        }
+
+        .custom-next {
+          right: 5vw;
+        }
+
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 22vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 16vw;
+        }
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 2vw;
+      }
+
+      .owl-dot {
+        display: inline-block;
+        margin: 0 1vw;
+        cursor: pointer;
+      }
+
+      .owl-dot span {
+        display: block;
+        width: 2.5vw;
+        max-width: 40px;
+        min-width: 20px;
+        height: 0.35vw;
+        max-height: 7px;
+        min-height: 5px;
+        background-color: #ddd;
+        border-radius: 2vw;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .owl-dot.active span {
+        background: #c1ff76;
+        border-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        transform: scaleX(1.5);
+        animation: pulseActive 2.5s ease-in-out infinite;
+      }
+
+      .owl-dot:hover span {
+        background-color: #c1ff72;
+        transform: scaleX(1.3);
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 6px rgba(193, 255, 114, 0.5);
+      }
+
+      @keyframes pulseActive {
+
+        0%,
+        100% {
+          transform: scaleX(1.5);
+          box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        50% {
+          transform: scaleX(1.6);
+          box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), inset 0 2px 8px rgba(255, 255, 255, 1);
+        }
+      }
+    </style>
     <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
@@ -410,216 +555,135 @@
         </div>
       </div>
 
-      <div class="featured-projects-slider px-3">
+      <div class="featured-projects-slider px-3 position-relative">
+        <!-- Custom navigation arrows -->
+        <button class="custom-prev carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-left" class="fs-3"></iconify-icon>
+        </button>
+        <button class="custom-next carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-right" class="fs-3"></iconify-icon>
+        </button>
+
+        <!-- Owl Carousel container -->
         <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-1.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/food-photo.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Food Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">UX Strategy</span> -->
-                  <!-- <span class="badge text-dark border">UI Design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-2.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/ambience.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Restaurant ambiance Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/food.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Food Styling & Plating</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">UI/UX design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/beverages.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Beverage Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/chef.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Chef & Kitchen Storytelling</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Brand identity</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/menu.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Menu & Catalog Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/influencer.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Influencer Collaboration Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/food-festival.webp" alt=""
+                  class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Event Coverage(Food Festivals)</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/advertising.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Advertisement & Commercial</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-6.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Food & Restro Photograpohy (webp)/story.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Indoor Studio Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
@@ -628,180 +692,194 @@
     </div>
   </section>
 
-  <section class="services py-5 py-lg-11 py-xl-12" id="services">
-    <style>
+  <!-- How we work section -->
+<section class="services py-5 py-lg-11 py-xl-12" id="services">
+  <style>
+    .services {
+      background-image: url('../assets/images/services/service-bg-3.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+
+    @media (max-width: 767px) {
       .services {
-        background-image: url('../assets/images/services/service-bg-2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        /* Ensures the section covers the full viewport height */
+        background-image: url('../assets/images/services/service-bg-6.webp');
       }
+    }
 
-      @media (max-width: 767px) {
-        .services {
-          background-image: url('../assets/images/services/service-bg-5.jpg');
-        }
+    /* Icon size styling */
+    .icon-img {
+      width: 5vw;
+      height: auto;
+      margin-right: 2vw;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .icon-img {
+        width: 12vw;
+        margin-right: 5vw;
       }
-    </style>
-    <div class="container">
-      <div class="d-flex flex-column gap-5 gap-xl-10">
-        <div class="row gap-7 gap-xl-0">
-          <div class="col-xl-4 col-xxl-4">
-            <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-              data-aos-duration="1000">
-              <span
-                class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
-              <hr class="border-line bg-white">
-              <span class="badge text-dark bg-white">Services</span>
-            </div>
-          </div>
-          <div class="col-xl-8 col-xxl-7">
-            <div class="row">
-              <div class="col-xxl-8">
-                <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                  <h2 class="mb-0 text-white">Our Key Services</h2>
-                  <p class="fs-5 mb-0 text-white text-opacity-70">Our process is simple yet effective — from booking
-                    your slot to final delivery, we ensure a seamless photography experience tailored to your needs.</p>
-                </div>
-              </div>
-            </div>
+    }
+  </style>
+
+  <div class="container">
+    <div class="d-flex flex-column gap-5 gap-xl-10">
+
+      <!-- Section Title Row -->
+      <div class="row gap-7 gap-xl-0">
+        <div class="col-xl-4 col-xxl-4">
+          <div class="d-flex align-items-center gap-7 py-2"
+            data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+            <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">
+              03
+            </span>
+            <hr class="border-line bg-white">
+            <span class="badge text-dark bg-white">Services</span>
           </div>
         </div>
-        <div class="services-tab">
-          <div class="row gap-5 gap-xl-0">
-            <div class="col-xl-4">
-              <div class="tab-content" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-                <div class="tab-pane active" id="one" role="tabpanel" aria-labelledby="one-tab" tabindex="0">
-                  <img src="../assets/images/services/service-1.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="two" role="tabpanel" aria-labelledby="two-tab" tabindex="0">
-                  <img src="../assets/images/services/service-2.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="three" role="tabpanel" aria-labelledby="three-tab" tabindex="0">
-                  <img src="../assets/images/services/service-3.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="four" role="tabpanel" aria-labelledby="four-tab" tabindex="0">
-                  <img src="../assets/images/services/service-4.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="five" role="tabpanel" aria-labelledby="five-tab" tabindex="0">
-                  <img src="../assets/images/services/service-5.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="six" role="tabpanel" aria-labelledby="six-tab" tabindex="0">
-                  <img src="../assets/images/services/service-6.jpg" alt="services" class="img-fluid-service">
-                </div>
-                <div class="tab-pane" id="seven" role="tabpanel" aria-labelledby="seven-tab" tabindex="0">
-                  <img src="../assets/images/services/service-7.jpg" alt="services" class="img-fluid-service">
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-8">
-              <div class="d-flex flex-column gap-5">
-                <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200"
-                  data-aos-duration="1000">
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
-                          id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
-                          aria-controls="one" aria-selected="true">Instagram Creator Shoots</button>
-                      </div>
+        <div class="col-xl-8 col-xxl-7">
+          <div class="d-flex flex-column gap-6"
+            data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <h2 class="mb-0 text-white">Our Key Services</h2>
+            <p class="fs-5 mb-0 text-white text-opacity-70">
+              Our process is simple yet effective — from booking your slot to final delivery, 
+              we ensure a seamless photography experience tailored to your needs.
+            </p>
+          </div>
+        </div>
+      </div>
 
+      <!-- Services Tabs -->
+      <div class="services-tab">
+        <div class="row gap-5 gap-xl-0">
+          <div class="col-xl-12">
+            <div class="d-flex flex-column gap-5">
 
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Lifestyle, Fashion, Travel, Food & daily content shoots tailored for instagram, facebook and
-                          tiktok.
-                          Reel-making support with trendy transitions, creative shots, and aesthetic compositions.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="two-tab"
-                          data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two"
-                          aria-selected="false">Youtube Video Production</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Complete Multi-cameras and proper lighting shoot setup for youtube creators (vlogs, tutorials,
-                          unboxings, reviews, documentries, educationals, etc.)
+              <!-- Nav Tabs -->
+              <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 
-                        </p>
-                      </div>
+                <!-- Instagram Creator Shoots -->
+                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
+                  <div class="row w-100 align-items-center gx-3">
+                    <div class="col-lg-6 col-xxl-5">
+                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
+                        id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button"
+                        role="tab" aria-controls="one" aria-selected="true">
+                        <img src="../assets/images/Icons/instagram.png" alt="icon" class="icon-img">
+                        Instagram Creator Shoots
+                      </button>
                     </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="three-tab"
-                          data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="three"
-                          aria-selected="false">Professional Podcast Shoots</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Audio-visual podcast production with professional mic, studio lighting, and multiple camera
-                          angles.
-                        </p>
-                      </div>
+                    <div class="col-lg-6 col-xxl-7">
+                      <p class="text-white text-opacity-70 mb-0">
+                        Lifestyle, Fashion, Travel, Food & daily content shoots tailored for 
+                        Instagram, Facebook and TikTok. Reel-making support with trendy transitions, 
+                        creative shots, and aesthetic compositions.
+                      </p>
                     </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="four-tab"
-                          data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four"
-                          aria-selected="false">Storytelling Concept Shoots</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Content designed around storytelling for personal branding, campaigns, or social initiatives
-                          and will take cinematic shots that resonate with audiences.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                    role="presentation">
-                    <div class="row w-100 align-items-center gx-3">
-                      <div class="col-lg-6 col-xxl-5">
-                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="five-tab"
-                          data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five"
-                          aria-selected="false">Short-Form Video Content</button>
-                      </div>
-                      <div class="col-lg-6 col-xxl-7">
-                        <p class="text-white text-opacity-70 mb-0">
-                          Quick, trendy, and engaging content creation optimized for instagram reels & youtube shorts.
-                        </p>
-                      </div>
-                    </div>
-                  </li>
+                  </div>
+                </li>
 
-                  <a href="projects.html" class="btn border border-white border-opacity-25" data-aos="fade-up"
-                    data-aos-delay="300" data-aos-duration="1000">
-                    <span class="btn-text">See our Work</span>
-                    <iconify-icon icon="lucide:arrow-up-right"
-                      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                  </a>
-              </div>
+                <!-- Youtube Video Production -->
+                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
+                  <div class="row w-100 align-items-center gx-3">
+                    <div class="col-lg-6 col-xxl-5">
+                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
+                        id="two-tab" data-bs-toggle="tab" data-bs-target="#two" type="button"
+                        role="tab" aria-controls="two" aria-selected="false">
+                        <img src="../assets/images/Icons/youtube.png" alt="icon" class="icon-img">
+                        Youtube Video Production
+                      </button>
+                    </div>
+                    <div class="col-lg-6 col-xxl-7">
+                      <p class="text-white text-opacity-70 mb-0">
+                        Complete multi-camera and professional lighting setup for YouTube creators — 
+                        vlogs, tutorials, unboxings, reviews, documentaries, and educational content.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Professional Podcast Shoots -->
+                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
+                  <div class="row w-100 align-items-center gx-3">
+                    <div class="col-lg-6 col-xxl-5">
+                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
+                        id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button"
+                        role="tab" aria-controls="three" aria-selected="false">
+                        <img src="../assets/images/Icons/podcast.png" alt="icon" class="icon-img">
+                        Professional Podcast Shoots
+                      </button>
+                    </div>
+                    <div class="col-lg-6 col-xxl-7">
+                      <p class="text-white text-opacity-70 mb-0">
+                        Audio-visual podcast production with professional microphones, studio lighting, 
+                        and multiple camera angles for a polished final output.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Storytelling Concept Shoots -->
+                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
+                  <div class="row w-100 align-items-center gx-3">
+                    <div class="col-lg-6 col-xxl-5">
+                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
+                        id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button"
+                        role="tab" aria-controls="four" aria-selected="false">
+                        <img src="../assets/images/Icons/storytelling.png" alt="icon" class="icon-img">
+                        Storytelling Concept Shoots
+                      </button>
+                    </div>
+                    <div class="col-lg-6 col-xxl-7">
+                      <p class="text-white text-opacity-70 mb-0">
+                        Content designed around storytelling for campaigns or social initiatives — 
+                        cinematic shots that emotionally resonate with audiences.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Short-Form Video Content -->
+                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
+                  <div class="row w-100 align-items-center gx-3">
+                    <div class="col-lg-6 col-xxl-5">
+                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
+                        id="five-tab" data-bs-toggle="tab" data-bs-target="#five" type="button"
+                        role="tab" aria-controls="five" aria-selected="false">
+                        <img src="../assets/images/Icons/shorts.png" alt="icon" class="icon-img">
+                        Short-Form Video Content
+                      </button>
+                    </div>
+                    <div class="col-lg-6 col-xxl-7">
+                      <p class="text-white text-opacity-70 mb-0">
+                        Quick, trendy, and engaging video content optimized for Instagram Reels 
+                        and YouTube Shorts.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- CTA Button -->
+              <a href="projects.html" class="innerbtn btn border border-white border-opacity-25"
+                data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <span class="btn-text">See Other Works</span>
+                <iconify-icon icon="lucide:arrow-up-right"
+                  class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm">
+                </iconify-icon>
+              </a>
+
             </div>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Pricing Section -->
   <section id="pricing4-ip" class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray">
@@ -865,7 +943,7 @@
 
             <!-- Button (Open in New Tab) -->
             <div class="mt-3">
-              <a href="../assets/images/pricing_pdf/Interior-Pricing-MOKO.pdf" class="btn btn-primary w-80 w-md-50"
+              <a href="../assets/images/pricing_pdf/templatepdf.pdf" class="btn btn-primary w-80 w-md-50"
                 target="_blank">
                 <span class="btn-text">Pricing Quotation</span>
                 <iconify-icon icon="lucide:arrow-up-right"
