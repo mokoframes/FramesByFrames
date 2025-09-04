@@ -263,8 +263,7 @@
             </div>
 
             <!-- ✅ Image below the 'Introduction' heading, visible only on large screens -->
-            <div class="mt-8 d-none d-lg-block" data-aos="fade-right" data-aos-delay="200"
-              data-aos-duration="1000">
+            <div class="mt-8 d-none d-lg-block" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
               <img src="../assets/images/Product Photography (webp)/product-about.webp"
                 alt="Product Photography Introduction" class="img-fluid-home w-100">
             </div>
@@ -416,8 +415,6 @@
         top: 30%;
         transform: translateY(-50%);
         background: rgba(0, 0, 0, 0.15);
-        background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
-        /* Fallback */
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
         border: none;
@@ -477,6 +474,15 @@
 
         .custom-next {
           right: 5vw;
+        }
+
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 22vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 16vw;
         }
       }
 
@@ -585,7 +591,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Studio Product Shots</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -597,7 +602,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Lifestyle Product Photography</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -609,7 +613,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">White Background Shots</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -621,7 +624,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">360° Product Photography</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -633,7 +635,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Macro & Close-up Shots</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -645,7 +646,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Packaging & Label Focus</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -657,7 +657,6 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">E-commerce Ready Images</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
@@ -669,285 +668,285 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Product Interaction Shots</h3>
-                <div class="hstack gap-2"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   </section>
 
-<!-- Our Services Section -->
-<section class="services py-5 py-lg-11 py-xl-12" id="services">
-<style>
-  .services {
-    position: relative;
-    background-image: url('../assets/images/services/service-bg-3.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    z-index: 1;
-  }
+  <!-- Our Services Section -->
+  <section class="services py-5 py-lg-11 py-xl-12" id="services">
+    <style>
+      .services {
+        position: relative;
+        background-image: url('../assets/images/services/service-bg-3.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        z-index: 1;
+      }
 
-  /* Overlay effect */
-  .services::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* dim background */
-    z-index: 2;
-  }
+      /* Overlay effect */
+      .services::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* dim background */
+        z-index: 2;
+      }
 
-  /* Make content above overlay */
-  .services > * {
-    position: relative;
-    z-index: 3;
-  }
+      /* Make content above overlay */
+      .services>* {
+        position: relative;
+        z-index: 3;
+      }
 
-  /* Accordion Header Buttons */
-  .accordion-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.3rem 1.25rem !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-weight: 700;
-    font-size: 1.3rem; /* bigger heading font */
-    border: none;
-    box-shadow: none !important;
-    letter-spacing: 0.5px;
-  }
+      /* Accordion Header Buttons */
+      .accordion-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.3rem 1.25rem !important;
+        background: transparent !important;
+        color: #fff !important;
+        font-weight: 700;
+        font-size: 1.3rem;
+        /* bigger heading font */
+        border: none;
+        box-shadow: none !important;
+        letter-spacing: 0.5px;
+      }
 
-  /* Active state */
-  .accordion-button:not(.collapsed) {
-    background: transparent !important;
-    color: #fff !important;
-  }
+      /* Active state */
+      .accordion-button:not(.collapsed) {
+        background: transparent !important;
+        color: #fff !important;
+      }
 
-  /* Hover effect */
-  .accordion-button:hover {
-    color: #c1ff76 !important; /* lime green */
-    transition: color 0.3s ease;
-  }
+      /* Hover effect */
+      .accordion-button:hover {
+        color: #c1ff76 !important;
+        /* lime green */
+        transition: color 0.3s ease;
+      }
 
-  /* Accordion Body */
-  .accordion-body {
-    padding: 1.25rem;
-    background: transparent !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    line-height: 1.7;
-    font-size: 1.05rem;
-  }
+      /* Accordion Body */
+      .accordion-body {
+        padding: 0.5rem;
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
 
-  .accordion-body h5 {
-    margin-bottom: 1rem;
-    color: #fff !important;
-  }
+      .accordion-body h5 {
+        margin-bottom: 1rem;
+        color: #fff !important;
+      }
 
-  /* List styling */
-  .accordion-body ul {
-    padding-left: 20px;
-    margin-top: 0.5rem;
-    list-style: none;
-  }
+      /* List styling */
+      .accordion-body ul {
+        padding-left: 20px;
+        margin-top: 0.5rem;
+        list-style: none;
+      }
 
-  .accordion-body ul li {
-    margin-bottom: 0.6rem;
-    color: #fff !important;
-    font-size: 1rem;
-  }
+      .accordion-body ul li {
+        margin-bottom: 0.6rem;
+        color: #fff !important;
+        font-size: 1rem;
+      }
 
-  .accordion-body .bullet-arrow {
-    color: #c1ff76 !important; /* lime arrow */
-  }
+      .accordion-body .bullet-arrow {
+        color: #c1ff76 !important;
+        /* lime arrow */
+      }
 
-  .accordion-body img {
-    margin-top: 1rem;
-    max-width: 100%;
-    border-radius: 6px;
-  }
+      .accordion-body img {
+        margin-top: 1rem;
+        max-width: 100%;
+        border-radius: 6px;
+      }
 
-  /* Accordion items */
-  .accordion-item {
-    background: transparent !important;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    margin-bottom: 1rem;
-  }
+      /* Accordion items */
+      .accordion-item {
+        background: transparent !important;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        margin-bottom: 1rem;
+      }
 
-  .accordion-item:last-child {
-    border-bottom: none;
-  }
+      .accordion-item:last-child {
+        border-bottom: none;
+      }
 
-  /* Responsive background */
-  @media (max-width: 767px) {
-    .services {
-      background-image: url('../assets/images/services/service-bg-6.webp');
-    }
-  }
-</style>
+      /* Responsive background */
+      @media (max-width: 767px) {
+        .services {
+          background-image: url('../assets/images/services/service-bg-6.webp');
+        }
+      }
+    </style>
 
-  <div class="container">
-    <div class="d-flex flex-column gap-5 gap-xl-10">
-      <div class="row gap-7 gap-xl-0">
-        <div class="col-xl-4 col-xxl-4">
-          <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-            data-aos-duration="1000">
-            <span
-              class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
-            <hr class="border-line bg-white">
-            <span class="badge text-dark bg-white">Services</span>
+    <div class="container">
+      <div class="d-flex flex-column gap-5 gap-xl-10">
+        <div class="row gap-7 gap-xl-0">
+          <div class="col-xl-4 col-xxl-4">
+            <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+              data-aos-duration="1000">
+              <span
+                class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
+              <hr class="border-line bg-white">
+              <span class="badge text-dark bg-white">Services</span>
+            </div>
           </div>
-        </div>
-        <div class="col-xl-8 col-xxl-7">
-          <div class="row">
-            <div class="col-xxl-12">
-              <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h2 class="mb-0 text-white">Our Services</h2>
-                <p class="fs-5 mb-0 text-white text-opacity-70">Our process is simple yet effective — from booking
-                  your slot to final delivery, we ensure a seamless photography experience tailored to your needs.</p>
+          <div class="col-xl-8 col-xxl-7">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <h2 class="mb-0 text-white">Our Services</h2>
+                  <p class="fs-5 mb-0 text-white text-opacity-70">Our process is simple yet effective — from booking
+                    your slot to final delivery, we ensure a seamless photography experience tailored to your needs.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <!-- Accordion Section -->
+            <div class="accordion" id="servicesAccordion" data-aos="fade-up" data-aos-delay="200"
+              data-aos-duration="1000">
+
+              <!-- Studio Product Photography -->
+              <div class="accordion-item">
+                <h6 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#serviceOne" aria-expanded="false" aria-controls="serviceOne">
+                    Studio Product Photography
+                  </button>
+                </h6>
+                <div id="serviceOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>✔ Professional shots with controlled lighting & backdrop setups</li>
+                      <li>✔ White background / transparent PNG optimized for e-commerce</li>
+                      <li>✔ Multi-angle coverage – front, side, back, close-ups</li>
+                      <li>✔ Flat-lay product displays for small accessories, cosmetics, gadgets</li>
+                      <li>✔ Shadow & reflection photography for a premium look</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- E-commerce Photography -->
+              <div class="accordion-item">
+                <h6 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#serviceTwo" aria-expanded="false" aria-controls="serviceTwo">
+                    E-commerce Photography
+                  </button>
+                </h6>
+                <div id="serviceTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>✔ Category-specific product standards (clothing, beauty, electronics, decor)</li>
+                      <li>✔ Size & dimension optimized as per marketplace requirements</li>
+                      <li>✔ Consistent angles for entire product range</li>
+                      <li>✔ High-resolution output with compressed web-friendly versions</li>
+                      <li>✔ Ghost mannequin photography for fashion garments</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jewelry & Luxury Product Photography -->
+              <div class="accordion-item">
+                <h6 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#serviceThree" aria-expanded="false" aria-controls="serviceThree">
+                    Jewelry & Luxury Product Photography
+                  </button>
+                </h6>
+                <div id="serviceThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>✔ Macro photography for gemstones & fine detail</li>
+                      <li>✔ Model-based showcasing for catalogs & campaigns</li>
+                      <li>✔ High-end retouching for sparkle, shine & premium aesthetics</li>
+                      <li>✔ Creative videography with rotating jewelry stands</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fashion & Apparel Product Shoots -->
+              <div class="accordion-item">
+                <h6 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#serviceFour" aria-expanded="false" aria-controls="serviceFour">
+                    Fashion & Apparel Product Shoots
+                  </button>
+                </h6>
+                <div id="serviceFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>✔ On-model photography (studio & outdoor)</li>
+                      <li>✔ Flat-lay clothing photography for e-commerce</li>
+                      <li>✔ Ghost mannequin / invisible mannequin for fashion catalogs</li>
+                      <li>✔ Short fashion films & reels for campaigns</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 360° Product Photography -->
+              <div class="accordion-item">
+                <h6 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#serviceFive" aria-expanded="false" aria-controls="serviceFive">
+                    360° Product Photography
+                  </button>
+                </h6>
+                <div id="serviceFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>✔ Rotational product images for websites & apps</li>
+                      <li>✔ Zoom-in macro detail shots (texture, stitching, engraving, etc.)</li>
+                      <li>✔ Multi-view sequences for a virtual showroom experience</li>
+                      <li>✔ 360° turntable setups for smooth rotation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Button -->
+        <a href="projects.html" style="margin-left: 5vw;" class="innerbtn btn border border-white border-opacity-25 mt-4" data-aos="fade-up"
+          data-aos-delay="300" data-aos-duration="1000">
+          <span class="btn-text">See Other Works</span>
+          <iconify-icon icon="lucide:arrow-up-right"
+            class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+        </a>
       </div>
-
-      <!-- Accordion Section -->
-      <div class="accordion" id="servicesAccordion" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-
-        <!-- Studio Product Photography -->
-        <div class="accordion-item">
-          <h6 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#serviceOne" aria-expanded="false" aria-controls="serviceOne">
-              Studio Product Photography
-            </button>
-          </h6>
-          <div id="serviceOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-            data-bs-parent="#servicesAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>✔ Professional shots with controlled lighting & backdrop setups</li>
-                <li>✔ White background / transparent PNG optimized for e-commerce</li>
-                <li>✔ Multi-angle coverage – front, side, back, close-ups</li>
-                <li>✔ Flat-lay product displays for small accessories, cosmetics, gadgets</li>
-                <li>✔ Shadow & reflection photography for a premium look</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- E-commerce Photography -->
-        <div class="accordion-item">
-          <h6 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#serviceTwo" aria-expanded="false" aria-controls="serviceTwo">
-              E-commerce Photography
-            </button>
-          </h6>
-          <div id="serviceTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#servicesAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>✔ Category-specific product standards (clothing, beauty, electronics, decor)</li>
-                <li>✔ Size & dimension optimized as per marketplace requirements</li>
-                <li>✔ Consistent angles for entire product range</li>
-                <li>✔ High-resolution output with compressed web-friendly versions</li>
-                <li>✔ Ghost mannequin photography for fashion garments</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Jewelry & Luxury Product Photography -->
-        <div class="accordion-item">
-          <h6 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#serviceThree" aria-expanded="false" aria-controls="serviceThree">
-              Jewelry & Luxury Product Photography
-            </button>
-          </h6>
-          <div id="serviceThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#servicesAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>✔ Macro photography for gemstones & fine detail</li>
-                <li>✔ Model-based showcasing for catalogs & campaigns</li>
-                <li>✔ High-end retouching for sparkle, shine & premium aesthetics</li>
-                <li>✔ Creative videography with rotating jewelry stands</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fashion & Apparel Product Shoots -->
-        <div class="accordion-item">
-          <h6 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#serviceFour" aria-expanded="false" aria-controls="serviceFour">
-              Fashion & Apparel Product Shoots
-            </button>
-          </h6>
-          <div id="serviceFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-            data-bs-parent="#servicesAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>✔ On-model photography (studio & outdoor)</li>
-                <li>✔ Flat-lay clothing photography for e-commerce</li>
-                <li>✔ Ghost mannequin / invisible mannequin for fashion catalogs</li>
-                <li>✔ Short fashion films & reels for campaigns</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 360° Product Photography -->
-        <div class="accordion-item">
-          <h6 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#serviceFive" aria-expanded="false" aria-controls="serviceFive">
-              360° Product Photography
-            </button>
-          </h6>
-          <div id="serviceFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-            data-bs-parent="#servicesAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>✔ Rotational product images for websites & apps</li>
-                <li>✔ Zoom-in macro detail shots (texture, stitching, engraving, etc.)</li>
-                <li>✔ Multi-view sequences for a virtual showroom experience</li>
-                <li>✔ 360° turntable setups for smooth rotation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Button -->
-      <a href="projects.html" class="innerbtn btn border border-white border-opacity-25 mt-4" data-aos="fade-up"
-        data-aos-delay="300" data-aos-duration="1000">
-        <span class="btn-text">See Other Works</span>
-        <iconify-icon icon="lucide:arrow-up-right"
-          class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-      </a>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Pricing Section -->
