@@ -215,7 +215,7 @@
   <div class="page-wrapper overflow-hidden">
     <!-- Banner Section -->
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/backgrounds/commercial-banner.jpg); background-size: cover; background-position: center;">
+      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/Model\ Photographs\ Portfolio\ \(webp\)/22.webp); background-size: cover; background-position: center;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
@@ -223,9 +223,8 @@
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
                 <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-80">Elevate your brand with <span
-                    class="text-primary fw-bold">professional commercial photography</span> that captures the essence of
-                  your business.</p>
+                <p class="mb-0 text-white fs-5 text-opacity-80">Elevate your portfolio with <span
+                    class="text-primary fw-bold">professional model photography</span> that highlights personality, style, and confidence.</p>
               </div>
             </div>
           </div>
@@ -247,10 +246,12 @@
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!--  Stats & Facts Section -->
+        <!-- Stats & Facts Section -->
     <section class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
+
+          <!-- Left Column -->
           <div class="col-xl-4 col-xxl-4">
             <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
               data-aos-duration="1000">
@@ -259,7 +260,15 @@
               <hr class="border-line">
               <span class="badge text-bg-dark">Introduction</span>
             </div>
+
+            <!-- ✅ Image under heading (only visible on large screens) -->
+            <div class="mt-4 w-75 ms-3 d-none d-lg-block" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+              <img src="../assets/images/Model Photographs Portfolio (webp)/41.webp" alt="Factory & Industrial Photography"
+                class="img-fluid-home w-100 rounded-3 shadow">
+            </div>
           </div>
+
+          <!-- Right Column -->
           <div class="col-xl-8 col-xxl-7">
             <div class="d-flex flex-column gap-9">
               <div class="row">
@@ -267,16 +276,22 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">About Model Shoots</h2>
-                    <p class="fs-5 mb-0">Model portfolio shoots are designed to highlight your versatility, personality,
+                    <p class="fs-5 mb-0">
+                      Model portfolio shoots are designed to highlight your versatility, personality,
                       and unique features across various looks and moods. Whether you’re an aspiring model or looking to
                       refresh your portfolio, this shoot includes fashion, beauty, headshots, and full-body shots that
-                      show your potential to agencies and brands. At MOKO, we craft personalized portfolio sessions with
+                      show your potential to agencies and brands.
+                    </p>
+                    <p class="fs-5 mb-0">
+                      At MOKO, we craft personalized portfolio sessions with
                       expert guidance on posing, styling, and expressions to help you present yourself confidently and
-                      professionally.</p>
+                      professionally.
+                    </p>
                   </div>
                 </div>
               </div>
 
+              <!-- CTA Button -->
               <a href="model-shoot-projects.html" class="btn" data-aos="fade-up" data-aos-delay="500"
                 data-aos-duration="1000">
                 <span class="btn-text">See Our Work</span>
@@ -285,13 +300,15 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
+
+      <!-- Background -->
       <div class="position-absolute bottom-0 start-0" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
         <img src="../assets/images/backgrounds/stats-facts-bg.svg" alt="" class="img-fluid">
       </div>
     </section>
-
 
     <section class="about-img">
       <div class="marquee w-100 d-flex align-items-center overflow-hidden bg-primary py-4">
@@ -381,8 +398,139 @@
   </div>
   </section>
 
-  <!--  Featured Projects Section -->
+    <!-- Featured Projects Section -->
   <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <style>
+      .carousel-nav-btn {
+        top: 30%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: none;
+        border-radius: 0.8vw;
+        width: 4vw;
+        height: 8vw;
+        box-shadow: 0 0.17vw 1vw rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .carousel-nav-btn iconify-icon {
+        font-size: 12vw;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .carousel-nav-btn:hover {
+        transform: translateY(-50%) scale(1.15);
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.67vw 2.33vw rgba(0, 0, 0, 0.5);
+      }
+
+      .carousel-nav-btn:hover iconify-icon {
+        transform: scale(1.2);
+        color: #fff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+      }
+
+      .custom-prev {
+        left: 1.5vw;
+      }
+
+      .custom-next {
+        right: 1.5vw;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-nav-btn {
+          top: 35%;
+          width: 8vw;
+          height: 8vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 5vw;
+        }
+
+        .custom-prev {
+          left: 5vw;
+        }
+
+        .custom-next {
+          right: 5vw;
+        }
+
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 22vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 16vw;
+        }
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 2vw;
+      }
+
+      .owl-dot {
+        display: inline-block;
+        margin: 0 1vw;
+        cursor: pointer;
+      }
+
+      .owl-dot span {
+        display: block;
+        width: 2.5vw;
+        max-width: 40px;
+        min-width: 20px;
+        height: 0.35vw;
+        max-height: 7px;
+        min-height: 5px;
+        background-color: #ddd;
+        border-radius: 2vw;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .owl-dot.active span {
+        background: #c1ff76;
+        border-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        transform: scaleX(1.5);
+        animation: pulseActive 2.5s ease-in-out infinite;
+      }
+
+      .owl-dot:hover span {
+        background-color: #c1ff72;
+        transform: scaleX(1.3);
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 6px rgba(193, 255, 114, 0.5);
+      }
+
+      @keyframes pulseActive {
+
+        0%,
+        100% {
+          transform: scaleX(1.5);
+          box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        50% {
+          transform: scaleX(1.6);
+          box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), inset 0 2px 8px rgba(255, 255, 255, 1);
+        }
+      }
+    </style>
     <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
@@ -400,8 +548,7 @@
               <div class="col-xxl-12">
                 <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                   <h2 class="mb-0">Our Services</h2>
-                  <p class="fs-5 mb-0">We provide a wide range of commercial photography services designed to highlight
-                    your brand, people, and workplace with precision and creativity.</p>
+                  <p class="fs-5 mb-0">We offer professional model photography services that showcase individuality, style, and confidence with creativity and elegance.</p>
                 </div>
               </div>
             </div>
@@ -409,14 +556,23 @@
         </div>
       </div>
 
-      <div class="featured-projects-slider px-3">
+      <div class="featured-projects-slider px-3 position-relative">
+        <!-- Custom navigation arrows -->
+        <button class="custom-prev carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-left" class="fs-3"></iconify-icon>
+        </button>
+        <button class="custom-next carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-right" class="fs-3"></iconify-icon>
+        </button>
+
+        <!-- Owl Carousel container -->
         <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-1.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/fashion.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
+                                    <!-- <a href="projects-detail.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
                   </a> -->
@@ -424,200 +580,114 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Fashion & Editorial Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <p>Styled high-fashion shoots for magazines, designers, and editorial campaigns.</p> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-2.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/portfolio.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Portfolio Development</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/indoor.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Indoor & Studio Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">UI/UX design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/outdoor.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Outdoor & Lifestyle Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/casual.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Western & Casual Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Brand identity</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/fitness.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Fitness & Sports Modeling</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/traditional.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Traditional Wear Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/catwalk.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Runway & Catwalk Portfolio</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/couple.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Couple / Duo Modeling</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-6.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Model Photographs Portfolio (webp)/acting.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Acting Portfolio Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
