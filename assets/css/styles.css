@@ -767,6 +767,20 @@ progress {
   content: "— ";
 }
 
+.about-page-img {
+  width: 60vw;          /* responsive width relative to screen */
+  max-width: 1200px;    /* prevents it from getting too big */
+  height: auto;         /* keeps aspect ratio */
+  object-fit: cover;
+  border-radius: 1vw;  /* optional */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* optional */
+  display: block;
+  margin: 0 auto;       /* center align */
+  margin-top: -8vw;
+  margin-bottom: 3vw;
+  cursor: pointer;
+}
+
 .img-fluid {
   /* max-width: 100%; */
   width: 18vw;

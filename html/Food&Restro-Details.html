@@ -692,194 +692,203 @@
     </div>
   </section>
 
-  <!-- How we work section -->
-<section class="services py-5 py-lg-11 py-xl-12" id="services">
-  <style>
-    .services {
-      background-image: url('../assets/images/services/service-bg-3.webp');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-    }
-
-    @media (max-width: 767px) {
+  <section class="services py-5 py-lg-11 py-xl-12" id="services">
+    <style>
       .services {
-        background-image: url('../assets/images/services/service-bg-6.webp');
+        background-image: url('../assets/images/services/service-bg-2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        /* Ensures the section covers the full viewport height */
       }
-    }
 
-    /* Icon size styling */
-    .icon-img {
-      width: 5vw;
-      height: auto;
-      margin-right: 2vw;
-      vertical-align: middle;
-    }
+      @media (max-width: 767px) {
+        .services {
+          background-image: url('../assets/images/services/service-bg-5.jpg');
+        }
+      }
 
-    @media (max-width: 768px) {
+      /* Default icon size for larger screens (PC, tablets, etc.) */
       .icon-img {
-        width: 12vw;
-        margin-right: 5vw;
+        width: 10vw;
+        /* Icon size in viewport width for larger screens */
+        height: auto;
+        margin-right: 0.2vw;
+        /* Space between the icon and the text in viewport width */
+        vertical-align: middle;
+        /* Align the icon vertically with the text */
       }
-    }
-  </style>
 
-  <div class="container">
-    <div class="d-flex flex-column gap-5 gap-xl-10">
-
-      <!-- Section Title Row -->
-      <div class="row gap-7 gap-xl-0">
-        <div class="col-xl-4 col-xxl-4">
-          <div class="d-flex align-items-center gap-7 py-2"
-            data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-            <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">
-              03
-            </span>
-            <hr class="border-line bg-white">
-            <span class="badge text-dark bg-white">Services</span>
+      /* Responsive icon size for smaller screens (mobile, tablets) */
+      @media (max-width: 768px) {
+        .icon-img {
+          width: 17vw;
+          /* Icon size in viewport width for smaller screens */
+          margin-right: 0.2vw;
+          /* Adjust space between the icon and the text in viewport width */
+        }
+      }
+    </style>
+    <div class="container">
+      <div class="d-flex flex-column gap-5 gap-xl-10">
+        <div class="row gap-7 gap-xl-0">
+          <div class="col-xl-4 col-xxl-4">
+            <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+              data-aos-duration="1000">
+              <span
+                class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
+              <hr class="border-line bg-white">
+              <span class="badge text-dark bg-white">Services</span>
+            </div>
+          </div>
+          <div class="col-xl-8 col-xxl-7">
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                  <h2 class="mb-0 text-white">How We Work</h2>
+                  <p class="fs-5 mb-0 text-white text-opacity-70">Our process is simple yet effective — from booking
+                    your slot to final delivery, we ensure a seamless photography experience tailored to your needs.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-xl-8 col-xxl-7">
-          <div class="d-flex flex-column gap-6"
-            data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <h2 class="mb-0 text-white">Our Key Services</h2>
-            <p class="fs-5 mb-0 text-white text-opacity-70">
-              Our process is simple yet effective — from booking your slot to final delivery, 
-              we ensure a seamless photography experience tailored to your needs.
-            </p>
-          </div>
-        </div>
-      </div>
+        <div class="services-tab">
+          <div class="row gap-5 gap-xl-0">
 
-      <!-- Services Tabs -->
-      <div class="services-tab">
-        <div class="row gap-5 gap-xl-0">
-          <div class="col-xl-12">
-            <div class="d-flex flex-column gap-5">
+            <!-- Removed images from this section -->
+            <!-- <div class="col-xl-4">
+              <div class="tab-content" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                <div class="tab-pane active" id="one" role="tabpanel" aria-labelledby="one-tab" tabindex="0">
+                  <img src="../assets/images/services/service-1.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="two" role="tabpanel" aria-labelledby="two-tab" tabindex="0">
+                  <img src="../assets/images/services/service-2.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="three" role="tabpanel" aria-labelledby="three-tab" tabindex="0">
+                  <img src="../assets/images/services/service-3.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="four" role="tabpanel" aria-labelledby="four-tab" tabindex="0">
+                  <img src="../assets/images/services/service-4.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="five" role="tabpanel" aria-labelledby="five-tab" tabindex="0">
+                  <img src="../assets/images/services/service-5.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="six" role="tabpanel" aria-labelledby="six-tab" tabindex="0">
+                  <img src="../assets/images/services/service-6.jpg" alt="services" class="img-fluid-service">
+                </div>
+                <div class="tab-pane" id="seven" role="tabpanel" aria-labelledby="seven-tab" tabindex="0">
+                  <img src="../assets/images/services/service-7.jpg" alt="services" class="img-fluid-service">
+                </div>
+              </div>
+            </div> -->
 
-              <!-- Nav Tabs -->
-              <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="col-xl-12">
+              <div class="d-flex flex-column gap-5">
+                <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200"
+                  data-aos-duration="1000">
+                  <li
+                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
+                    role="presentation">
+                    <div class="row w-100 align-items-center gx-3">
+                      <div class="col-lg-6 col-xxl-5">
+                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
+                          id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
+                          aria-controls="one" aria-selected="true">
+                          <img src="../assets/images/Icons/icon1_slot.png" alt="icon" class="icon-img"> Inquiry & Slot
+                          Booking
+                        </button>
+                      </div>
+                      <div class="col-lg-6 col-xxl-7">
+                        <p class="text-white text-opacity-70 mb-0">Choose your service and confirm date.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
+                    role="presentation">
+                    <div class="row w-100 align-items-center gx-3">
+                      <div class="col-lg-6 col-xxl-5">
+                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="two-tab"
+                          data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two"
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon2_plan.png" alt="icon" class="icon-img"> Concept &
+                          Planning
+                        </button>
+                      </div>
+                      <div class="col-lg-6 col-xxl-7">
+                        <p class="text-white text-opacity-70 mb-0">Shoot concepts, wardrobe, styling & brief discussion.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
+                    role="presentation">
+                    <div class="row w-100 align-items-center gx-3">
+                      <div class="col-lg-6 col-xxl-5">
+                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="three-tab"
+                          data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="three"
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon3_onSiteShoot.png" alt="icon" class="icon-img"> On-Site
+                          Shoot
+                        </button>
+                      </div>
+                      <div class="col-lg-6 col-xxl-7">
+                        <p class="text-white text-opacity-70 mb-0">Professional photography at your office/studio/event.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
+                    role="presentation">
+                    <div class="row w-100 align-items-center gx-3">
+                      <div class="col-lg-6 col-xxl-5">
+                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="four-tab"
+                          data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four"
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon4_editing.png" alt="icon" class="icon-img"> Editing &
+                          Retouching
+                        </button>
+                      </div>
+                      <div class="col-lg-6 col-xxl-7">
+                        <p class="text-white text-opacity-70 mb-0">High-end post-production for polished results.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
+                    role="presentation">
+                    <div class="row w-100 align-items-center gx-3">
+                      <div class="col-lg-6 col-xxl-5">
+                        <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="five-tab"
+                          data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five"
+                          aria-selected="false">
+                          <img src="../assets/images/Icons/icon5_delivery.png" alt="icon" class="icon-img"> Delivery
+                        </button>
+                      </div>
+                      <div class="col-lg-6 col-xxl-7">
+                        <p class="text-white text-opacity-70 mb-0">Final images delivered digitally & on time.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
 
-                <!-- Instagram Creator Shoots -->
-                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                  <div class="row w-100 align-items-center gx-3">
-                    <div class="col-lg-6 col-xxl-5">
-                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
-                        id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button"
-                        role="tab" aria-controls="one" aria-selected="true">
-                        <img src="../assets/images/Icons/instagram.png" alt="icon" class="icon-img">
-                        Instagram Creator Shoots
-                      </button>
-                    </div>
-                    <div class="col-lg-6 col-xxl-7">
-                      <p class="text-white text-opacity-70 mb-0">
-                        Lifestyle, Fashion, Travel, Food & daily content shoots tailored for 
-                        Instagram, Facebook and TikTok. Reel-making support with trendy transitions, 
-                        creative shots, and aesthetic compositions.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Youtube Video Production -->
-                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                  <div class="row w-100 align-items-center gx-3">
-                    <div class="col-lg-6 col-xxl-5">
-                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                        id="two-tab" data-bs-toggle="tab" data-bs-target="#two" type="button"
-                        role="tab" aria-controls="two" aria-selected="false">
-                        <img src="../assets/images/Icons/youtube.png" alt="icon" class="icon-img">
-                        Youtube Video Production
-                      </button>
-                    </div>
-                    <div class="col-lg-6 col-xxl-7">
-                      <p class="text-white text-opacity-70 mb-0">
-                        Complete multi-camera and professional lighting setup for YouTube creators — 
-                        vlogs, tutorials, unboxings, reviews, documentaries, and educational content.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Professional Podcast Shoots -->
-                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                  <div class="row w-100 align-items-center gx-3">
-                    <div class="col-lg-6 col-xxl-5">
-                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                        id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button"
-                        role="tab" aria-controls="three" aria-selected="false">
-                        <img src="../assets/images/Icons/podcast.png" alt="icon" class="icon-img">
-                        Professional Podcast Shoots
-                      </button>
-                    </div>
-                    <div class="col-lg-6 col-xxl-7">
-                      <p class="text-white text-opacity-70 mb-0">
-                        Audio-visual podcast production with professional microphones, studio lighting, 
-                        and multiple camera angles for a polished final output.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Storytelling Concept Shoots -->
-                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                  <div class="row w-100 align-items-center gx-3">
-                    <div class="col-lg-6 col-xxl-5">
-                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                        id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button"
-                        role="tab" aria-controls="four" aria-selected="false">
-                        <img src="../assets/images/Icons/storytelling.png" alt="icon" class="icon-img">
-                        Storytelling Concept Shoots
-                      </button>
-                    </div>
-                    <div class="col-lg-6 col-xxl-7">
-                      <p class="text-white text-opacity-70 mb-0">
-                        Content designed around storytelling for campaigns or social initiatives — 
-                        cinematic shots that emotionally resonate with audiences.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Short-Form Video Content -->
-                <li class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100" role="presentation">
-                  <div class="row w-100 align-items-center gx-3">
-                    <div class="col-lg-6 col-xxl-5">
-                      <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                        id="five-tab" data-bs-toggle="tab" data-bs-target="#five" type="button"
-                        role="tab" aria-controls="five" aria-selected="false">
-                        <img src="../assets/images/Icons/shorts.png" alt="icon" class="icon-img">
-                        Short-Form Video Content
-                      </button>
-                    </div>
-                    <div class="col-lg-6 col-xxl-7">
-                      <p class="text-white text-opacity-70 mb-0">
-                        Quick, trendy, and engaging video content optimized for Instagram Reels 
-                        and YouTube Shorts.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-              <!-- CTA Button -->
-              <a href="projects.html" class="innerbtn btn border border-white border-opacity-25"
-                data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <span class="btn-text">See Other Works</span>
-                <iconify-icon icon="lucide:arrow-up-right"
-                  class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm">
-                </iconify-icon>
-              </a>
-
+                <a href="projects.html" class="innerbtn btn border border-white border-opacity-25" data-aos="fade-up"
+                  data-aos-delay="300" data-aos-duration="1000">
+                  <span class="btn-text">See Other Works</span>
+                  <iconify-icon icon="lucide:arrow-up-right"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Pricing Section -->
   <section id="pricing4-ip" class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray">
@@ -1266,7 +1275,7 @@
             <li>
               <a class="link-hover fs-5 text-white d-flex align-items-center gap-2" href="Music&Singing-Details.html">
                 <iconify-icon icon="lucide:chevron-right" class="fs-6 text-primary"></iconify-icon>
-                Music-Singing Shoot
+                Events Shoot
               </a>
             </li>
           </ul>
