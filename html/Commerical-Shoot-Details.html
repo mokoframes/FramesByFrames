@@ -215,7 +215,7 @@
   <div class="page-wrapper overflow-hidden">
     <!-- Banner Section -->
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/backgrounds/commercial-banner.jpg); background-size: cover; background-position: center;">
+      style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(../assets/images/Commercial\ Photography\ \(webp\)/2.webp); background-size: cover; background-position: center;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
@@ -247,10 +247,12 @@
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!--  Stats & Facts Section -->
+    <!-- Stats & Facts Section for Product Photography -->
     <section class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
+
+          <!-- Left Column -->
           <div class="col-xl-4 col-xxl-4">
             <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
               data-aos-duration="1000">
@@ -259,11 +261,20 @@
               <hr class="border-line">
               <span class="badge text-bg-dark">Introduction</span>
             </div>
+
+            <!-- ✅ Image below the 'Introduction' heading, visible only on large screens -->
+            <div class="mt-7 d-none d-lg-block ms-2" data-aos="fade-right" data-aos-delay="200"
+              data-aos-duration="1000">
+              <img src="../assets/images/Commercial Photography (webp)/6.webp" alt="Product Photography Introduction"
+                class="img-fluid-home w-100">
+            </div>
           </div>
+
+          <!-- Right Column -->
           <div class="col-xl-8 col-xxl-7">
             <div class="d-flex flex-column gap-9">
               <div class="row">
-                <div class="col-xxl-12">
+                <div class="col-xl-10 offset-xl-1 col-xxl-10 offset-xxl-1">
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">About Commercial Photography</h2>
@@ -271,14 +282,16 @@
                       your brand, products, people, and workplace in the best light. It’s not just about taking
                       pictures—it’s about telling your business story visually. Whether you need corporate portraits,
                       workplace coverage, product branding, or event documentation, commercial photography builds trust,
-                      strengthens brand identity, and creates long-lasting impressions with clients and customers. At
+                      strengthens brand identity, and creates long-lasting impressions with clients and customers.</p>
+                    <p class="fs-5 mb-0">At
                       MOKO, we specialize in delivering high-quality commercial photos that match your brand vision,
                       tailored for marketing campaigns, annual reports, digital platforms, and advertisements.</p>
                   </div>
                 </div>
               </div>
 
-              <a href="Commercial-Shoot-projects.html" class="btn" data-aos="fade-up" data-aos-delay="500"
+              <!-- CTA Button -->
+              <a href="food&restro-projects.html" class="btn" data-aos="fade-up" data-aos-delay="500"
                 data-aos-duration="1000">
                 <span class="btn-text">See Our Work</span>
                 <iconify-icon icon="lucide:arrow-up-right"
@@ -286,13 +299,15 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
+
+      <!-- Background Image -->
       <div class="position-absolute bottom-0 start-0" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
         <img src="../assets/images/backgrounds/stats-facts-bg.svg" alt="" class="img-fluid">
       </div>
     </section>
-
 
     <section class="about-img">
       <div class="marquee w-100 d-flex align-items-center overflow-hidden bg-primary py-4">
@@ -382,8 +397,139 @@
   </div>
   </section>
 
-  <!--  Featured Projects Section -->
+   <!-- Featured Projects Section -->
   <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <style>
+      .carousel-nav-btn {
+        top: 30%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: none;
+        border-radius: 0.8vw;
+        width: 4vw;
+        height: 8vw;
+        box-shadow: 0 0.17vw 1vw rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .carousel-nav-btn iconify-icon {
+        font-size: 12vw;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .carousel-nav-btn:hover {
+        transform: translateY(-50%) scale(1.15);
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.67vw 2.33vw rgba(0, 0, 0, 0.5);
+      }
+
+      .carousel-nav-btn:hover iconify-icon {
+        transform: scale(1.2);
+        color: #fff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+      }
+
+      .custom-prev {
+        left: 1.5vw;
+      }
+
+      .custom-next {
+        right: 1.5vw;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-nav-btn {
+          top: 35%;
+          width: 8vw;
+          height: 8vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 5vw;
+        }
+
+        .custom-prev {
+          left: 5vw;
+        }
+
+        .custom-next {
+          right: 5vw;
+        }
+
+        .carousel-nav-btn {
+          width: 8vw;
+          height: 22vw;
+        }
+
+        .carousel-nav-btn iconify-icon {
+          font-size: 16vw;
+        }
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 2vw;
+      }
+
+      .owl-dot {
+        display: inline-block;
+        margin: 0 1vw;
+        cursor: pointer;
+      }
+
+      .owl-dot span {
+        display: block;
+        width: 2.5vw;
+        max-width: 40px;
+        min-width: 20px;
+        height: 0.35vw;
+        max-height: 7px;
+        min-height: 5px;
+        background-color: #ddd;
+        border-radius: 2vw;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .owl-dot.active span {
+        background: #c1ff76;
+        border-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        transform: scaleX(1.5);
+        animation: pulseActive 2.5s ease-in-out infinite;
+      }
+
+      .owl-dot:hover span {
+        background-color: #c1ff72;
+        transform: scaleX(1.3);
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 6px rgba(193, 255, 114, 0.5);
+      }
+
+      @keyframes pulseActive {
+
+        0%,
+        100% {
+          transform: scaleX(1.5);
+          box-shadow: 0 0 10px rgba(50, 205, 50, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        50% {
+          transform: scaleX(1.6);
+          box-shadow: 0 0 15px rgba(50, 205, 50, 0.9), inset 0 2px 8px rgba(255, 255, 255, 1);
+        }
+      }
+    </style>
     <div class="d-flex flex-column gap-5 gap-xl-11">
       <div class="container">
         <div class="row gap-7 gap-xl-0">
@@ -410,14 +556,23 @@
         </div>
       </div>
 
-      <div class="featured-projects-slider px-3">
+      <div class="featured-projects-slider px-3 position-relative">
+        <!-- Custom navigation arrows -->
+        <button class="custom-prev carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-left" class="fs-3"></iconify-icon>
+        </button>
+        <button class="custom-next carousel-nav-btn position-absolute">
+          <iconify-icon icon="lucide:chevron-right" class="fs-3"></iconify-icon>
+        </button>
+
+        <!-- Owl Carousel container -->
         <div class="owl-carousel owl-theme">
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-1.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/corporate-headshot.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
+                                    <!-- <a href="projects-detail.html"
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
                     <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
                   </a> -->
@@ -425,201 +580,115 @@
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Corporate Headshots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">UX Strategy</span>
-                  <span class="badge text-dark border">UI Design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-2.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/business-profile.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Business Profile Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/workplace.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Workplace Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">UI/UX design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/brand-storytelling.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Brand Storytelling Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-4.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/factory.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Industrial & Factory Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Brand identity</span> -->
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                </div>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/event.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Event Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/workshop.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Training-Workshop Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/meeting.webp" alt=""
+                  class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Meeting Photography</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/advertising.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Advertising Shoot</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Photography</span> -->
-                  <!-- <span class="badge text-dark border">Studio</span> -->
-                </div>
               </div>
             </div>
           </div>
-
-
           <div class="item">
             <div class="portfolio d-flex flex-column gap-6">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/portfolio/portfolio-img-6.jpg" alt="" class="img-fluid">
+                <img src="../assets/images/Commercial Photography (webp)/product-brand.webp" alt="" class="img-fluid">
                 <div class="portfolio-overlay">
-                  <!-- <a href="projects-detail.html"
-                    class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                    <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                  </a> -->
                 </div>
               </div>
               <div class="portfolio-details d-flex flex-column gap-3">
                 <h3 class="mb-0">Product Branding Shoots</h3>
-                <div class="hstack gap-2">
-                  <!-- <span class="badge text-dark border">Digital design</span> -->
-                  <!-- <span class="badge text-dark border">Web development</span> -->
-                </div>
               </div>
             </div>
           </div>
@@ -826,7 +895,7 @@
     </div>
   </section>
 
-<!-- Pricing Section -->
+  <!-- Pricing Section -->
   <section id="pricing4-ip" class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray">
     <style>
       .image-hover-effect img {
@@ -907,7 +976,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- 7. CTA Section -->
   <section class="cta-section">
     <style>
