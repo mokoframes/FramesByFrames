@@ -767,18 +767,39 @@ progress {
   content: "— ";
 }
 
+/* 🌐 Default: Desktop styles (larger screens) */
 .about-page-img {
-  width: 60vw;          /* responsive width relative to screen */
-  max-width: 1200px;    /* prevents it from getting too big */
-  height: auto;         /* keeps aspect ratio */
+  width: 100vw;
+  height: 30vw;
   object-fit: cover;
-  border-radius: 1vw;  /* optional */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* optional */
+  border-radius: 0;
+  box-shadow: none;
   display: block;
-  margin: 0 auto;       /* center align */
+  margin: 0;
   margin-top: -8vw;
   margin-bottom: 3vw;
   cursor: pointer;
+}
+
+/* 📱 Tablet and below (max-width: 768px): Full width */
+@media (max-width: 768px) {
+  .about-page-img {
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 5vw;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* 📱 Extra small devices (max-width: 480px): Slightly larger bottom margin */
+@media (max-width: 480px) {
+  .about-page-img {
+    margin-bottom: 5vw;
+    margin-top: -15vw;
+  }
 }
 
 .img-fluid {
