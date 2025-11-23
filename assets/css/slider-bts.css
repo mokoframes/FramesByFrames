@@ -1,0 +1,478 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+:root {
+  --primary: #ec994b;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+  --dark-overlay: rgba(0, 0, 0, 0.7);
+}
+/* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+} */
+
+/* html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1440px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    zoom: 2.5;
+  }
+} */
+
+/* ::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg);
+} */
+
+.slider-container {
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 4rem;
+  color: black;
+  padding: 2rem 0;
+}
+
+/* #tranding {
+  padding: 4rem 0;
+} */
+
+@media (max-width: 1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+  .section-heading {
+    font-size: 3.5rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 776px) {
+  .section-heading {
+    font-size: 3rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 666px) {
+  .section-heading {
+    font-size: 2.5rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 558px) {
+  .section-heading {
+    font-size: 2rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-heading {
+    font-size: 1.8rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+/* @media (max-width: 415px) {
+  .section-heading {
+    font-size: 1.8rem;
+    color: black;
+    padding: 2rem 0;
+  }
+} */
+
+@media (max-width: 350px) {
+  .section-heading {
+    font-size: 1rem;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+/* ------------------------------------- */
+/* SLIDER DIMENSIONS (Final Screen-Friendly 9:16 Ratio) */
+/* ------------------------------------- */
+#tranding .tranding-slider {
+  height: 45rem; /* Overall container height for Desktop */
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  #tranding .tranding-slider {
+    height: 38rem; /* Mobile container height */
+  }
+}
+
+.tranding-slide {
+  width: 20rem; /* Base smaller width */
+  height: 35.5rem; /* Perfect 9:16 height (20 * 16/9) */
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .tranding-slide {
+    width: 18rem !important; /* Smaller mobile width */
+    height: 32rem !important; /* Perfect 9:16 mobile height (18 * 16/9) */
+  }
+  .tranding-slide .tranding-slide-video video {
+    width: 18rem !important;
+    height: 32rem !important;
+  }
+}
+
+.tranding-slide .tranding-slide-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tranding-slide .tranding-slide-video video {
+  width: 100%;
+  height: 35.5rem; /* Desktop video height */
+  border-radius: 2rem;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  user-select: none;
+  pointer-events: auto;
+}
+
+/* Hide context menu on video to prevent download */
+.tranding-slide-video video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+/* ------------------------------------- */
+
+/* --- Custom Controls Styling --- */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s;
+  border-radius: 2rem;
+}
+
+.video-overlay.playing {
+  background: transparent;
+}
+
+.video-overlay .center-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+
+/* Reduced Center Play Button Size */
+.video-overlay .center-button ion-icon {
+  font-size: 6rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.video-overlay.playing .center-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Reduced Padding for slimmer bar */
+  padding: 0.7rem;
+  background: var(--dark-overlay);
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  pointer-events: none;
+}
+
+.tranding-slide-video:hover .custom-controls,
+.tranding-slide-video .custom-controls.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.seek-bar {
+  width: 100%;
+  height: 0.4rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.controls-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+}
+
+.controls-bottom button {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Reduced Bottom Play/Pause/Volume Button Icon Size */
+.controls-bottom button ion-icon {
+  font-size: 2.2rem;
+}
+
+/* Reduced Time Display Font Size */
+.time-display {
+  font-size: 1.1rem;
+  margin-right: auto;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Reduced Volume Bar Width */
+.volume-bar {
+  width: 4rem;
+  cursor: pointer;
+}
+/* --- End Custom Controls Styling --- */
+
+.tranding-slide-content .food-price {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--white);
+  pointer-events: none;
+}
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--white);
+  pointer-events: none;
+}
+
+/* Font Sizes for Name and Rating (Desktop/Default) */
+.tranding-slide-content-bottom .food-name {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.food-rating {
+  padding-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.rating ion-icon {
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+/* ------------------------------------- */
+/* ARROW POSITIONING (FIXED FOR ALL SCREENS) */
+/* ------------------------------------- */
+.tranding-slider-control {
+  /* Use relative positioning for desktop placement below the slides */
+  position: relative;
+  /* Pushes the container box down, ensures visibility */
+  bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 80% !important;
+  transform: translateX(-58%) !important;
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width: 990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 20%;
+  transform: translateX(-42%);
+  /* filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1)); */
+  z-index: 51;
+  padding-bottom: 2.5rem;
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: "";
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+/* ------------------------------------- */
+/* Logo Styling */
+/* ------------------------------------- */
+.slider-logo {
+  max-width: 6rem;
+  height: auto;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+@media (max-width: 500px) {
+  /* Reduced Center Play Button Size (Mobile) */
+  .video-overlay .center-button ion-icon {
+    font-size: 4rem;
+  }
+
+  /* Reduced logo size on mobile */
+  .slider-logo {
+    max-width: 5rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  /* Reduced Food Name size on Mobile */
+  .tranding-slide-content-bottom .food-name {
+    font-size: 1.6rem;
+  }
+
+  /* FINAL Mobile arrows position: relies on desktop/general rule for visibility */
+  .tranding-slider-control {
+    bottom: -0.5rem;
+  }
+}
