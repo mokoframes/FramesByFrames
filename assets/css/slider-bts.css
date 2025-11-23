@@ -140,31 +140,30 @@ body {
     padding: 2rem 0;
   }
 }
-/* ------------------------------------- */
-/* SLIDER DIMENSIONS (Final Screen-Friendly 9:16 Ratio) */
-/* ------------------------------------- */
+
+/* Slider Instagram Reel Video (Final 9:16 Ratio) */
 #tranding .tranding-slider {
-  height: 45rem; /* Overall container height for Desktop */
+  height: 45rem;
   padding: 2rem 0;
   position: relative;
 }
 
 @media (max-width: 500px) {
   #tranding .tranding-slider {
-    height: 38rem; /* Mobile container height */
+    height: 38rem; 
   }
 }
 
 .tranding-slide {
-  width: 20rem; /* Base smaller width */
-  height: 35.5rem; /* Perfect 9:16 height (20 * 16/9) */
+  width: 20rem; 
+  height: 35.5rem;
   position: relative;
 }
 
 @media (max-width: 500px) {
   .tranding-slide {
-    width: 18rem !important; /* Smaller mobile width */
-    height: 32rem !important; /* Perfect 9:16 mobile height (18 * 16/9) */
+    width: 18rem !important; 
+    height: 32rem !important; 
   }
   .tranding-slide .tranding-slide-video video {
     width: 18rem !important;
@@ -182,7 +181,7 @@ body {
 
 .tranding-slide .tranding-slide-video video {
   width: 100%;
-  height: 35.5rem; /* Desktop video height */
+  height: 35.5rem;
   border-radius: 2rem;
   object-fit: cover;
   transition: opacity 0.3s ease;
@@ -190,7 +189,7 @@ body {
   pointer-events: auto;
 }
 
-/* Hide context menu on video to prevent download */
+/* Hide Download Function for Video */
 .tranding-slide-video video::-webkit-media-controls-enclosure {
   display: none !important;
 }
@@ -206,7 +205,6 @@ body {
 }
 /* ------------------------------------- */
 
-/* --- Custom Controls Styling --- */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -238,7 +236,6 @@ body {
   margin: 0;
 }
 
-/* Reduced Center Play Button Size */
 .video-overlay .center-button ion-icon {
   font-size: 6rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
@@ -254,7 +251,6 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  /* Reduced Padding for slimmer bar */
   padding: 0.7rem;
   background: var(--dark-overlay);
   z-index: 20;
@@ -295,12 +291,10 @@ body {
   line-height: 1;
 }
 
-/* Reduced Bottom Play/Pause/Volume Button Icon Size */
 .controls-bottom button ion-icon {
   font-size: 2.2rem;
 }
 
-/* Reduced Time Display Font Size */
 .time-display {
   font-size: 1.1rem;
   margin-right: auto;
@@ -312,12 +306,10 @@ body {
   gap: 0.5rem;
 }
 
-/* Reduced Volume Bar Width */
 .volume-bar {
   width: 4rem;
   cursor: pointer;
 }
-/* --- End Custom Controls Styling --- */
 
 .tranding-slide-content .food-price {
   position: absolute;
@@ -335,7 +327,6 @@ body {
   pointer-events: none;
 }
 
-/* Font Sizes for Name and Rating (Desktop/Default) */
 .tranding-slide-content-bottom .food-name {
   font-size: 1.8rem;
   color: white;
@@ -358,13 +349,9 @@ body {
   display: none;
 }
 
-/* ------------------------------------- */
-/* ARROW POSITIONING (FIXED FOR ALL SCREENS) */
-/* ------------------------------------- */
+/* ARROW POSITIONING*/
 .tranding-slider-control {
-  /* Use relative positioning for desktop placement below the slides */
   position: relative;
-  /* Pushes the container box down, ensures visibility */
   bottom: 2.5rem;
   display: flex;
   align-items: center;
@@ -441,9 +428,7 @@ body {
   background: var(--primary);
 }
 
-/* ------------------------------------- */
 /* Logo Styling */
-/* ------------------------------------- */
 .slider-logo {
   max-width: 6rem;
   height: auto;
@@ -454,24 +439,20 @@ body {
 }
 
 @media (max-width: 500px) {
-  /* Reduced Center Play Button Size (Mobile) */
   .video-overlay .center-button ion-icon {
     font-size: 4rem;
   }
 
-  /* Reduced logo size on mobile */
   .slider-logo {
     max-width: 5rem;
     top: 1.5rem;
     right: 1.5rem;
   }
 
-  /* Reduced Food Name size on Mobile */
   .tranding-slide-content-bottom .food-name {
     font-size: 1.6rem;
   }
 
-  /* FINAL Mobile arrows position: relies on desktop/general rule for visibility */
   .tranding-slider-control {
     bottom: -0.5rem;
   }
