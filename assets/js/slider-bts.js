@@ -1,9 +1,17 @@
+/**
+ * 1. SWIPER INITIALIZATION
+ * Configures the visual layout and automatic sliding behavior.
+ */
 var TrandingSlider = new Swiper('.tranding-slider', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
     loop: true,
     slidesPerView: 'auto',
+    autoplay: {
+        delay: 4000, // Time (ms) before moving to next slide
+        disableOnInteraction: false, // Continue autoplay even after user swipes manually
+    },
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
@@ -20,87 +28,91 @@ var TrandingSlider = new Swiper('.tranding-slider', {
     }
 });
 
-// -----------------------------------------------------------------
-// Custom Video Control Functionality (कस्टम वीडियो नियंत्रण कार्यक्षमता)
-// -----------------------------------------------------------------
+/**
+ * 2. UTILITY FUNCTIONS
+ */
 
-// Helper function to format time (समय को फॉर्मेट करने के लिए सहायक फंक्शन)
+// Converts raw seconds (e.g., 95) into a readable string (e.g., "1:35")
 function formatTime(time) {
+    if (isNaN(time)) return "0:00";
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
-// Function to stop all videos (सभी वीडियो को रोकने का फंक्शन)
-function stopAllVideos(swiper) {
+// Resets all videos to their starting state (hides video frames, shows thumbnails)
+function resetAllVideos(swiper) {
     const allSlides = swiper.el.querySelectorAll('.tranding-slide');
     allSlides.forEach(slide => {
         const video = slide.querySelector('video');
-        const centerButton = slide.querySelector('.video-overlay .center-button');
         const overlay = slide.querySelector('.video-overlay');
         const bottomButton = slide.querySelector('.custom-controls .video-play-pause-button');
-        const timeDisplay = slide.querySelector('.time-display');
+        const centerButton = slide.querySelector('.video-overlay .center-button');
         const seekBar = slide.querySelector('.seek-bar');
 
-        if (video && !video.paused) {
+        if (video) {
             video.pause();
-            video.currentTime = 0; // Rewind video to start
+            video.currentTime = 0;
+            // .load() is crucial: it clears the current frame and resets to the 'poster' image
+            video.load(); 
             
-            // Update UI
+            // Reset UI elements to 'Play' state
             if (centerButton) centerButton.querySelector('ion-icon').setAttribute('name', 'play-circle');
             if (bottomButton) bottomButton.querySelector('ion-icon').setAttribute('name', 'play-circle');
             if (overlay) overlay.classList.remove('playing');
-            if (timeDisplay) timeDisplay.textContent = '0:00 / 0:00';
             if (seekBar) seekBar.value = 0;
         }
     });
 }
 
-// Add event listener for slide changes (स्लाइड बदलने पर इवेंट लिसनर)
+/**
+ * 3. SWIPER EVENT LISTENERS
+ * Triggered when the user or autoplay moves the slider.
+ */
 TrandingSlider.on('slideChangeTransitionStart', function () {
-    stopAllVideos(this);
+    // When moving to a new slide, ensure the old video doesn't keep playing in the background
+    resetAllVideos(this);
 });
 
-
-// Setup listeners for each video (हर वीडियो के लिए लिसनर सेट करें)
+/**
+ * 4. INDIVIDUAL VIDEO CONTROL SETUP
+ * Loops through every slide to attach specific video and UI logic.
+ */
 document.querySelectorAll('.tranding-slide').forEach(slide => {
     const video = slide.querySelector('video');
-    const centerButton = slide.querySelector('.video-overlay .center-button');
     const overlay = slide.querySelector('.video-overlay');
-    const customControls = slide.querySelector('.custom-controls');
-    
-    // Bottom controls
     const bottomButton = slide.querySelector('.custom-controls .video-play-pause-button');
-    const timeDisplay = slide.querySelector('.time-display');
+    const centerButton = slide.querySelector('.video-overlay .center-button');
     const seekBar = slide.querySelector('.seek-bar');
+    const timeDisplay = slide.querySelector('.time-display');
     const volumeButton = slide.querySelector('.volume-button');
     const volumeBar = slide.querySelector('.volume-bar');
-    
-    // -------------------------------------
-    // 1. Play/Pause Logic (प्ले/पॉज लॉजिक)
-    // -------------------------------------
+
+    // Central function to handle Play/Pause toggle
     function togglePlayPause() {
         if (video.paused || video.ended) {
-            stopAllVideos(TrandingSlider); // Stop others before playing
+            // Stop other active videos and PAUSE the slider movement
+            resetAllVideos(TrandingSlider);
+            TrandingSlider.autoplay.stop(); 
             video.play();
         } else {
             video.pause();
+            // RESUME slider movement if the user manually pauses the video
+            TrandingSlider.autoplay.start();
         }
     }
 
-    if (video && centerButton && bottomButton) {
-        // Center button and overlay click toggles play/pause
-        overlay.addEventListener('click', togglePlayPause);
-        bottomButton.addEventListener('click', togglePlayPause);
-    }
-    
-    // Video Event Listeners (वीडियो इवेंट लिसनर)
-    video.addEventListener('loadedmetadata', () => {
-        seekBar.max = video.duration;
-        timeDisplay.textContent = `0:00 / ${formatTime(video.duration)}`;
-    });
+    // Attach click listeners to UI elements
+    if (overlay) overlay.addEventListener('click', togglePlayPause);
+    if (bottomButton) bottomButton.addEventListener('click', togglePlayPause);
 
+    /**
+     * VIDEO STATE EVENTS
+     * Syncs the UI with the actual state of the video player.
+     */
     video.addEventListener('play', () => {
+        // Prevent slider from swiping away while user is watching
+        TrandingSlider.autoplay.stop(); 
         centerButton.querySelector('ion-icon').setAttribute('name', 'pause-circle');
         bottomButton.querySelector('ion-icon').setAttribute('name', 'pause-circle');
         overlay.classList.add('playing');
@@ -110,54 +122,47 @@ document.querySelectorAll('.tranding-slide').forEach(slide => {
         centerButton.querySelector('ion-icon').setAttribute('name', 'play-circle');
         bottomButton.querySelector('ion-icon').setAttribute('name', 'play-circle');
         overlay.classList.remove('playing');
-        customControls.classList.add('visible'); // Show controls when paused
+    });
+
+    video.addEventListener('ended', () => {
+        // When video finishes, reset to thumbnail and allow slider to move again after the delay
+        video.currentTime = 0;
+        video.load(); 
+        TrandingSlider.autoplay.start(); 
     });
 
     video.addEventListener('timeupdate', () => {
+        // Sync the progress bar and timestamp text as the video plays
         seekBar.value = video.currentTime;
         timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
     });
 
-    video.addEventListener('ended', () => {
-        video.currentTime = 0;
-        video.pause();
+    video.addEventListener('loadedmetadata', () => {
+        // Once video metadata loads, set the seek bar max length
+        seekBar.max = video.duration;
+        timeDisplay.textContent = `0:00 / ${formatTime(video.duration)}`;
     });
 
-    // -------------------------------------
-    // 2. Seek Bar (ट्रैक बार)
-    // -------------------------------------
+    /**
+     * SEEK BAR & VOLUME LOGIC
+     */
     seekBar.addEventListener('input', () => {
+        // Jump to specific part of the video when dragging the slider
         video.currentTime = seekBar.value;
     });
 
-    // -------------------------------------
-    // 3. Volume Controls (वॉल्यूम कंट्रोल्स)
-    // -------------------------------------
+    // Stop slider from swiping while the user is actively dragging the seek bar
+    seekBar.addEventListener('mousedown', () => TrandingSlider.autoplay.stop());
+    seekBar.addEventListener('mouseup', () => {
+        if (video.paused) TrandingSlider.autoplay.start();
+    });
+
     volumeBar.addEventListener('input', () => {
         video.volume = volumeBar.value;
-        if (video.volume === 0) {
-            volumeButton.querySelector('ion-icon').setAttribute('name', 'volume-mute');
-        } else {
-            volumeButton.querySelector('ion-icon').setAttribute('name', 'volume-medium');
-        }
+        // Update volume icon based on level
+        volumeButton.querySelector('ion-icon').setAttribute('name', video.volume === 0 ? 'volume-mute' : 'volume-medium');
     });
 
-    volumeButton.addEventListener('click', () => {
-        if (video.volume > 0) {
-            video.volume = 0;
-            volumeBar.value = 0;
-            volumeButton.querySelector('ion-icon').setAttribute('name', 'volume-mute');
-        } else {
-            video.volume = 1;
-            volumeBar.value = 1;
-            volumeButton.querySelector('ion-icon').setAttribute('name', 'volume-medium');
-        }
-    });
-
-    // -------------------------------------
-    // 4. Prevent Download (डाउनलोड रोकें)
-    // -------------------------------------
-    video.addEventListener('contextmenu', (e) => {
-        e.preventDefault(); // Prevent right-click context menu
-    });
+    // Security/UX: Prevents right-click 'Save Video As' menu download
+    video.addEventListener('contextmenu', (e) => e.preventDefault());
 });

@@ -75,7 +75,7 @@ body {
 .section-heading {
   font-size: 4rem;
   color: black;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
 }
 
 /* #tranding {
@@ -84,7 +84,7 @@ body {
 
 @media (max-width: 1440px) {
   #tranding {
-    padding: 7rem 0;
+    /* padding: 7rem 0; */
   }
   .section-heading {
     font-size: 3.5rem;
