@@ -1,0 +1,89 @@
+.client-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* .client-section h2 {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+} */
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* balanced grid */
+  gap: 40px;
+  max-width: 950px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.logo-item {
+  width: 100%;
+  /* max-width: 250px;  */
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent; /* default no background */
+  padding: 5px;
+  border-radius: 6px;
+  transition: transform 0.3s ease; /* move hover scale to container */
+}
+
+.logo-item:hover {
+  transform: scale(1.1); /* entire box scales, including background */
+}
+
+.jg {
+  width: 12rem;
+}
+
+.pgp {
+  height: 50%;
+}
+
+.sidhharth {
+  width: 12rem;
+}
+
+.sunexo {
+  width: 12rem;
+}
+
+.bellavita {
+  background-color: darkgray; /* light gray for white logos */
+  height: 30%;
+}
+
+.logo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .client-section {
+    padding: 50px 20px;
+  }
+
+  .logo-item {
+    max-width: 120px;
+    height: 60px;
+  }
+}
